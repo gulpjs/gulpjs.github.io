@@ -4,6 +4,9 @@
 /* 29px */
 /* 28px */
 /* 24px */
+.get-started {
+  background-color: #e74c3c;
+}
 .gulpLogo {
   width: 130px !important;
   height: 256px !important;
@@ -951,7 +954,7 @@ section * {
 .header-21-sub .control-btn {
   width: 53px;
   height: 53px;
-  line-height: 47px;
+  line-height: 53px;
   margin: 0;
   padding: 0;
   border-radius: 50%;
