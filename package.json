@@ -1,5 +1,16 @@
 {
-  "name": "site",
+  "name": "gulpjs.github.io",
+  "description": "gulp.js website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gulpjs/gulpjs.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gulpjs/gulpjs.github.io/issues"
+  },
+  "main": "index.html",
+  "author": "gulp.js",
+  "homepage": "http://gulpjs.com/",
   "dependencies": {
     "tiny-lr": "0.0.5",
     "gulp": "~3.2.0",
