@@ -241,7 +241,7 @@ body {
 .main-info {
   *zoom: 1;
   width: auto;
-  max-width: 800px;
+  max-width: 1024px;
   float: none;
   display: block;
   margin-right: auto;
@@ -268,7 +268,7 @@ body {
   margin-right: 3%;
   *zoom: 1;
   width: auto;
-  max-width: 800px;
+  max-width: 1024px;
   float: none;
   display: block;
   margin-right: auto;
