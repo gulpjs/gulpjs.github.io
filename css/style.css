@@ -159,7 +159,7 @@ body {
   -ms-transform: translateX(50%);
   transform: translateX(50%);
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1;
 }
@@ -195,8 +195,7 @@ body {
   clear: both;
 }
 .navbar .navbar-links .navbar-link {
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 0 15px;
   border-right: 1px solid rgba(255,255,255,0.2);
 }
 .navbar .navbar-links .navbar-link:last-child {
