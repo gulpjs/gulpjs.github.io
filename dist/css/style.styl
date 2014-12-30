@@ -1,0 +1,89 @@
+@require 'nib'
+
+global-reset()
+
+thin()
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif
+
+button()
+  transition: all 0.4s
+  color: inherit
+  padding: 15px 60px 16px
+  line-height: 1
+  vertical-align: top
+  cursor: pointer
+  border: 1px solid #fff
+  border-radius: 3px
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent
+
+
+  &:hover
+    box-shadow: 0 0 50px rgba(255,255,255,.3)
+
+html, body
+  width: 100%
+  height: 100%
+
+body
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif
+  font-weight: 300
+
+  position: relative !important
+  color: #333
+  background-color: #000
+  //background-image: linear-gradient(45deg, #0a1855, #da0024)
+
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+  font-feature-settings: 'liga', 'kern'
+
+.main-header
+  height: 100%
+  width: 100%
+  color: #fff
+  text-shadow: 1px 1px rgba(0,0,0,0.6)
+  min-height: 750px
+  text-align: center
+  background-size: cover
+  background-position: 50% 50%
+  background-image: url('../img/bg.png')
+
+.main-header-content
+  position: relative
+  max-width: 90vw
+  margin: 0 auto
+  padding: 50px 10px
+  top: 40%
+  transform: translateY(-50%)
+
+.main-header-text
+  animation: fadein 2s
+  margin-bottom: 90px
+  font-size: 30px
+  line-height: 150%
+
+  @media screen and (min-width: 768px)
+    thin()
+    font-size: 70px
+    line-height: 90px
+
+.main-header-btn
+  button()
+
+  animation: fadein 2s
+  animation-delay: 1s
+  text-shadow: none
+  color: #333
+  background-color: #fff
+  font-size: 22px
+
+.content
+
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
