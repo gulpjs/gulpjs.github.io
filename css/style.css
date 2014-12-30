@@ -159,7 +159,7 @@ body {
   -ms-transform: translateX(50%);
   transform: translateX(50%);
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1;
 }
@@ -180,7 +180,7 @@ body {
   float: right;
 }
 .navbar .navbar-links .navbar-link {
-  padding: 15px;
+  padding-right: 20px;
 }
 .main-header {
   height: 100%;
