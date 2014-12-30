@@ -36,7 +36,7 @@ body
     transition: opacity .2s linear
     transform: translateX(50%)
     margin-bottom: 0
-    font-size: 20px
+    font-size: 16px
     font-weight: 300
     line-height: 1
 
@@ -50,12 +50,15 @@ body
     left: 50%
 
   .navbar-links
-    position: static
-    float: right
+    center()
     
     .navbar-link
-      padding: 15px
-    
+      padding: 0 15px
+      border-right: 1px solid rgba(255, 255, 255, 0.2)
+      
+      &:last-child
+        border-right: none
+
 .main-header
   height: 100%
   width: 100%
@@ -98,12 +101,12 @@ body
     box-shadow: 0 0 50px rgba(255,255,255,.3)
 
 .main-info
-  center(max-width: 800px)
+  center(max-width: 1024px)
   background-color: #fff
 
 .benefits
   col(1/1)
-  center(max-width: 800px)
+  center(max-width: 1024px)
   padding: 50px
 
   .benefit
