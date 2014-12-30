@@ -206,9 +206,7 @@ body {
   width: 100%;
   color: #fff;
   text-align: center;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-image: url("../img/bg.png");
+  background-color: #eb4a4b;
 }
 .main-header-content {
   position: absolute;
@@ -221,6 +219,10 @@ body {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+.logo {
+  max-width: 20vh;
+  max-height: 20vh;
 }
 .main-header-text {
   width: 90vw;
