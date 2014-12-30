@@ -176,11 +176,31 @@ body {
   left: 50%;
 }
 .navbar .navbar-links {
-  position: static;
-  float: right;
+  *zoom: 1;
+  width: auto;
+  max-width: 1440px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar .navbar-links:before,
+.navbar .navbar-links:after {
+  content: '';
+  display: table;
+}
+.navbar .navbar-links:after {
+  clear: both;
 }
 .navbar .navbar-links .navbar-link {
-  padding-right: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+.navbar .navbar-links .navbar-link:last-child {
+  border-right: none;
 }
 .main-header {
   height: 100%;
