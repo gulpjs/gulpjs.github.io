@@ -116,15 +116,15 @@ body {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  *zoom: 1;
-  width: auto;
-  max-width: 1440px;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   padding-top: 30px;
   float: left;
   width: 100%;
@@ -139,14 +139,6 @@ body {
 }
 .navbar:last-child {
   margin-right: 0%;
-}
-.navbar:before,
-.navbar:after {
-  content: '';
-  display: table;
-}
-.navbar:after {
-  clear: both;
 }
 .navbar a {
   color: inherit;
