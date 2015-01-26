@@ -50,16 +50,16 @@ body
 
   .navbar-links
     center()
-    
+
     .navbar-link
       padding: 0 15px
       border-right: 1px solid rgba(255, 255, 255, 0.3)
-      
+
       &:last-child
         border-right: none
 
 .main-header
-  height: 100%
+  height: 90%
   width: 100%
   min-height: 450px
   color: #fff
@@ -69,14 +69,102 @@ body
 .main-header-content
   align()
 
+.main-rotate-text
+  margin-bottom: 60px
+
+.main-rotate-text.type .words-wrapper
+  vertical-align: top
+  overflow: hidden
+
+.main-rotate-text.type .words-wrapper.waiting::after
+  -webkit-animation: cd-pulse 1s infinite
+  -moz-animation: cd-pulse 1s infinite
+  animation: cd-pulse 1s infinite
+
+.main-rotate-text.type .words-wrapper.selected
+  background-color: #aebcb9
+
+.main-rotate-text.type .words-wrapper.selected::after
+  visibility: hidden
+
+.main-rotate-text.type .words-wrapper.selected b
+  color: #0d0d0d
+
+.main-rotate-text.type b
+  visibility: hidden
+
+.main-rotate-text.type b.is-visible
+  visibility: visible
+
+.main-rotate-text.type i
+  position: absolute
+  visibility: hidden
+
+.main-rotate-text.type i.in
+  position: relative
+  visibility: visible
+
+
+@-webkit-keyframes cd-pulse
+  0%
+    -webkit-transform: translateY(-50%) scale(1)
+    opacity: 1
+
+  40%
+    -webkit-transform: translateY(-50%) scale(0.9)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateY(-50%) scale(0)
+    opacity: 0
+
+
+@-moz-keyframes cd-pulse
+  0%
+    -moz-transform: translateY(-50%) scale(1)
+    opacity: 1
+
+  40%
+    -moz-transform: translateY(-50%) scale(0.9)
+    opacity: 0
+
+  100%
+    -moz-transform: translateY(-50%) scale(0)
+    opacity: 0
+
+
+@keyframes cd-pulse
+  0%
+    -webkit-transform: translateY(-50%) scale(1)
+    -moz-transform: translateY(-50%) scale(1)
+    -ms-transform: translateY(-50%) scale(1)
+    -o-transform: translateY(-50%) scale(1)
+    transform: translateY(-50%) scale(1)
+    opacity: 1
+
+  40%
+    -webkit-transform: translateY(-50%) scale(0.9)
+    -moz-transform: translateY(-50%) scale(0.9)
+    -ms-transform: translateY(-50%) scale(0.9)
+    -o-transform: translateY(-50%) scale(0.9)
+    transform: translateY(-50%) scale(0.9)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateY(-50%) scale(0)
+    -moz-transform: translateY(-50%) scale(0)
+    -ms-transform: translateY(-50%) scale(0)
+    -o-transform: translateY(-50%) scale(0)
+    transform: translateY(-50%) scale(0)
+    opacity: 0
+
 .logo
   max-width: 20vh
   max-height: 20vh
 
-.main-header-text
+.main-header-text, .main-rotate-text
   width: 90vw
   animation: fadein 2s
-  margin-bottom: 60px
   font-size: 41px
   font-weight: 300
   line-height: 60px
@@ -100,6 +188,97 @@ body
   &:hover
     box-shadow: 0 0 50px rgba(255,255,255,.3)
 
+.arrow-wrap
+  position: absolute
+  z-index: 1
+  left: 50%
+  margin-top: 10em
+  margin-left: -5em
+  background: none repeat scroll 0% 0% #fff
+  width: 40px
+  height: 40px
+  padding: 2em 2em
+  border-radius: 50%
+  font-size: 0.5em
+  display: block
+
+.arrow
+  float:left
+  position:relative
+  width: 0px
+  height: 0px
+  border-style: solid
+  border-width: 3em 3em 0 3em
+  border-color: #ffffff transparent transparent transparent
+  -webkit-transform:rotate(360deg)
+
+.arrow:after
+  content:''
+  position:absolute
+  top:-3.2em
+  left:-3em
+  width: 0px
+  height: 0px
+  border-style: solid
+  border-width: 3em 3em 0 3em
+  border-color: #111 transparent transparent transparent
+  -webkit-transform:rotate(360deg)
+
+.arrows
+  width: 60px
+  height: 40px
+  position: absolute
+  left: 50%
+  margin-left: -30px
+  top: 25px
+
+.arrows path
+  stroke: #CF4646
+  fill: transparent
+  stroke-width: 1px
+
+.hint
+  position:absolute
+  top:0.6em
+  width:100%
+  left:0
+  font-size:2em
+  font-style:italic
+  text-align:center
+  color:#fff
+  opacity:0
+
+.arrow-wrap:hover .hint
+  opacity:1
+
+@-webkit-keyframes arrows
+  0%
+    top:0
+  10%
+    top:12%
+  20%
+    top:0
+  30%
+    top:12%
+  40%
+    top:-12%
+  50%
+    top:12%
+  60%
+    top:0
+  70%
+    top:12%
+  80%
+    top:-12%
+  90%
+    top:12%
+  100%
+    top:0
+
+.arrow-wrap .arrow
+  -webkit-animation: arrows 2.8s 0.4s
+  -webkit-animation-delay: 3s
+
 .main-info
   center(max-width: 1024px)
   background-color: #fff
@@ -111,10 +290,10 @@ body
 
   .benefit
     margin-top: 50px
-    
+
     @media screen and (min-width: 700px)
       col(1/2, cycle: 2)
-      
+
     @media screen and (max-width: 700px)
       col(1/2, cycle: 4)
       stack()
@@ -123,12 +302,12 @@ body
       margin-bottom: 14px
       font-size: 22px
       font-weight: 500
-    
+
     .benefit-text
       color: #7f8c8d
       font-size: 16px
       line-height: 26px
-      
+
 .sample
   min-height: 150px
 

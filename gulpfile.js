@@ -9,6 +9,7 @@ var nib = require('nib');
 var jeet = require('jeet');
 var autoprefixer = require('autoprefixer-stylus');
 var deploy = require('gulp-gh-pages');
+var connect = require('gulp-connect');
 
 gulp.task('deploy', function(){
   return gulp.src('dist/**/*')
@@ -17,7 +18,7 @@ gulp.task('deploy', function(){
     }));
 });
 
-gulp.task('default', function(){
+gulp.task('build', function(){
   return gulp.src('src/**/*')
     .pipe(cached('build'))
     .pipe(gif('*.styl', stylus({
@@ -30,6 +31,13 @@ gulp.task('default', function(){
     .pipe(gif('*.js', uglify()))
     .pipe(gulp.dest('dist'))
     .pipe(lr());
+});
+
+gulp.task('default', function() {
+  connect.server({
+    root: './',
+    livereload: true
+  });
 });
 
 gulp.watch('src/**/*', ['default']);
