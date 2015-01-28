@@ -203,28 +203,6 @@ body
   display: block
 
 .arrow
-  float:left
-  position:relative
-  width: 0px
-  height: 0px
-  border-style: solid
-  border-width: 3em 3em 0 3em
-  border-color: #ffffff transparent transparent transparent
-  -webkit-transform:rotate(360deg)
-
-.arrow:after
-  content:''
-  position:absolute
-  top:-3.2em
-  left:-3em
-  width: 0px
-  height: 0px
-  border-style: solid
-  border-width: 3em 3em 0 3em
-  border-color: #111 transparent transparent transparent
-  -webkit-transform:rotate(360deg)
-
-.arrows
   width: 60px
   height: 40px
   position: absolute
@@ -232,61 +210,29 @@ body
   margin-left: -30px
   top: 25px
 
-.arrows path
+.arrow path
   stroke: #CF4646
   fill: transparent
   stroke-width: 1px
 
-.hint
-  position:absolute
-  top:0.6em
-  width:100%
-  left:0
-  font-size:2em
-  font-style:italic
-  text-align:center
-  color:#fff
-  opacity:0
-
-.arrow-wrap:hover .hint
-  opacity:1
-
-@-webkit-keyframes arrows
-  0%
-    top:0
-  10%
-    top:12%
-  20%
-    top:0
-  30%
-    top:12%
-  40%
-    top:-12%
-  50%
-    top:12%
-  60%
-    top:0
-  70%
-    top:12%
-  80%
-    top:-12%
-  90%
-    top:12%
-  100%
-    top:0
-
-.arrow-wrap .arrow
-  -webkit-animation: arrows 2.8s 0.4s
-  -webkit-animation-delay: 3s
-
-.main-info
+.content
   center(max-width: 1024px)
   background-color: #fff
 
-.benefits
+.content h1
+  color: #CF4646
+  font-size: 2em
+  text-align: center
+
+section
+  padding-top: 5em
+
+.detail-content
   col(1/1)
   center(max-width: 1024px)
-  padding: 50px
+  padding-top: 50px
+  padding-right: 50px
+  padding-left: 50px
 
   .benefit
     margin-top: 50px
@@ -308,10 +254,10 @@ body
       font-size: 16px
       line-height: 26px
 
-.sample
+.sample, .use
   min-height: 150px
 
-  .sample-code
+  .sample-code, .use
     col(1/2)
     font-size: 16px
     line-height: 18px
@@ -332,6 +278,49 @@ body
 
     @media screen and (max-width: 768px)
       stack(0, center)
+
+.who-use
+  text-align: center
+
+.who-item
+  display: inline-block
+  margin-right: 30px
+
+.who-item-link
+  display: block
+  width: 150px
+  height: 150px
+  text-align: center
+  vertical-align: middle
+  line-height: 150px
+
+footer
+  background: #CF4646
+  color: #FFF
+  min-height: 40px
+  height: 4em
+  line-height: 4em
+
+.footer-links
+  float: right
+
+.footer-links .octicon
+  font-size: 1.5em
+  color: #fff
+
+.footer-credits, .footer-detail ul li
+  float: left
+
+.footer-detail
+  width: 70%
+  margin: 0 auto
+
+.footer-detail ul
+    margin: 0px
+    list-style-type: none
+
+.footer-detail ul li
+  margin-right: 1em
 
 
 @keyframes fadein

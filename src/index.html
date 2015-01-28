@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="css/highlight.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/octicons.css">
 
   <!--[if lt IE 9]>
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -41,121 +42,260 @@
         </span>
       </h1>
       <a class="main-header-btn" href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Try it now<i></i></a>
-      <a class="arrow-wrap" href="#content-info">
-        <svg class="arrows">
-          <path class="a1" d="M0 0 L30 32 L60 0"></path>
+      <a class="arrow-wrap" href="#info-content">
+        <svg class="arrow">
+          <path class="arrow-svg" d="M0 0 L30 32 L60 0"></path>
         </svg>
-        <!--<span class="hint">scroll</span>-->
       </a>
     </div>
   </div>
-  <div id="content-info" class="main-info">
-    <div class="main-info-content">
-      <div class='benefits'>
+  <div id="info-content" class="content">
+    <section class="info-content">
+      <h1>Why use Gulp?</h1>
+      <div class='detail-content'>
         <div class='benefit'>
-          <h1 class='benefit-title'>Easy to use</h1>
+          <h2 class='benefit-title'>Easy to use</h2>
           <p class='benefit-text'>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
         </div>
         <div class='benefit'>
-          <h1 class='benefit-title'>Efficient</h1>
+          <h2 class='benefit-title'>Efficient</h2>
           <p class='benefit-text'>Using the power of node streams, gulp gives you fast builds that don't write intermediary files to disk.</p>
         </div>
         <div class='benefit'>
-          <h1 class='benefit-title'>High Quality</h1>
+          <h2 class='benefit-title'>High Quality</h2>
           <p class='benefit-text'>By enforcing strict plugin guidelines, we ensure that plugins stay simple and work as expected.</p>
         </div>
         <div class='benefit'>
-          <h1 class='benefit-title'>Easy to Learn</h1>
+          <h2 class='benefit-title'>Easy to Learn</h2>
           <p class='benefit-text'>Using node best practices and maintaining a minimal API surface, your build works exactly as you would imagine.</p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section id="use-content">
+      <h1>How to use Gulp?</h1>
+      <div class='detail-content'>
+        <div class="use">
+          <p class="use-text">Install gulp in your project devDependencies:</p>
+          <pre class="use-code">
+            <code class="hljs console">
+              $ npm install --save-dev gulp
+            </code>
+          </pre>
+        </div>
+        <div class="use">
+          <p class="use-text">Creat a gulpfile.js at the root of your project:</p>
+          <pre class="use-code">
+            <code class="hljs javascript">
+              var gulp = require('gulp');
+
+              gulp.task('default', function() {
+                // place code for your default task here
+              });
+            </code>
+          </pre>
+        </div>
+        <div class="use">
+          <p class="use-text">Run gulp:</p>
+          <pre class="use-code">
+            <code class="hljs javascript">
+              $ gulp
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-content">
+      <h1>This guys use Gulp</h1>
+      <div class='detail-content'>
+        <ul class="who-use">
+          <li class="who-item">
+            <a href="http://ionicframework.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/Ionic.png" alt="Ionic Logo" title="Ionic Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="https://www.mashape.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/Mashape.png" alt="Mashape Logo" title="Mashape Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="https://angularjs.org/" target="_blank" class="who-item-link">
+              <img src="img/who-use/AngularJS.png" alt="AngularJS Logo" title="AngularJS Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="http://www.nhl.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/NHL.png" alt="NHL Logo" title="NHL Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="http://www.dell.com/" targer="_blank" class="who-item-link">
+              <img src="img/who-use/Dell.png" alt="Dell" title="Dell Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="http://www.godaddy.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/GoDaddy.png" alt="GoDaddy Logo" title="GoDaddy Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="https://soundcloud.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/Soundcloud.png" alt="Soundcloud Logo" title="Soundcloud Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="https://www.tumblr.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/Tumblr.png" alt="Tumblr Logo" title="Tumblr Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="https://liferay.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/Liferay.png" alt="Liferay Logo" title="Liferay Logo">
+            </a>
+          </li>
+          <li class="who-item">
+            <a href="http://www.globo.com/" target="_blank" class="who-item-link">
+              <img src="img/who-use/Globo.png" alt="Globo Logo" title="Globo Logo">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- <section id="work-content">
+      <h1>How Gulp work?</h1>
+      <div class='detail-content'>
+        <div class="sample">
+          <p class="sample-text">Since a gulpfile is a normal node application, it will start with requiring any plugins or modules you want to use.</p>
+          <pre class="sample-code">
+            <code class="hljs javascript">
+              var gulp = require('gulp');
+              var uglify = require('gulp-uglify');
+              var coffee = require('gulp-coffee');
+              var concat = require('gulp-concat');
+              var imagemin = require('gulp-imagemin');
+            </code>
+          </pre>
+        </div>
+
+        <div class="sample">
+          <p class="sample-text">The next portion of a gulpfile is typically the definition of globs to be used in tasks. Keeping your globs in one place helps keep things DRY.</p>
+          <pre class="sample-code">
+            <code class="hljs javascript">
+              var paths = {
+                scripts: [
+                'client/js/**/*.coffee',
+                '!client/external/**/*.coffee'
+                ],
+                images: 'client/img/**/*'
+              };
+            </code>
+          </pre>
+        </div>
+
+        <div class="sample">
+          <p class="sample-text">In gulp, we think of things as pipelines. Instead of making a task for each transform, we group based on file types.
+          <br/><br/>
+          In this example, we create a pipeline for scripts that compiles, minifies, and concatenates them before writing to a folder.
+          <br/><br/>
+          Using gulp-sourcemaps, we are able to maintain transformation history throughout the entire pipeline.</p>
+          <pre class="sample-code">
+            <code class="hljs javascript">
+              gulp.task('scripts', function () {
+                return gulp.src(paths.scripts, {sourcemaps: true})
+                .pipe(coffee())
+                .pipe(uglify())
+                .pipe(concat('all.min.js'))
+                .pipe(gulp.dest('build/js'));
+              });
+            </code>
+          </pre>
+        </div>
+
+        <div class="sample">
+          <p class="sample-text">requires n shit</p>
+          <pre class="sample-code">
+            <code class="hljs javascript">
+              gulp.task('images', function () {
+                return gulp.src(paths.images)
+                .pipe(imagemin({
+                  optimizationLevel: 5
+                }))
+                .pipe(gulp.dest('build/img'));
+              });
+            </code>
+          </pre>
+        </div>
+
+        <div class="sample">
+          <p class="sample-text">requires n shit</p>
+          <pre class="sample-code">
+            <code class="hljs javascript">
+              gulp.task('watch', function () {
+                gulp.watch(paths.scripts, ['scripts']);
+                gulp.watch(paths.images, ['images']);
+              });
+            </code>
+          </pre>
+        </div>
+
+        <div class="sample">
+          <p class="sample-text">requires n shit</p>
+          <pre class="sample-code">
+            <code class="hljs javascript">
+              gulp.task('default', [
+              'scripts',
+              'images',
+              'watch'
+              ]);
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section> -->
   </div>
+  <footer>
+    <div class="footer-detail">
+      <ul class="footer-links">
+        <li>
+          <a href="https://github.com/gulpjs/" alt="Gulp on GitHub" title="Gulp on GitHub">
+            <span class="octicon octicon-mark-github"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" alt="Gulp Docs" title="Gulp Docs">
+            <span class="octicon octicon-file-text"></span>
+          </a>
+        </li>
+        <li>
+          <a href="http://gulpjs.com/plugins" alt="Gulp Plugins" title="Gulp Plugins">
+            <span class="octicon octicon-plug"></span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer-credits">
+        <li>made with so much
+          <span class="octicon octicon-heart"></span>
+        </li>
+      </ul>
+    </div>
+  </footer>
 
-  <div class="sample">
-  <p class="sample-text">Since a gulpfile is a normal node application, it will start with requiring any plugins or modules you want to use.</p>
-  <pre class="sample-code">
-  <code class="hljs javascript">var gulp = require('gulp');
+  <script src="js/highlight.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/words.js"></script>
+  <script src="js/scroll.js"></script>
+  <script>
+    !function(g,u,l,p,j,s){g.GoogleAnalyticsObject=l;g[l]||(g[l]=function(){
+      (g[l].q=g[l].q||[]).push(arguments)});g[l].l=+new Date;j=u.createElement(p);
+      s=u.getElementsByTagName(p)[0];j.src='//www.google-analytics.com/analytics.js';
+      s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
 
-  var uglify = require('gulp-uglify');
-  var coffee = require('gulp-coffee');
-  var concat = require('gulp-concat');
-  var imagemin = require('gulp-imagemin');</code></pre>
-</div>
-
-<div class="sample">
-<p class="sample-text">The next portion of a gulpfile is typically the definition of globs to be used in tasks. Keeping your globs in one place helps keep things DRY.</p>
-<pre class="sample-code">
-<code class="hljs javascript">var paths = {
-scripts: [
-'client/js/**/*.coffee',
-'!client/external/**/*.coffee'
-],
-images: 'client/img/**/*'
-};</code></pre>
-</div>
-
-<div class="sample">
-<p class="sample-text">In gulp, we think of things as pipelines. Instead of making a task for each transform, we group based on file types.
-<br/><br/>
-In this example, we create a pipeline for scripts that compiles, minifies, and concatenates them before writing to a folder.
-<br/><br/>
-Using gulp-sourcemaps, we are able to maintain transformation history throughout the entire pipeline.</p>
-<pre class="sample-code">
-<code class="hljs javascript">gulp.task('scripts', function () {
-return gulp.src(paths.scripts, {sourcemaps: true})
-.pipe(coffee())
-.pipe(uglify())
-.pipe(concat('all.min.js'))
-.pipe(gulp.dest('build/js'));
-});</code></pre>
-</div>
-
-<div class="sample">
-<p class="sample-text">requires n shit</p>
-<pre class="sample-code">
-<code class="hljs javascript">gulp.task('images', function () {
-return gulp.src(paths.images)
-.pipe(imagemin({
-optimizationLevel: 5
-}))
-.pipe(gulp.dest('build/img'));
-});</code></pre>
-</div>
-
-<div class="sample">
-<p class="sample-text">requires n shit</p>
-<pre class="sample-code">
-<code class="hljs javascript">gulp.task('watch', function () {
-gulp.watch(paths.scripts, ['scripts']);
-gulp.watch(paths.images, ['images']);
-});
-</code></pre>
-</div>
-
-<div class="sample">
-<p class="sample-text">requires n shit</p>
-<pre class="sample-code">
-<code class="hljs javascript">gulp.task('default', [
-'scripts',
-'images',
-'watch'
-]);</code></pre>
-</div>
-
-<script src="js/highlight.js"></script>
-<script src="js/script.js"></script>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/words.js"></script>
-<script src="js/scroll.js"></script>
-<script>
-  !function(g,u,l,p,j,s){g.GoogleAnalyticsObject=l;g[l]||(g[l]=function(){
-    (g[l].q=g[l].q||[]).push(arguments)});g[l].l=+new Date;j=u.createElement(p);
-    s=u.getElementsByTagName(p)[0];j.src='//www.google-analytics.com/analytics.js';
-    s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
-
-    ga('create', 'UA-42485841-3', 'gulpjs.com');
-    ga('send', 'pageview');
+      ga('create', 'UA-42485841-3', 'gulpjs.com');
+      ga('send', 'pageview');
   </script>
 </body>
 </html>
