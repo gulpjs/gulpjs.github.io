@@ -1,82 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>gulp.js - the streaming build system</title>
+<head>
+  <meta charset="utf-8">
+  <title>gulp.js - the streaming build system</title>
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-        <link rel="stylesheet" href="css/highlight.css">
-        <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/highlight.css">
+  <link rel="stylesheet" href="css/style.css">
 
-        <!--[if lt IE 9]>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
-        <![endif]-->
-    </head>
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
 
-    <body>
-        <div class="main-header">
-            <nav class="navbar">
-              <a href="http://gulpjs.com" class="navbar-title">gulp.js</a>
-              <div class="navbar-links">
-                <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" class="navbar-link">Docs</a>
-                <a href="http://gulpjs.com/plugins" class="navbar-link">Plugins</a>
-                <a href="https://twitter.com/gulpjs" class="navbar-link">Twitter</a>
-              </div>
-            </nav>
-            <div class="main-header-content">
-                <img class="logo" src="img/gulp-white-text.svg"/>
-                <p class="main-header-text">Automate and enhance your workflow</p>
-                <a class="main-header-btn" href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Try it now</a>
-            </div>
+<body>
+  <div class="main-header">
+    <nav class="navbar">
+      <a href="http://gulpjs.com" class="navbar-title">gulp.js</a>
+      <div class="navbar-links">
+        <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" class="navbar-link">Docs</a>
+        <a href="http://gulpjs.com/plugins" class="navbar-link">Plugins</a>
+        <a href="https://twitter.com/gulpjs" class="navbar-link">Twitter</a>
+      </div>
+    </nav>
+    <div class="main-header-content">
+      <img class="logo" src="img/gulp-white-text.svg"/>
+      <p class="main-header-text">Automate and enhance your workflow</p>
+      <h1 class="main-rotate-text letters type">
+        <span>Gulp is</span>
+        <span class="words-wrapper waiting">
+          <b class="is-visible">easy to use</b>
+          <b>easy to learn</b>
+          <b>efficient</b>
+          <b>high quality</b>
+        </span>
+      </h1>
+      <a class="main-header-btn" href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Try it now<i></i></a>
+      <a class="arrow-wrap" href="#content-info">
+        <svg class="arrows">
+          <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        </svg>
+        <!--<span class="hint">scroll</span>-->
+      </a>
+    </div>
+  </div>
+  <div id="content-info" class="main-info">
+    <div class="main-info-content">
+      <div class='benefits'>
+        <div class='benefit'>
+          <h1 class='benefit-title'>Easy to use</h1>
+          <p class='benefit-text'>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
         </div>
-        <div class="main-info">
-            <div class="main-info-content">
-              <div class='benefits'>
-                <div class='benefit'>
-                  <h1 class='benefit-title'>Easy to use</h1>
-                  <p class='benefit-text'>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
-                </div>
-                <div class='benefit'>
-                  <h1 class='benefit-title'>Efficient</h1>
-                  <p class='benefit-text'>Using the power of node streams, gulp gives you fast builds that don't write intermediary files to disk.</p>
-                </div>
-                <div class='benefit'>
-                  <h1 class='benefit-title'>High Quality</h1>
-                  <p class='benefit-text'>By enforcing strict plugin guidelines, we ensure that plugins stay simple and work as expected.</p>
-                </div>
-                <div class='benefit'>
-                  <h1 class='benefit-title'>Easy to Learn</h1>
-                  <p class='benefit-text'>Using node best practices and maintaining a minimal API surface, your build works exactly as you would imagine.</p>
-                </div>
-              </div>
-            </div>
+        <div class='benefit'>
+          <h1 class='benefit-title'>Efficient</h1>
+          <p class='benefit-text'>Using the power of node streams, gulp gives you fast builds that don't write intermediary files to disk.</p>
         </div>
-        <!--
-<div class="sample">
-<p class="sample-text">Since a gulpfile is a normal node application, it will start with requiring any plugins or modules you want to use.</p>
-<pre class="sample-code">
-<code class="hljs javascript">var gulp = require('gulp');
+        <div class='benefit'>
+          <h1 class='benefit-title'>High Quality</h1>
+          <p class='benefit-text'>By enforcing strict plugin guidelines, we ensure that plugins stay simple and work as expected.</p>
+        </div>
+        <div class='benefit'>
+          <h1 class='benefit-title'>Easy to Learn</h1>
+          <p class='benefit-text'>Using node best practices and maintaining a minimal API surface, your build works exactly as you would imagine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-var uglify = require('gulp-uglify');
-var coffee = require('gulp-coffee');
-var concat = require('gulp-concat');
-var imagemin = require('gulp-imagemin');</code></pre>
+  <div class="sample">
+  <p class="sample-text">Since a gulpfile is a normal node application, it will start with requiring any plugins or modules you want to use.</p>
+  <pre class="sample-code">
+  <code class="hljs javascript">var gulp = require('gulp');
+
+  var uglify = require('gulp-uglify');
+  var coffee = require('gulp-coffee');
+  var concat = require('gulp-concat');
+  var imagemin = require('gulp-imagemin');</code></pre>
 </div>
 
 <div class="sample">
 <p class="sample-text">The next portion of a gulpfile is typically the definition of globs to be used in tasks. Keeping your globs in one place helps keep things DRY.</p>
 <pre class="sample-code">
 <code class="hljs javascript">var paths = {
-  scripts: [
-    'client/js/**/*.coffee',
-    '!client/external/**/*.coffee'
-  ],
-  images: 'client/img/**/*'
+scripts: [
+'client/js/**/*.coffee',
+'!client/external/**/*.coffee'
+],
+images: 'client/img/**/*'
 };</code></pre>
 </div>
 
@@ -88,11 +103,11 @@ In this example, we create a pipeline for scripts that compiles, minifies, and c
 Using gulp-sourcemaps, we are able to maintain transformation history throughout the entire pipeline.</p>
 <pre class="sample-code">
 <code class="hljs javascript">gulp.task('scripts', function () {
-  return gulp.src(paths.scripts, {sourcemaps: true})
-    .pipe(coffee())
-    .pipe(uglify())
-    .pipe(concat('all.min.js'))
-    .pipe(gulp.dest('build/js'));
+return gulp.src(paths.scripts, {sourcemaps: true})
+.pipe(coffee())
+.pipe(uglify())
+.pipe(concat('all.min.js'))
+.pipe(gulp.dest('build/js'));
 });</code></pre>
 </div>
 
@@ -100,11 +115,11 @@ Using gulp-sourcemaps, we are able to maintain transformation history throughout
 <p class="sample-text">requires n shit</p>
 <pre class="sample-code">
 <code class="hljs javascript">gulp.task('images', function () {
-  return gulp.src(paths.images)
-    .pipe(imagemin({
-      optimizationLevel: 5
-    }))
-    .pipe(gulp.dest('build/img'));
+return gulp.src(paths.images)
+.pipe(imagemin({
+optimizationLevel: 5
+}))
+.pipe(gulp.dest('build/img'));
 });</code></pre>
 </div>
 
@@ -112,8 +127,8 @@ Using gulp-sourcemaps, we are able to maintain transformation history throughout
 <p class="sample-text">requires n shit</p>
 <pre class="sample-code">
 <code class="hljs javascript">gulp.task('watch', function () {
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.images, ['images']);
+gulp.watch(paths.scripts, ['scripts']);
+gulp.watch(paths.images, ['images']);
 });
 </code></pre>
 </div>
@@ -122,22 +137,25 @@ Using gulp-sourcemaps, we are able to maintain transformation history throughout
 <p class="sample-text">requires n shit</p>
 <pre class="sample-code">
 <code class="hljs javascript">gulp.task('default', [
-    'scripts',
-    'images',
-    'watch'
+'scripts',
+'images',
+'watch'
 ]);</code></pre>
 </div>
--->
-        <script src="js/highlight.js"></script>
-        <script src="js/script.js"></script>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-42485841-3', 'gulpjs.com');
-          ga('send', 'pageview');
-        </script>
-    </body>
+<script src="js/highlight.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/words.js"></script>
+<script src="js/scroll.js"></script>
+<script>
+  !function(g,u,l,p,j,s){g.GoogleAnalyticsObject=l;g[l]||(g[l]=function(){
+    (g[l].q=g[l].q||[]).push(arguments)});g[l].l=+new Date;j=u.createElement(p);
+    s=u.getElementsByTagName(p)[0];j.src='//www.google-analytics.com/analytics.js';
+    s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+    ga('create', 'UA-42485841-3', 'gulpjs.com');
+    ga('send', 'pageview');
+  </script>
+</body>
 </html>

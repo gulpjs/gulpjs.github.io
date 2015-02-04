@@ -50,16 +50,16 @@ body
 
   .navbar-links
     center()
-    
+
     .navbar-link
       padding: 0 15px
       border-right: 1px solid rgba(255, 255, 255, 0.3)
-      
+
       &:last-child
         border-right: none
 
 .main-header
-  height: 100%
+  height: 90%
   width: 100%
   min-height: 450px
   color: #fff
@@ -69,14 +69,102 @@ body
 .main-header-content
   align()
 
+.main-rotate-text
+  margin-bottom: 60px
+
+.main-rotate-text.type .words-wrapper
+  vertical-align: top
+  overflow: hidden
+
+.main-rotate-text.type .words-wrapper.waiting::after
+  -webkit-animation: cd-pulse 1s infinite
+  -moz-animation: cd-pulse 1s infinite
+  animation: cd-pulse 1s infinite
+
+.main-rotate-text.type .words-wrapper.selected
+  background-color: #aebcb9
+
+.main-rotate-text.type .words-wrapper.selected::after
+  visibility: hidden
+
+.main-rotate-text.type .words-wrapper.selected b
+  color: #0d0d0d
+
+.main-rotate-text.type b
+  visibility: hidden
+
+.main-rotate-text.type b.is-visible
+  visibility: visible
+
+.main-rotate-text.type i
+  position: absolute
+  visibility: hidden
+
+.main-rotate-text.type i.in
+  position: relative
+  visibility: visible
+
+
+@-webkit-keyframes cd-pulse
+  0%
+    -webkit-transform: translateY(-50%) scale(1)
+    opacity: 1
+
+  40%
+    -webkit-transform: translateY(-50%) scale(0.9)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateY(-50%) scale(0)
+    opacity: 0
+
+
+@-moz-keyframes cd-pulse
+  0%
+    -moz-transform: translateY(-50%) scale(1)
+    opacity: 1
+
+  40%
+    -moz-transform: translateY(-50%) scale(0.9)
+    opacity: 0
+
+  100%
+    -moz-transform: translateY(-50%) scale(0)
+    opacity: 0
+
+
+@keyframes cd-pulse
+  0%
+    -webkit-transform: translateY(-50%) scale(1)
+    -moz-transform: translateY(-50%) scale(1)
+    -ms-transform: translateY(-50%) scale(1)
+    -o-transform: translateY(-50%) scale(1)
+    transform: translateY(-50%) scale(1)
+    opacity: 1
+
+  40%
+    -webkit-transform: translateY(-50%) scale(0.9)
+    -moz-transform: translateY(-50%) scale(0.9)
+    -ms-transform: translateY(-50%) scale(0.9)
+    -o-transform: translateY(-50%) scale(0.9)
+    transform: translateY(-50%) scale(0.9)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateY(-50%) scale(0)
+    -moz-transform: translateY(-50%) scale(0)
+    -ms-transform: translateY(-50%) scale(0)
+    -o-transform: translateY(-50%) scale(0)
+    transform: translateY(-50%) scale(0)
+    opacity: 0
+
 .logo
   max-width: 20vh
   max-height: 20vh
 
-.main-header-text
+.main-header-text, .main-rotate-text
   width: 90vw
   animation: fadein 2s
-  margin-bottom: 60px
   font-size: 41px
   font-weight: 300
   line-height: 60px
@@ -100,21 +188,58 @@ body
   &:hover
     box-shadow: 0 0 50px rgba(255,255,255,.3)
 
-.main-info
+.arrow-wrap
+  position: absolute
+  z-index: 1
+  left: 50%
+  margin-top: 10em
+  margin-left: -5em
+  background: none repeat scroll 0% 0% #fff
+  width: 40px
+  height: 40px
+  padding: 2em 2em
+  border-radius: 50%
+  font-size: 0.5em
+  display: block
+
+.arrow
+  width: 60px
+  height: 40px
+  position: absolute
+  left: 50%
+  margin-left: -30px
+  top: 25px
+
+.arrow path
+  stroke: #CF4646
+  fill: transparent
+  stroke-width: 1px
+
+.content
   center(max-width: 1024px)
   background-color: #fff
 
-.benefits
+.content h1
+  color: #CF4646
+  font-size: 2em
+  text-align: center
+
+section
+  padding-top: 5em
+
+.detail-content
   col(1/1)
   center(max-width: 1024px)
-  padding: 50px
+  padding-top: 50px
+  padding-right: 50px
+  padding-left: 50px
 
   .benefit
     margin-top: 50px
-    
+
     @media screen and (min-width: 700px)
       col(1/2, cycle: 2)
-      
+
     @media screen and (max-width: 700px)
       col(1/2, cycle: 4)
       stack()
@@ -123,16 +248,16 @@ body
       margin-bottom: 14px
       font-size: 22px
       font-weight: 500
-    
+
     .benefit-text
       color: #7f8c8d
       font-size: 16px
       line-height: 26px
-      
-.sample
+
+.sample, .use
   min-height: 150px
 
-  .sample-code
+  .sample-code, .use
     col(1/2)
     font-size: 16px
     line-height: 18px
@@ -153,6 +278,49 @@ body
 
     @media screen and (max-width: 768px)
       stack(0, center)
+
+.who-use
+  text-align: center
+
+.who-item
+  display: inline-block
+  margin-right: 30px
+
+.who-item-link
+  display: block
+  width: 150px
+  height: 150px
+  text-align: center
+  vertical-align: middle
+  line-height: 150px
+
+footer
+  background: #CF4646
+  color: #FFF
+  min-height: 40px
+  height: 4em
+  line-height: 4em
+
+.footer-links
+  float: right
+
+.footer-links .octicon
+  font-size: 1.5em
+  color: #fff
+
+.footer-credits, .footer-detail ul li
+  float: left
+
+.footer-detail
+  width: 70%
+  margin: 0 auto
+
+.footer-detail ul
+    margin: 0px
+    list-style-type: none
+
+.footer-detail ul li
+  margin-right: 1em
 
 
 @keyframes fadein
