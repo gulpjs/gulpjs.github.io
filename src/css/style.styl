@@ -50,11 +50,11 @@ body
 
   .navbar-links
     center()
-    
+
     .navbar-link
       padding: 0 15px
       border-right: 1px solid rgba(255, 255, 255, 0.3)
-      
+
       &:last-child
         border-right: none
 
@@ -108,27 +108,29 @@ body
   col(1/1)
   center(max-width: 1024px)
   padding: 50px
+  margin: 100px 0 100px 0
 
   .benefit
-    margin-top: 50px
-    
+    margin: 50px
+
     @media screen and (min-width: 700px)
       col(1/2, cycle: 2)
-      
+
     @media screen and (max-width: 700px)
       col(1/2, cycle: 4)
       stack()
+      float: left
 
     .benefit-title
       margin-bottom: 14px
       font-size: 22px
       font-weight: 500
-    
+
     .benefit-text
       color: #7f8c8d
       font-size: 16px
       line-height: 26px
-      
+
 .sample
   min-height: 150px
 

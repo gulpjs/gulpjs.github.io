@@ -144,7 +144,6 @@ body {
   color: inherit;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
   -webkit-transform: translateX(50%);
   -ms-transform: translateX(50%);
@@ -227,7 +226,6 @@ body {
   line-height: 60px;
 }
 .main-header-btn {
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   color: inherit;
   padding: 15px 20px 16px;
@@ -286,6 +284,7 @@ body {
   padding-left: 0;
   padding-right: 0;
   padding: 50px;
+  margin: 100px 0 100px 0;
 }
 .benefits:before,
 .benefits:after {
@@ -307,7 +306,7 @@ body {
   clear: both;
 }
 .benefits .benefit {
-  margin-top: 50px;
+  margin: 50px;
 }
 @media screen and (min-width: 700px) {
   .benefits .benefit {
@@ -350,6 +349,7 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    float: left;
   }
   .benefits .benefit:before,
   .benefits .benefit:after {
