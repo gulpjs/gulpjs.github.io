@@ -1,27 +1,26 @@
-var gulp = require('gulp');
-var lr = require('gulp-livereload');
-var gif = require('gulp-if');
-var lr = require('gulp-livereload');
-var cached = require('gulp-cached');
-var uglify = require('gulp-uglify');
-var stylus = require('gulp-stylus');
-var nib = require('nib');
-var jeet = require('jeet');
-var autoprefixer = require('autoprefixer-stylus');
-var deploy = require('gulp-gh-pages');
+const gulp = require('gulp')
+const lr = require('gulp-livereload')
+const gif = require('gulp-if')
+const cached = require('gulp-cached')
+const uglify = require('gulp-uglify')
+const stylus = require('gulp-stylus')
+const nib = require('nib')
+const jeet = require('jeet')
+const autoprefixer = require('autoprefixer-stylus')
+const deploy = require('gulp-gh-pages')
 
-gulp.task('deploy', function(){
+gulp.task('deploy', () => {
   return gulp.src('dist/**/*')
     .pipe(deploy({
       branch: 'master'
-    }));
-});
+    }))
+})
 
-gulp.task('default', function(){
+gulp.task('default', () => {
   return gulp.src('src/**/*')
     .pipe(cached('build'))
     .pipe(gif('*.styl', stylus({
-      use:[
+      use: [
         nib(),
         jeet(),
         autoprefixer()
@@ -29,8 +28,8 @@ gulp.task('default', function(){
     })))
     .pipe(gif('*.js', uglify()))
     .pipe(gulp.dest('dist'))
-    .pipe(lr());
-});
+    .pipe(lr())
+})
 
-gulp.watch('src/**/*', ['default']);
-lr.listen();
+gulp.watch('src/**/*', ['default'])
+lr.listen()
