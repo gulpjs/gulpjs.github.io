@@ -1,5 +1,5 @@
 const gulp = require('gulp')
-const lr = require('gulp-livereload')
+const lr = require('gulp-refresh')
 const gif = require('gulp-if')
 const cached = require('gulp-cached')
 const uglify = require('gulp-uglify')
