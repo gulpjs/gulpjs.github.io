@@ -1,19 +1,45 @@
 @require 'nib'
-@require 'jeet'
 
-global-reset()
+/*
+ * VARIABLES
+ */
+
+// Colors
+
+color-black = #000
+color-white = #fff
+color-red = #cf4646
+color-grey = #e6e6e6
+color-purple = #3a3e64
+color-dark-purple = #313454
+
+// Fonts
+
+font-header = 'Open Sans', sans-serif
+font-body = 'Raleway', sans-serif
+
+// Breakpoints
+
+xs = 544px
+sm = 768px
+md = 992px
+lg = 1200px
+
+/*
+ * GENERAL
+ */
 
 html, body
   height: 100%
   width: 100%
 
 body
-  font-family: "Open Sans", sans-serif
+  font-family: font-body
   font-weight: 400
-  font-size: 14px/1.5
+  font-size: 16px
 
   color: #333
-  background-color: #fff
+  background-color: color-white
 
   -webkit-text-size-adjust: 100%
   -webkit-font-smoothing: antialiased
@@ -21,144 +47,230 @@ body
   text-rendering: optimizeLegibility
   font-feature-settings: 'liga', 'kern'
 
-.navbar
-  col(1/1)
-  align(horizontal)
-  padding-top: 30px
-  float: left
-  width: 100%
 
-  a
-    color: inherit
-    text-decoration: none
-    -webkit-tap-highlight-color: transparent
-    transition: opacity .2s linear
-    transform: translateX(50%)
-    margin-bottom: 0
-    font-size: 16px
-    font-weight: 300
-    line-height: 1
+.button
+  border-radius: 30px/30px
+  background: color-purple
+  padding: 0.5em
+  color: color-white
+  font-size: 1.2em
+  font-family: font-body
+  min-width: 12em
+  display: inline-block
+  border: 2px solid color-purple
+  &:focus, &:hover
+  	background: transparent
+  	color: color-purple
+  	font-weight: bold
+  	text-decoration: none
 
-    &:focus, &:active
-      opacity: .5
+/*
+ * HOMEPAGE
+ */
 
-  .navbar-title
-    display: none
-    position: static
-    float: left
-    left: 50%
+ .main-menu
+   background: color-red
+   padding-top: 0.8em
+   position: fixed
+   width 100%
+   z-index: 1000
+   @media (max-width: sm)
+     text-align center
+ 	.logo
+ 		img
+ 			height: 1.5em
 
-  .navbar-links
-    center()
+ 	ul
+ 		display: inline-block
+ 		padding: 0
+ 		margin: 0
+ 		li
+         list-style-type: none
+         margin-right: 1em
+         display: inline-block
+         margin-top: 1em
+         @media (max-width: sm)
+           margin-right: 0.5em
+ 			a
+           color: color-white
+           font-weight: 700
+           &:hover
+             color: color-white
 
-    .navbar-link
-      padding: 0 15px
-      border-right: 1px solid rgba(255, 255, 255, 0.3)
+     .social
+       i
+         font-size: 2em
+         position: relative
+         top: 0.1em
+         @media (max-width: sm)
+           font-size 1em
 
-      &:last-child
-        border-right: none
+.hero
+  background: color-red
+  padding: 1em
 
-.main-header
-  height: 100%
-  width: 100%
-  min-height: 450px
-  color: #fff
-  text-align: center
-  background-color: #cf4646
+	.hero-content
+    padding: 15em 0
+    text-align: center
+    color: color-white
 
-.main-header-content
-  align()
+    @media (max-width: sm)
+      font-size 12px
 
-.logo
-  max-width: 20vh
-  max-height: 20vh
+  	h2
+  		font-size: 4em
+  		font-weight: bold
 
-.main-header-text
-  width: 90vw
-  animation: fadein 2s
-  margin-bottom: 60px
-  font-size: 41px
-  font-weight: 300
-  line-height: 60px
+.features
+  padding 3em 0
+  h2
+    color: color-red
+    font-size 3em
+  .feature
+    padding 3em 0
+    img
+      margin-bottom 0.8em
+    @media (max-width: sm)
+      padding 1em 0
+    img
+      height: 5em
 
-.main-header-btn
-  transition: all 0.4s
-  color: inherit
-  padding: 15px 20px 16px
-  vertical-align: top
-  cursor: pointer
-  border: 1px solid #fff
-  border-radius: 3px
-  text-decoration: none
-  -webkit-tap-highlight-color: transparent
-  animation: fadein 2s
-  text-shadow: none
-  color: #333
-  background-color: #fff
-  font-size: 22px
+.reasons
+  padding 3em 0
+  background: color-purple
+  h2
+    color: color-white
+    margin-bottom 1em
+    font-size 3em
+  ul
+    li
+      color: color-white
+      font-size 1.2em
+      margin-bottom 1em
+  img
+    max-width: 100%
 
-  &:hover
-    box-shadow: 0 0 50px rgba(255,255,255,.3)
+.installation
+  padding 3em 0
+  &:before
+    content: '';
+    height 350%
+    width: 10px
+    background: color-red
+    position: absolute;
+    left 50%
+    @media (max-width: sm)
+      display: none
+  h2
+    color: color-red
+    font-size: 3em
+    text-align: center
+    background: color-white
+    padding-bottom: 1em
+  h3
+    color: color-red
+    font-size 24px
+  img
+    max-width: 100%
 
-.main-info
-  center(max-width: 1024px)
-  background-color: #fff
+  .step
+    position: relative;
+    margin-bottom 2em
+    &:before
+      content: ''
+      height: 50px
+      width: 50px
+      border-radius: 50%
+      background: color-red
+      color: color-white
+      left: 48.2%
+      top: -10px
+      position: absolute
+      text-align center
+      font-weight: bold;
+      font-size: 30px;
+      @media (max-width: lg)
+        left: 47.8%;
+      @media (max-width: md)
+        left: 46.9%;
+      @media (max-width: sm)
+        display: none
+    .console
+      position: relative;
+      p
+        position: absolute;
+        top: 20%
+        left: 15%
 
-.benefits
-  col(1/1)
-  center(max-width: 1024px)
-  padding: 0 50px
-  margin: 100px 0 100px 0
+  .step-1
+    &:before
+      content: '1'
+    .step-1-content
+      padding 2em
 
-  .benefit
-    margin: 50px
+  .step-2
+    &:before
+      content: '2'
 
-    @media screen and (min-width: 700px)
-      col(1/2, cycle: 2)
+  .step-3
+    &:before
+      content: '3'
 
-    @media screen and (max-width: 700px)
-      col(1/2, cycle: 4)
-      stack()
-      float: left
+  .step-4
+    &:before
+      content: '4'
+    @media (max-width: md)
+      h3
+        margin-left: 20px
 
-    .benefit-title
-      margin-bottom: 14px
-      font-size: 22px
-      font-weight: 500
-
-    .benefit-text
-      color: #7f8c8d
-      font-size: 16px
-      line-height: 26px
-
-.sample
-  min-height: 150px
-
-  .sample-code
-    col(1/2)
-    font-size: 16px
-    line-height: 18px
-
-    code
-      border-radius: 2px
-
-    @media screen and (max-width: 768px)
-      stack()
-
-  .sample-text
-    col(1/2)
-
-    margin-bottom: 1.5em
-    font-size: 18px
-    line-height: 20px
-    color: #555
-
-    @media screen and (max-width: 768px)
-      stack(0, center)
+  .step-5
+    &:before
+      content: '5'
 
 
-@keyframes fadein
-  from
-    opacity: 0
-  to
-    opacity: 1
+.contribute
+  padding 3em 0
+  background: color-red
+  color: color-white
+
+  img
+    height: 300px
+    @media (max-width: sm)
+      height 230px
+  .contribute-content
+    margin-top 2em
+    margin-left: 2.5em
+    display: block
+    @media (min-width: sm) and (max-width: md)
+      font-size 14px
+    h2
+      font-weight bold
+      color: color-white
+      font-size 3em
+      @media (max-width: xs)
+        font-size 24px
+    .button
+      background: color-white
+      border-color: color-white
+      color: color-red
+      padding-left: 1em
+      padding-right: 1em
+      &:focus,
+      &:hover
+        color: color-white
+        background: transparent
+      @media (max-width: xs)
+        font-size 13px
+
+.credits
+  padding 2em 0
+  text-align center
+  background: color-dark-purple
+  p
+    color: #808080
+    margin: 0
+    i
+      color: color-red
+      margin: 0 0.5em
+    a
+      color: color-white

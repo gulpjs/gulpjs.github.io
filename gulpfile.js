@@ -5,7 +5,6 @@ const cached = require('gulp-cached')
 const uglify = require('gulp-uglify')
 const stylus = require('gulp-stylus')
 const nib = require('nib')
-const jeet = require('jeet')
 const autoprefixer = require('autoprefixer-stylus')
 const deploy = require('gulp-gh-pages')
 
@@ -22,7 +21,6 @@ gulp.task('default', () => {
     .pipe(gif('*.styl', stylus({
       use: [
         nib(),
-        jeet(),
         autoprefixer()
       ]
     })))

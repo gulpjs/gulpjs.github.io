@@ -12,6 +12,9 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <script src="https://use.fontawesome.com/d7d1231d0e.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/highlight.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -23,58 +26,216 @@
 
   <body>
 
-    <div class="main-header">
-
-      <nav class="navbar">
-
-        <a href="http://gulpjs.com" class="navbar-title">gulp.js</a>
-
-        <div class="navbar-links">
-          <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" class="navbar-link">Docs</a>
-          <a href="http://gulpjs.com/plugins" class="navbar-link">Plugins</a>
-          <a href="https://github.com/gulpjs/gulp" class="navbar-link">Contribute</a>
-          <a href="https://twitter.com/gulpjs" class="navbar-link">Twitter</a>
+    <div class="main-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          <a href="http://gulpjs.com" class="logo"><h1><img src="img/gulp-white-text.svg" alt=""></h1></a>
+          </div>
+          <div class="col-md-8 text-md-right">
+            <ul class="menu">
+              <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">DOCUMENTATION</a></li>
+              <li><a href="http://gulpjs.com/plugins">PLUGINS</a></li>
+            </ul>
+            <ul class="social">
+              <li><a href="https://github.com/gulpjs/gulp"><i class="fa fa-github"></i></a></li>
+              <li><a href="https://twitter.com/gulpjs"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div>
         </div>
-
-      </nav>
-
-      <div class="main-header-content">
-        <img class="logo" src="img/gulp-white-text.svg"/>
-        <p class="main-header-text">Automate and enhance your workflow</p>
-        <a class="main-header-btn" href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Try it now</a>
-      </div>
-
-    </div>
-
-    <div class="main-info">
-      <div class="main-info-content">
-
-        <div class="benefits">
-
-          <div class="benefit">
-            <h1 class="benefit-title">Easy to use</h1>
-            <p class="benefit-text">By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
-          </div>
-
-          <div class="benefit">
-            <h1 class="benefit-title">Efficient</h1>
-            <p class="benefit-text">Using the power of node streams, gulp gives you fast builds that don't write intermediary files to disk.</p>
-          </div>
-
-          <div class="benefit">
-            <h1 class="benefit-title">High Quality</h1>
-            <p class="benefit-text">By enforcing strict plugin guidelines, we ensure that plugins stay simple and work as expected.</p>
-          </div>
-
-          <div class="benefit">
-            <h1 class="benefit-title">Easy to Learn</h1>
-            <p class="benefit-text">Using node best practices and maintaining a minimal API surface, your build works exactly as you would imagine.</p>
-          </div>
-
-        </div>
-
       </div>
     </div>
+
+    <div class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 offset-sm-2">
+            <div class="hero-content">
+              <h2>Automate and enhance your workflow</h2>
+              <p>Gulp is a streaming build system, by using node’s streams file manipulation is all done in memory, and a file isn’t written until you tell it to do so.</p>
+              <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" class="button">Try it now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 offset-md-2">
+          <div class="row">
+            <div class="col-sm-12 text-xs-center">
+              <h2>WHY GULP.JS</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 text-xs-center">
+              <div class="feature">
+                <img src="img/computer.svg" alt="">
+                <h3>Easy to use</h3>
+                <p>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
+              </div>
+            </div>
+            <div class="col-md-6 text-xs-center">
+              <div class="feature">
+                <img src="img/car.svg" alt="">
+                <h3>Efficient</h3>
+                <p>Using the power of node streams, gulp gives you fast builds that don't write intermediary files to disk.</p>
+              </div>
+            </div>
+            <div class="col-md-6 text-xs-center">
+              <div class="feature">
+                <img src="img/shapes.svg" alt="">
+                <h3>High Quality</h3>
+                <p>By enforcing strict plugin guidelines, we ensure that plugins stay simple and work as expected.</p>
+              </div>
+            </div>
+            <div class="col-md-6 text-xs-center">
+              <div class="feature">
+                <img src="img/library.svg" alt="">
+                <h3>Easy to Learn</h3>
+                <p>Using node best practices and maintaining a minimal API surface, your build works exactly as you would imagine.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+  <div class="reasons">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-xs-center">
+          <h2>WHAT IS GULP.JS</h2>
+        </div>
+        <div class="col-lg-5">
+          <ul>
+            <li><b>Automation:</b> gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.</li>
+            <li><b>Platform-agnostic: </b>Integrations are built into all major IDEs and people are using gulp with PHP, .NET, Node.js, Java, and other platforms.</li>
+            <li><b>Strong Ecosystem: </b>Use npm modules to do anything you want + over 2000 curated plugins for streaming file transformations.</li>
+            <li><b>Simple: </b>By providing only a minimal API surface, gulp is easy to learn and simple to use.</li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <img src="img/console.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="installation">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>GETTING STARTED</h2>
+        </div>
+      </div>
+      <div class="step step-1">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="text-sm-center">Install gulp globally</h3>
+            <div class="console">
+              <img src="img/console-red.png" alt="">
+              <p>$ npm install --global gulp-cli</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="step-1-content">
+              <p>If you have previously installed a version of gulp globally, please run <code>npm rm --global gulp</code> to make sure your old version doesn't collide with gulp-cli.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step step-2">
+        <div class="row">
+          <div class="col-md-6 offset-md-6">
+            <h3 class="text-sm-center">Initialize your project directory</h3>
+            <div class="console">
+              <img src="img/console-red.png" alt="">
+              <p>$ npm init</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step step-3">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="text-sm-center">Install gulp in your project devDependencies</h3>
+            <div class="console">
+              <img src="img/console-red.png" alt="">
+              <p>$ npm install --save-dev gulp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step step-4">
+        <div class="row">
+          <div class="col-md-6 offset-md-6">
+            <h3 class="text-sm-center">Create a gulpfile.js at the root of your project</h3>
+            <div class="console">
+              <img src="img/console-red.png" alt="">
+              <p>
+                var gulp = require('gulp');
+                <br>
+                <br>
+                gulp.task('default', function() {
+                  <br>
+                  // place code for your default task here
+                  <br>
+                });
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step step-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="text-sm-center">Run gulp</h3>
+            <div class="console">
+              <img src="img/console-red.png" alt="">
+              <p>$ gulp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contribute">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 offset-md-2">
+          <div class="row">
+            <div class="col-xs-3 col-sm-3">
+              <img src="img/gulp-cup.png" alt="">
+            </div>
+            <div class="col-xs-9 col-sm-9">
+              <div class="contribute-content">
+                <h2>BE PART OF IT!</h2>
+                <p>With your support, you’ll help us cover all the expenses the collective needs to keep going!</p>
+                <a href="" class="button">Become a backer or sponsor</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="credits">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.behance.net/aliceperez8c0f">Alice Pérez</a> and <a href="http://codetiger.co/">Vivian Guillen</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
     <script src="js/highlight.js"></script>
     <script src="js/script.js"></script>
