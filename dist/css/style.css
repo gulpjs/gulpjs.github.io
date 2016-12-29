@@ -255,6 +255,13 @@ body {
   padding-right: 0;
   background-color: #fff;
 }
+.main-info-title {
+  color: #cf4646;
+  font-size: 45px;
+  margin-top: 75px;
+  text-align: center;
+  text-transform: uppercase;
+}
 .main-info:before,
 .main-info:after {
   content: '';
@@ -267,7 +274,6 @@ body {
   *zoom: 1;
   float: left;
   clear: none;
-  text-align: inherit;
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
@@ -275,13 +281,15 @@ body {
   width: auto;
   max-width: 1024px;
   float: none;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
   margin-right: auto;
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
   padding: 0 50px;
-  margin: 100px 0 100px 0;
+  margin: 25px 0 100px 0;
 }
 .benefits:before,
 .benefits:after {
@@ -305,12 +313,17 @@ body {
 .benefits .benefit {
   margin: 50px;
 }
+.benefit {
+  text-align: center;
+}
+.benefit-title {
+  margin-top: 30px;
+}
 @media screen and (min-width: 700px) {
   .benefits .benefit {
     *zoom: 1;
     float: left;
     clear: none;
-    text-align: inherit;
     width: 48.5%;
     margin-left: 0%;
     margin-right: 3%;
@@ -336,7 +349,7 @@ body {
     *zoom: 1;
     float: left;
     clear: none;
-    text-align: inherit;
+    text-align: center;
     width: 48.5%;
     margin-left: 0%;
     margin-right: 3%;
