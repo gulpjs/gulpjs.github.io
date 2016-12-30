@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1210px" height="937px" viewBox="0 0 1210 937" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#4A4A4A" x="0" y="0" width="1210" height="937"></rect>
+        <text id="$-npm-install-gulp-c" font-family="Helvetica-Light, Helvetica" font-size="40" font-weight="300" fill="#85FF00">
+            <tspan x="38" y="63">$ npm install gulp-cli -g</tspan>
+            <tspan x="38" y="111">$ npm install gulp -D</tspan>
+            <tspan x="38" y="159">$ touch gulpfile.js</tspan>
+            <tspan x="38" y="207">$ gulp --help</tspan>
+        </text>
+    </g>
+</svg>
