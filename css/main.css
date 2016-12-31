@@ -107,6 +107,9 @@ p.paragraph {
 .centervertical {
     display: flex;
 }
+.baseline {
+  align-items: baseline;
+}
 .aligncenter {
     align-items: center;
 }
@@ -239,7 +242,8 @@ p.paragraph {
     width: 100%;
 }
 .container-lrg {
-    max-width: 1080px;
+  display: flex;
+  max-width: 1080px;
 }
 .container-sml {
     max-width: 700px;
@@ -386,14 +390,11 @@ p.paragraph {
     padding: 90px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
-.feature3 .emoji {
-    font-size: 55px;
+.feature3 .svg {
+    margin-bottom: 30px;
     color: black
 }
 @media (max-width: 750px) {
-    .feature3 .emoji {
-        font-size: 40px;
-    }
     .feature3 .flex {
         flex-wrap: wrap;
     }
