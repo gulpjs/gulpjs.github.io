@@ -66,6 +66,7 @@ body {
 }
 .subheading + .paragraph {
     margin-top: 10px;
+    padding: 0 30px 0 30px;
 }
 p.paragraph {
     color: rgba(0, 0, 0, .5);
@@ -393,6 +394,10 @@ p.paragraph {
 .feature3 .flex {
     flex-wrap: wrap;
 }
+.feature3 .col-6 {
+  margin-top: 40px;
+  text-align: center;
+}
 .feature3 .svg {
     margin-bottom: 30px;
     color: black
@@ -403,7 +408,6 @@ p.paragraph {
     }
     .feature3 .col-6 {
         width: 100%;
-        margin-top: 40px;
         text-align: center;
     }
 }
