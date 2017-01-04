@@ -79,6 +79,53 @@
     </div>
   </div>
 
+  <div class="whatisgulp feature2">
+    <div class="container-lrg flex baseline">
+      <div class="col-6">
+        <ul class="list">
+          <li>
+            <span class="listitem-heading">Automation</span>
+            <span class="listitem-content">gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.</span>
+          </li>
+          <li>
+            <span class="listitem-heading">Platform-agnostic</span>
+            <span class="listitem-content">Integrations are built into all major IDEs and people are using gulp with PHP, .NET, Node.js, Java, and other platforms.</span>
+          </li>
+          <li>
+            <span class="listitem-heading">Strong Ecosystem</span>
+            <span class="listitem-content">Use npm modules to do anything you want + over 2000 curated plugins for streaming file transformations.</span>
+          </li>
+          <li>
+            <span class="listitem-heading">Simple</span>
+            <span class="listitem-content">By providing only a minimal API surface, gulp is easy to learn and simple to use.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <div class="editor-window">
+          <div class="editor-menubar">
+            <span class="editor-button close"></span>
+            <span class="editor-button minimize"></span>
+            <span class="editor-button maximize"></span>
+          </div>
+          <pre><code class="javascript">
+var code = require('gulp');
+var child_process = require('child_process');
+
+gulp.task('default',function(){
+  child_process.exec('start mongod --dbpath ./db', function(err,stdout,stderr){
+    console.log(stdeout);
+  });
+  child_process.exec('start npm start', function(err,stdout,stderr){
+    console.log(stdeout);
+  });
+});
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="socialproof">
     <div class="container-sml">
       <div class="flex text-center">
@@ -101,5 +148,7 @@
       </div>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

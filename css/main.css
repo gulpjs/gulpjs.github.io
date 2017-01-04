@@ -56,6 +56,17 @@ body {
         line-height: 35px;
     }
 }
+.list {
+    font-size: 17px;
+    line-height: 32px;
+    font-weight: 100;
+}
+.listitem-heading {
+    font-weight: 700;
+}
+.listitem-heading:after {
+    content: ":";
+}
 .paragraph {
     font-size: 17px;
     line-height: 32px;
@@ -301,6 +312,59 @@ p.paragraph {
         margin: 10px 0 0 0;
     }
 }
+.whatisgulp {
+    background-color: #3A3E64;
+    color: rgba(255, 255, 255, 0.6);
+}
+.whatisgulp .listitem-heading {
+    color: rgba(255,255,255,0.9);
+}
+.whatisgulp .listitem-heading {
+    color: rgba(255,255,255,0.9);
+}
+.hljs-keyword {
+  color: rgba(195,154,78,1);
+}
+.hljs-string {
+  color: rgba(130 ,140,91,1);
+}
+.hljs-built_in {
+  color: rgba(112,75,40,1);
+}
+.editor-window .editor-menubar {
+    background-color: #E5E4E4;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+.editor-window code {
+    background-color: #141414;
+    font: normal 10pt monospace;
+}
+.editor-window pre {
+  overflow-x: auto;
+  border-radius: 0 0 5px 5px;
+  padding-left: 20px;
+  background-color: #141414;
+}
+.editor-menubar > .editor-button {
+    border-radius: 50%;
+    height: 7px;
+    width: 7px;
+    margin: 0 1px;
+    box-shadow: 0px 0px 10px 1px;
+}
+.editor-menubar .close {
+    background-color: red;
+    margin-left: 10px;
+}
+.editor-menubar .minimize {
+    background-color: yellow;
+}
+.editor-menubar .maximize {
+    background-color: green;
+}
 .socialproof {
     padding: 90px 0;
 }
@@ -386,6 +450,7 @@ p.paragraph {
         margin: 10px 0 0 0;
     }
 }
+.feature2,
 .feature3 {
     padding: 90px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -393,6 +458,15 @@ p.paragraph {
 .feature3 .svg {
     margin-bottom: 30px;
     color: black
+}
+@media (max-width: 750px) {
+    .feature2 .flex {
+        flex-wrap: wrap;
+    }
+    .feature2 .col-6 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
 @media (max-width: 750px) {
     .feature3 .flex {
