@@ -109,15 +109,15 @@
             <span class="editor-button maximize"></span>
           </div>
           <pre><code class="javascript">
-var code = require('gulp');
-var child_process = require('child_process');
+<span class="hljs-keyword">var</span> code = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> child_process = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
 
-gulp.task('default',function(){
-  child_process.exec('start mongod --dbpath ./db', function(err,stdout,stderr){
-    console.log(stdeout);
+gulp.task(<span class="hljs-string">'default'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  child_process.exec(<span class="hljs-string">'start mongod --dbpath ./db'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,stdout,stderr</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(stdeout);
   });
-  child_process.exec('start npm start', function(err,stdout,stderr){
-    console.log(stdeout);
+  child_process.exec(<span class="hljs-string">'start npm start'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,stdout,stderr</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(stdeout);
   });
 });
           </code></pre>
@@ -148,7 +148,5 @@ gulp.task('default',function(){
       </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
