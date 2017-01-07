@@ -355,6 +355,11 @@ p.paragraph {
     margin: 0 1px;
     box-shadow: 0px 0px 10px 1px;
 }
+.editor-filename {
+  color: #141414;
+  font: normal 9pt monospace;
+  margin-left: 10px;
+}
 .editor-menubar .close {
     background-color: red;
     margin-left: 10px;
