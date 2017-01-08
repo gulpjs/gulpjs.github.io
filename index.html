@@ -79,29 +79,9 @@
     </div>
   </div>
 
-  <div class="whatisgulp feature2">
-    <div class="container-lrg flex baseline">
-      <div class="col-6">
-        <ul class="list">
-          <li>
-            <span class="listitem-heading">Automation</span>
-            <span class="listitem-content">gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.</span>
-          </li>
-          <li>
-            <span class="listitem-heading">Platform-agnostic</span>
-            <span class="listitem-content">Integrations are built into all major IDEs and people are using gulp with PHP, .NET, Node.js, Java, and other platforms.</span>
-          </li>
-          <li>
-            <span class="listitem-heading">Strong Ecosystem</span>
-            <span class="listitem-content">Use npm modules to do anything you want + over 2000 curated plugins for streaming file transformations.</span>
-          </li>
-          <li>
-            <span class="listitem-heading">Simple</span>
-            <span class="listitem-content">By providing only a minimal API surface, gulp is easy to learn and simple to use.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-6">
+  <div class="whatisgulp">
+    <div class="container-sml">
+      <div class="col-12">
         <div class="editor-window">
           <div class="editor-menubar">
             <span class="editor-button close"></span>
@@ -110,15 +90,25 @@
             <span class="editor-filename">gulpfile.js</span>
           </div>
           <pre><code class="javascript hljs">
-<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
-<span class="hljs-keyword">var</span> jade = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-jade'</span>);
+  <span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+  <span class="hljs-keyword">var</span> jade = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-jade'</span>);
+  <span class="hljs-keyword">var</span> less = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-less'</span>);
+  <span class="hljs-keyword">var</span> minifyCSS = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-csso'</span>);
 
-gulp.task(<span class="hljs-string">'buildJade'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> stream = gulp.src(<span class="hljs-string">'client/templates/*.jade'</span>)
+  gulp.task(<span class="hljs-string">'html'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'client/templates/*.jade'</span>)
     .pipe(jade())
-    .pipe(gulp.dest(<span class="hljs-string">'build/minified_templates'</span>));
-  <span class="hljs-keyword">return</span> stream;
-});
+    .pipe(gulp.dest(<span class="hljs-string">'build/html'</span>))
+  });
+
+  gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'client/templates/*.less'</span>)
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(<span class="hljs-string">'build/css'</span>))
+  });
+
+  gulp.task(<span class="hljs-string">'default'</span>, [ <span class="hljs-string">'html'</span>, <span class="hljs-string">'css'</span> ]);
           </code></pre>
         </div>
       </div>

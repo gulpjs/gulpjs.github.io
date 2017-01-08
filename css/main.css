@@ -56,17 +56,6 @@ body {
         line-height: 35px;
     }
 }
-.list {
-    font-size: 17px;
-    line-height: 32px;
-    font-weight: 100;
-}
-.listitem-heading {
-    font-weight: 700;
-}
-.listitem-heading:after {
-    content: ":";
-}
 .paragraph {
     font-size: 17px;
     line-height: 32px;
@@ -253,8 +242,8 @@ p.paragraph {
     width: 100%;
 }
 .container-lrg {
-  display: flex;
-  max-width: 1080px;
+    display: flex;
+    max-width: 1080px;
 }
 .container-sml {
     max-width: 700px;
@@ -313,6 +302,7 @@ p.paragraph {
     }
 }
 .whatisgulp {
+    padding: 90px 0;
     background-color: #3A3E64;
     color: rgba(255, 255, 255, 0.6);
 }
@@ -323,13 +313,13 @@ p.paragraph {
     color: rgba(255,255,255,0.9);
 }
 .hljs-keyword {
-  color: rgba(195,154,78,1);
+    color: rgba(195,154,78,1);
 }
 .hljs-string {
-  color: rgba(130 ,140,91,1);
+    color: rgba(130 ,140,91,1);
 }
 .hljs-built_in {
-  color: rgba(112,75,40,1);
+    color: rgba(112,75,40,1);
 }
 .editor-window .editor-menubar {
     background-color: #E5E4E4;
@@ -343,10 +333,10 @@ p.paragraph {
     font: normal 10pt monospace;
 }
 .editor-window pre {
-  overflow-x: auto;
-  border-radius: 0 0 5px 5px;
-  padding-left: 20px;
-  background-color: #141414;
+    overflow-x: auto;
+    border-radius: 0 0 5px 5px;
+    padding-left: 20px;
+    background-color: #141414;
 }
 .editor-menubar > .editor-button {
     border-radius: 50%;
@@ -356,9 +346,9 @@ p.paragraph {
     box-shadow: 0px 0px 10px 1px;
 }
 .editor-filename {
-  color: #141414;
-  font: normal 9pt monospace;
-  margin-left: 10px;
+    color: #141414;
+    font: normal 9pt monospace;
+    margin-left: 10px;
 }
 .editor-menubar .close {
     background-color: red;
@@ -455,7 +445,6 @@ p.paragraph {
         margin: 10px 0 0 0;
     }
 }
-.feature2,
 .feature3 {
     padding: 90px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -463,15 +452,6 @@ p.paragraph {
 .feature3 .svg {
     margin-bottom: 30px;
     color: black
-}
-@media (max-width: 750px) {
-    .feature2 .flex {
-        flex-wrap: wrap;
-    }
-    .feature2 .col-6 {
-        width: 100%;
-        margin-bottom: 30px;
-    }
 }
 @media (max-width: 750px) {
     .feature3 .flex {
