@@ -4,7 +4,8 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 .footer,
-.header {
+.header,
+.contribute {
     background: #CF4647;
     color: white;
 }
@@ -41,6 +42,8 @@ div.logo-cli {
     height: 100%;
     color: #85FF00;
     background-color: #002b36;
+.logo-img-lg {
+    height: 255px;
 }
 /*text*/
 
@@ -105,6 +108,9 @@ p.paragraph {
 }
 .text-right {
     text-align: right;
+}
+.text-uppercase {
+    text-transform: uppercase;
 }
 /*flexbox styles*/
 
@@ -464,6 +470,17 @@ p.paragraph {
     .ctas-button-2 {
         margin: 10px 0 0 0;
     }
+}
+.contribute {
+  padding-top: 40px;
+}
+.contribute-copy {
+  margin-left: 25px;
+  text-align: left;
+}
+
+.contribute-item {
+  margin-bottom: 15px;
 }
 .feature3 {
     padding: 90px 0;
