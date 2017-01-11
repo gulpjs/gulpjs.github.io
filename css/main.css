@@ -28,10 +28,20 @@ body {
         display: none;
     }
 }
+@media only screen and (min-width: 500px) {
+    .mobile-show {
+        display: none;
+    }
+}
 .logo-img {
     max-width: 100%;
     max-height: 100%;
     height: 40px;
+}
+div.logo-cli {
+    height: 100%;
+    color: #85FF00;
+    background-color: #002b36;
 }
 .logo-img-lg {
     height: 255px;
@@ -249,8 +259,8 @@ p.paragraph {
     width: 100%;
 }
 .container-lrg {
-  display: flex;
-  max-width: 1080px;
+    display: flex;
+    max-width: 1080px;
 }
 .container-sml {
     max-width: 700px;
@@ -307,6 +317,75 @@ p.paragraph {
     .ctas-button-2 {
         margin: 10px 0 0 0;
     }
+}
+.whatisgulp {
+    padding: 90px 0;
+    background-color: #3A3E64;
+    color: rgba(255, 255, 255, 0.6);
+}
+.hljs-keyword {
+    color: rgba(195,154,78,1);
+}
+.hljs-string {
+    color: rgba(130 ,140,91,1);
+}
+.hljs-built_in {
+    color: rgba(112,75,40,1);
+}
+.editor-prefixed:before {
+  content: "$ ";
+}
+.editor-window {
+    background-color: #141414;
+}
+.editor-window .editor-menubar {
+    background-color: #E5E4E4;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+.editor-window code,
+.editor-window code span {
+    font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
+    font-weight: 600;
+    font-size: 14pt;
+}
+@media (max-width: 420px) {
+    .editor-window code,
+    .editor-window code span {
+        font-size: 13pt;
+    }
+}
+.editor-window pre {
+    overflow-x: auto;
+    border-radius: 0 0 5px 5px;
+    padding-left: 20px;
+    height: 100%;
+}
+.editor-menubar > .editor-button {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    box-shadow: 0px 0px 10px 1px;
+}
+.editor-filename {
+    color: #141414;
+    font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.editor-menubar .close {
+    background-color: red;
+    margin-left: 10px;
+}
+.editor-menubar .minimize {
+    background-color: yellow;
+}
+.editor-menubar .maximize {
+    background-color: green;
 }
 .socialproof {
     padding: 90px 0;
