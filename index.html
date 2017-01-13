@@ -96,13 +96,13 @@
           </div>
           <pre><code class="javascript hljs">
 <span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
-<span class="hljs-keyword">var</span> jade = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-jade'</span>);
+<span class="hljs-keyword">var</span> pug = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-pug'</span>);
 <span class="hljs-keyword">var</span> less = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-less'</span>);
 <span class="hljs-keyword">var</span> minifyCSS = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-csso'</span>);
 
 gulp.task(<span class="hljs-string">'html'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.jade'</span><span class="mobile-show"><br />    </span>)
-    .pipe(jade())
+  <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.pug'</span><span class="mobile-show"><br />    </span>)
+    .pipe(pug())
     .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/html'</span><span class="mobile-show"><br />    </span>))
 });
 
