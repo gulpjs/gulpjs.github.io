@@ -45,10 +45,16 @@
   box-sizing: border-box;
 }
 
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   height: 100%;
   width: 100%;
   -webkit-font-smoothing: antialiased;
+  font-size: 1.4rem;
 }
 
 @media only screen and (max-width: 500px) {
