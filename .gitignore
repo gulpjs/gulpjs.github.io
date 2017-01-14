@@ -1,2 +1,9 @@
 .DS_Store
 *.log
+.babelrc
+css/*.map
+*.map
+dist/
+gulpfile.babel.js
+node_modules/
+package.json
