@@ -352,7 +352,6 @@ p.paragraph {
 .editor-window code,
 .editor-window code span {
     font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
-    font-weight: 600;
     font-size: 14pt;
 }
 @media (max-width: 420px) {
