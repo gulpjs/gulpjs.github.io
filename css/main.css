@@ -4,8 +4,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 .footer,
-.header,
-.contribute {
+.header {
     background: #CF4647;
     color: white;
 }
@@ -43,9 +42,7 @@ div.logo-cli {
     color: #85FF00;
     background-color: #002b36;
 }
-.logo-img-lg {
-    height: 255px;
-}
+
 /*text*/
 
 .heading {
@@ -110,6 +107,9 @@ p.paragraph {
 .text-right {
     text-align: right;
 }
+.text-left {
+    text-align: left;
+}
 .text-uppercase {
     text-transform: uppercase;
 }
@@ -120,6 +120,7 @@ p.paragraph {
 .center,
 .right,
 .vertical,
+.horizontal,
 .aligncenter,
 .centervertical {
     display: flex;
@@ -146,6 +147,9 @@ p.paragraph {
 }
 .vertical {
     flex-direction: column;
+}
+.horizontal {
+    flex-direction: row;
 }
 /*grid*/
 
@@ -437,9 +441,8 @@ p.paragraph {
 .footer {
     padding: 45px 0;
 }
-.footer .nav-link {
-    display: inline-block;
-    margin: 0 10px;
+.footer-nav {
+  margin-top: 45px;
 }
 .ctas-button,
 .ctas-button-2 {
@@ -472,17 +475,14 @@ p.paragraph {
         margin: 10px 0 0 0;
     }
 }
-.contribute {
-  padding-top: 40px;
+
+.footer .paragraph {
+  color: inherit;
 }
-.contribute-copy {
-  margin-left: 25px;
-  text-align: left;
+.footer .ctas-button {
+  margin-top: 20px;
 }
 
-.contribute-item {
-  margin-bottom: 15px;
-}
 .feature3 {
     padding: 90px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
