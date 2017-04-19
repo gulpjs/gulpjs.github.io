@@ -511,3 +511,22 @@ p.paragraph {
         margin-top: 30px;
     }
 }
+
+.supporters {
+  padding: 10px 0;
+}
+.supporter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin: 10px;
+  float: left;
+  width: 112px;
+  height: 112px;
+  box-sizing: content-box;
+  background: #fff;
+}
+.supporter img {
+  border-radius: 3px;
+}
