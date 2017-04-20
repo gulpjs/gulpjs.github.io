@@ -12,16 +12,16 @@
   Promise.all(services).then(function (entries) {
     var fragment = document.createDocumentFragment();
     var nodes = [];
-  	var supporters = [].concat.apply([], entries);
-  	var supportersToDisplay = supporters
+    var supporters = [].concat.apply([], entries);
+    var supportersToDisplay = supporters
       .sort(function(first, second) {
         return (second.totalDonations - first.totalDonations)
       })
       .slice(0, 10);
 
-  	supportersToDisplay.forEach(function(supporter) {
+    supportersToDisplay.forEach(function(supporter) {
       var img = new Image();
-      img.src = 'https://opencollective.com/proxy/images/?src=' + supporter.avatar ;
+      img.src = 'https://opencollective.com/proxy/images/?width=320&height=320&src=' + supporter.avatar ;
       img.width = 80;
       img.onload = function(e) {
         e.currentTarget.parentNode.classList.remove('supporter--skeleton');
@@ -33,7 +33,7 @@
 
       link.appendChild(img);
       nodes.push(link);
-  	});
+    });
 
     nodes.forEach(function(node) {
       fragment.appendChild(node);

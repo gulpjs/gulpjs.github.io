@@ -1,109 +1,110 @@
 .centerdevices .computerwrapper .mask {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	border-radius: 8px;
-	box-shadow: -1px 1px 4px rgba(107,124,147,.45);
-	background: white;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: -1px 1px 4px rgba(107,124,147,.45);
+  background: white;
 }
 .centerdevices .computerwrapper .mask-img {
-	width: 100%;
-	display: block;
+  width: 100%;
+  display: block;
 }
 .centerdevices .computerwrapper .computer {
-	width: 640px;
-	height: 448px;
-	background: linear-gradient(to bottom, rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
-	border-radius: 18px;
-	position: relative;
-	margin: auto;
-	box-shadow: inset 0 2px 7px 1px rgba(255,255,255,.5),inset 0 -5px 20px rgba(187,200,225,.35),0 2px 6px rgba(40,39,66,.14),0 10px 20px rgba(40,39,66,.06), 76px 75px 169px -35px rgba(0,0,0,0.4);
-	padding: 25px 25px;
+  width: 640px;
+  height: 448px;
+  background: linear-gradient(to bottom, rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
+  border-radius: 18px;
+  position: relative;
+  margin: auto;
+  box-shadow: inset 0 2px 7px 1px rgba(255,255,255,.5),inset 0 -5px 20px rgba(187,200,225,.35),0 2px 6px rgba(40,39,66,.14),0 10px 20px rgba(40,39,66,.06), 76px 75px 169px -35px rgba(0,0,0,0.4);
+  padding: 25px 25px;
 }
 .centerdevices .computerwrapper .computer:after,
 .centerdevices .computerwrapper .computer:before {
-	content: "";
-	position: absolute;
-	border-radius: 3px 3px 0 0;
-	width: calc(100% + 200px);
-	height: 10px;
-	background: linear-gradient(to right, rgba(246,250,253,1) 0%,rgba(221,226,233,1) 6%,rgba(246,250,253,1) 15%,rgba(246,250,253,1) 42%,rgba(230, 230, 230, 1) 42%,rgba(246,250,253,1) 45%,rgba(246,250,253,1) 53%,rgba(230, 230, 230, 1) 56%,rgba(246,250,253,1) 56%, rgba(246,250,253,1) 85%,rgba(221,226,233,1) 94%,rgba(246,250,253,1) 100%);
-	left: -100px;
-	bottom: -5px;
+  content: "";
+  position: absolute;
+  border-radius: 3px 3px 0 0;
+  width: calc(100% + 200px);
+  height: 10px;
+  background: linear-gradient(to right, rgba(246,250,253,1) 0%,rgba(221,226,233,1) 6%,rgba(246,250,253,1) 15%,rgba(246,250,253,1) 42%,rgba(230, 230, 230, 1) 42%,rgba(246,250,253,1) 45%,rgba(246,250,253,1) 53%,rgba(230, 230, 230, 1) 56%,rgba(246,250,253,1) 56%, rgba(246,250,253,1) 85%,rgba(221,226,233,1) 94%,rgba(246,250,253,1) 100%);
+  left: -100px;
+  bottom: -5px;
 }
 .centerdevices .computerwrapper .computer:before {
-	height: 6px;
-	bottom: -11px;
-	border-radius: 0 0 40px 40px;
-	background: #dde2e9;
-	box-shadow: inset 0px -25px 10px -20px rgba(0,0,0,.5);
+  height: 6px;
+  bottom: -11px;
+  border-radius: 0 0 40px 40px;
+  background: #dde2e9;
+  box-shadow: inset 0px -25px 10px -20px rgba(0,0,0,.5);
 }
 @media screen and (max-width: 900px) {
 .centerdevices .computerwrapper .computer {
-		margin: auto;
-		width: 100%;
-		padding: 20px;
-		height: calc((100vw - 80px) * .75);
-	}
-}.centerdevices .iphoneipad2 .mask {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	border-radius: 8px;
-	box-shadow: -1px 1px 4px rgba(107,124,147,.45);
-	background: white;
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+    height: calc((100vw - 80px) * .75);
+  }
+}
+.centerdevices .iphoneipad2 .mask {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: -1px 1px 4px rgba(107,124,147,.45);
+  background: white;
 }
 .centerdevices .iphoneipad2 .mask-img {
-	width: 100%;
-	display: block;
+  width: 100%;
+  display: block;
 }
 .centerdevices .iphoneipad2 .iphone,
 .centerdevices .iphoneipad2 .ipad {
-	border-radius: 40px;
-	position: relative;
-	background: linear-gradient(to bottom, rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
-	box-shadow: inset 0 4px 7px 1px #fff,inset 0 -5px 20px rgba(187,200,225,.35),0 2px 6px rgba(40,39,66,.14),0 10px 20px rgba(40,39,66,.06), 0px 36px 79px -1px rgba(0,0,0,0.15);
-	overflow: hidden;
+  border-radius: 40px;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
+  box-shadow: inset 0 4px 7px 1px #fff,inset 0 -5px 20px rgba(187,200,225,.35),0 2px 6px rgba(40,39,66,.14),0 10px 20px rgba(40,39,66,.06), 0px 36px 79px -1px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
 .centerdevices .iphoneipad2 .iphone {
-	border-radius: 30px;
+  border-radius: 30px;
   width: 280px;
   height: 560px;
   z-index: 2;
   padding: 60px 12px 70px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transform: rotate(-5deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-5deg);
 }
 .centerdevices .iphoneipad2 .iphone .mask {
-	border-radius: 4px;
+  border-radius: 4px;
 }
 .centerdevices .iphoneipad2 .ipad {
-	width: 830px;
-	height: 560px;
-	padding: 15px 85px;
-	margin-left: auto;
-	transform: rotate(5deg);
+  width: 830px;
+  height: 560px;
+  padding: 15px 85px;
+  margin-left: auto;
+  transform: rotate(5deg);
 }
 
 .centerdevices .iphoneipad2 .ipad:after,
 .centerdevices .iphoneipad2 .iphone:after,
 .centerdevices .iphoneipad2 .ipad:before {
-	content: "";
-	width: 44px;
-	height: 44px;
-	border-radius: 50%;
-	background: rgba(0,0,0,.05);
-	position: absolute;
-	top: calc(50% - 22px);
-	right: 23px;
+  content: "";
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.05);
+  position: absolute;
+  top: calc(50% - 22px);
+  right: 23px;
 }
 .centerdevices .iphoneipad2 .ipad:after {
-	left: 34px;
-	width: 16px;
-	height: 16px;
-	top: calc(50% - 8px);
+  left: 34px;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
 }
 .centerdevices .iphoneipad2 .iphone:after {
   top: initial;
@@ -121,58 +122,58 @@
   left: calc(50% - 29px);
 }
 @media screen and (max-width: 900px) {
-	.centerdevices .iphoneipad2 {
-		position: relative;
-		white-space: nowrap;
-		vertical-align: top;
-		overflow: scroll;
-		width: calc(100% + 40px);
-		margin: 0 0 0 -20px;
-		z-index: 99;
-		-webkit-overflow-scrolling: touch;
-	}
-	.centerdevices .iphoneipad2 .iphone,
-	.centerdevices .iphoneipad2 .ipad {
-		transform: none;
-		border: none;
-		position: relative;
-		box-shadow: inset 0 4px 7px 1px #fff,inset 0 -5px 20px rgba(187,200,225,.35),0 2px 6px rgba(40,39,66,.14),0 10px 20px rgba(40,39,66,.06);
-		background: linear-gradient(to bottom, rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
-		margin: 0 20px;
-		display: inline-block;
-	}
-	.centerdevices .iphoneipad2 .iphone {
-		height: 440px;
-		width: 220px;
-		padding: 50px 8px 60px;
-		margin: 0 0 0 20px;
-		border-radius: 30px;
-	}
-	.centerdevices .iphoneipad2 .iphone .mask {
-		border-radius: 4px;
-	}
-	.centerdevices .iphoneipad2 .iphone:before {
-		top: 24px;
-		width: 50px;
-		height: 7px;
-		left: calc(50% - 25px);
-	}
-	.centerdevices .iphoneipad2 .iphone:after {
-		width: 38px;
-		height: 38px;
-		left: calc(50% - 19px);
-		bottom: 12px;
-	}
-	.centerdevices .iphoneipad2 .ipad {
-		width: 740px;
-		height: 440px;
-	}
-	.centerdevices .iphoneipad2 .ipad:before {
-		left: 23px;
-		right: inherit;
-	}
-	.centerdevices .iphoneipad2 .ipad:after {
-		right: 36px;
+  .centerdevices .iphoneipad2 {
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: scroll;
+    width: calc(100% + 40px);
+    margin: 0 0 0 -20px;
+    z-index: 99;
+    -webkit-overflow-scrolling: touch;
+  }
+  .centerdevices .iphoneipad2 .iphone,
+  .centerdevices .iphoneipad2 .ipad {
+    transform: none;
+    border: none;
+    position: relative;
+    box-shadow: inset 0 4px 7px 1px #fff,inset 0 -5px 20px rgba(187,200,225,.35),0 2px 6px rgba(40,39,66,.14),0 10px 20px rgba(40,39,66,.06);
+    background: linear-gradient(to bottom, rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
+    margin: 0 20px;
+    display: inline-block;
+  }
+  .centerdevices .iphoneipad2 .iphone {
+    height: 440px;
+    width: 220px;
+    padding: 50px 8px 60px;
+    margin: 0 0 0 20px;
+    border-radius: 30px;
+  }
+  .centerdevices .iphoneipad2 .iphone .mask {
+    border-radius: 4px;
+  }
+  .centerdevices .iphoneipad2 .iphone:before {
+    top: 24px;
+    width: 50px;
+    height: 7px;
+    left: calc(50% - 25px);
+  }
+  .centerdevices .iphoneipad2 .iphone:after {
+    width: 38px;
+    height: 38px;
+    left: calc(50% - 19px);
+    bottom: 12px;
+  }
+  .centerdevices .iphoneipad2 .ipad {
+    width: 740px;
+    height: 440px;
+  }
+  .centerdevices .iphoneipad2 .ipad:before {
+    left: 23px;
+    right: inherit;
+  }
+  .centerdevices .iphoneipad2 .ipad:after {
+    right: 36px;
     left: inherit;
-	}
+  }
 }
