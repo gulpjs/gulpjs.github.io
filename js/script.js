@@ -1,3 +1,13 @@
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
 (function(){
   var services = [
     'https://opencollective.com/gulpjs/sponsor.json',
@@ -13,11 +23,7 @@
     var fragment = document.createDocumentFragment();
     var nodes = [];
     var supporters = [].concat.apply([], entries);
-    var supportersToDisplay = supporters
-      .sort(function(first, second) {
-        return (second.totalDonations - first.totalDonations)
-      })
-      .slice(0, 10);
+    var supportersToDisplay = shuffleArray(supporters).slice(0, 10);
 
     supportersToDisplay.forEach(function(supporter) {
       var img = new Image();
