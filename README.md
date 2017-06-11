@@ -1,6 +1,6 @@
 # gulpjs.com
 
-This is the repository containing the code for the official gulp website [gulpjs.com](https://gulpjs.com).
+This is the repository containing the code for the official gulp website [gulpjs.com](http://gulpjs.com).
 
 ![A screenshot of gulpjs.com](screenshot.png)
 
