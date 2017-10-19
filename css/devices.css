@@ -40,10 +40,14 @@
 }
 @media screen and (max-width: 900px) {
 .centerdevices .computerwrapper .computer {
-    margin: auto;
     width: 100%;
     padding: 20px;
     height: calc((100vw - 80px) * .75);
+  }
+}
+@media screen and (max-width: 370px) {
+  .centerdevices .computerwrapper .computer {
+    padding: 15px;
   }
 }
 .centerdevices .iphoneipad2 .mask {
