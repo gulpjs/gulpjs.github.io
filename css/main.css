@@ -22,9 +22,38 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }
+#navMenu {
+  overflow: hidden;
+}
+#navMenu a {
+  float: left;
+  text-align: center;
+}
+.menu-lines {
+  display: none;
+}
 @media only screen and (max-width: 500px) {
-  .mobile-hide {
+  .mobile-hide, .mobile-hide a {
     display: none;
+  }
+  .menu-lines {
+    float: right;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+  #navMenu.responsive {
+    position: relative;
+    margin-top: 20px;
+  }
+  #navMenu.responsive a {
+    float: none;
+    display: inline-block;
+    text-align: left;
   }
 }
 @media only screen and (min-width: 500px) {

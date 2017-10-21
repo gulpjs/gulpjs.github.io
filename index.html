@@ -12,10 +12,11 @@
   <header class="header">
     <div class="container-lrg">
       <div class="col-12 spread aligncenter">
-        <a class="logo mobile-hide">
+        <a class="logo" href="/">
           <img class="logo-img" src="img/gulp-white-text.svg">
         </a>
-        <div class="mobile-col-12 spread">
+        <a href="javascript:void(0);" onclick="menu()" class="menu-lines">&#9776;</a>
+        <div id="navMenu" class="mobile-col-12 spread mobile-hide">
           <a class="nav-link" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md">Docs</a>
           <a class="nav-link" href="http://gulpjs.com/plugins">Plugins</a>
           <a class="nav-link" href="https://twitter.com/gulpjs">Twitter</a>
@@ -23,7 +24,19 @@
         </div>
       </div>
     </div>
-
+    <script type="text/javascript">
+      function menu() {
+        var x = document.getElementById("navMenu");
+        var hasClass = x.classList.contains('mobile-hide');
+        if (hasClass) {
+          console.log("Hellow")
+          x.classList.replace('mobile-hide', 'responsive');
+        } else {
+          console.log("Hello")
+          x.classList.replace('responsive', 'mobile-hide');
+        }
+      }
+    </script>
     <div class="container-lrg">
       <div class="col-12">
         <h1 class="heading text-center">Automate and enhance your workflow</h1>
