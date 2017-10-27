@@ -8,6 +8,51 @@
       });
   })
 
+  var npmService = [
+    'https://api.npmjs.org/downloads/point/last-day/gulp'
+  ].map(function (url) {
+    return fetch(url)
+      .then(function(resp) {
+        return resp.json();
+      });
+  })
+
+  var pluginService = [
+    'https://api.npms.io/v2/search?q=keywords%3Agulpplugin'
+  ].map(function (url) {
+    return fetch(url)
+      .then(function(resp) {
+        return resp.json();
+      });
+  })
+
+  var countUpOptions = {
+    useEasing: true,
+    useGrouping: true,
+    separator: ',',
+    decimal: '.',
+  };
+
+  Promise.all(npmService).then(function (data) {
+    var downloads = data[0].downloads;
+    var downloadsCount = new CountUp('installs', 100000, downloads, 0, 2.5, countUpOptions);
+    if (!downloadsCount.error) {
+      downloadsCount.start();
+    } else {
+      console.error(downloadsCount.error);
+    }
+  })
+
+  Promise.all(pluginService).then(function (data) {
+    var plugins = data[0].total;
+    var pluginsCount = new CountUp('gulp-plugins', 1000, plugins, 0, 2.5, countUpOptions);
+    if (!pluginsCount.error) {
+      pluginsCount.start();
+    } else {
+      console.error(pluginsCount.error);
+    }
+  })
+
   Promise.all(services).then(function (entries) {
     var fragment = document.createDocumentFragment();
     var nodes = [];

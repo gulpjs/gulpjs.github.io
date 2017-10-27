@@ -491,6 +491,14 @@ p.paragraph {
   margin-bottom: 30px;
   color: black
 }
+.feature3 .border-container .border {
+  margin-top: 60px;
+  margin-bottom: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid #CF4747;
+}
+
 @media (max-width: 750px) {
   .feature3 .flex {
     flex-wrap: wrap;
