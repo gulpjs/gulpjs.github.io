@@ -1,30 +1,19 @@
 (function(){
   var services = [
-    'https://opencollective.com/api/groups/gulpjs/backers'
+    'https://opencollective.com/api/groups/gulpjs/backers',
+    'https://api.npmjs.org/downloads/point/last-day/gulp',
+    'https://api.npms.io/v2/search?q=keywords%3Agulpplugin',
   ].map(function (url) {
-    return fetch(url)
-      .then(function(resp) {
-        return resp.json();
-      });
+    return fetch(url).then(asJson);
   })
 
-  var npmService = [
-    'https://api.npmjs.org/downloads/point/last-day/gulp'
-  ].map(function (url) {
-    return fetch(url)
-      .then(function(resp) {
-        return resp.json();
-      });
-  })
+  function asJson(resp) {
+    return resp.json();
+  }
 
-  var pluginService = [
-    'https://api.npms.io/v2/search?q=keywords%3Agulpplugin'
-  ].map(function (url) {
-    return fetch(url)
-      .then(function(resp) {
-        return resp.json();
-      });
-  })
+  var supporters = services[0];
+  var downloads = services[1];
+  var plugins = services[2];
 
   var countUpOptions = {
     useEasing: true,
@@ -33,8 +22,8 @@
     decimal: '.',
   };
 
-  Promise.all(npmService).then(function (data) {
-    var downloads = data[0].downloads;
+  downloads.then(function (data) {
+    var downloads = data.downloads;
     var downloadsCount = new CountUp('installs', 100000, downloads, 0, 2.5, countUpOptions);
     if (!downloadsCount.error) {
       downloadsCount.start();
@@ -43,8 +32,8 @@
     }
   })
 
-  Promise.all(pluginService).then(function (data) {
-    var plugins = data[0].total;
+  plugins.then(function (data) {
+    var plugins = data.total;
     var pluginsCount = new CountUp('gulp-plugins', 1000, plugins, 0, 2.5, countUpOptions);
     if (!pluginsCount.error) {
       pluginsCount.start();
@@ -53,11 +42,10 @@
     }
   })
 
-  Promise.all(services).then(function (entries) {
+  supporters.then(function (entries) {
     var fragment = document.createDocumentFragment();
     var nodes = [];
-    var supporters = [].concat.apply([], entries);
-    var supportersToDisplay = supporters.slice(0, 10);
+    var supportersToDisplay = entries.slice(0, 10);
 
     supportersToDisplay.forEach(function(supporter) {
       var img = new Image();
