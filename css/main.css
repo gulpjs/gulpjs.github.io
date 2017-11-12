@@ -81,26 +81,6 @@ div.logo-cli {
 p.paragraph {
   color: rgba(0, 0, 0, .5);
 }
-.logo {
-  font-size: 30px;
-  line-height: 30px;
-  font-weight: 900;
-}
-@media (max-width: 420px) {
-  .logo {
-    font-size: 22px;
-  }
-}
-.nav-link2,
-.nav-link {
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 30px;
-  color: inherit;
-}
-.nav-link:not(:first-of-type) {
-  margin-left: 20px;
-}
 .text-center {
   text-align: center;
 }
@@ -276,6 +256,40 @@ p.paragraph {
 .sidedevices {
   position: relative;
 }
+
+/*elements*/
+.logo {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 900;
+}
+@media (max-width: 420px) {
+  .logo {
+    font-size: 22px;
+  }
+}
+.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  color: inherit;
+}
+.nav-link:not(:first-of-type) {
+  margin-left: 20px;
+}
+@media (max-width: 370px) {
+  .nav {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 350px) {
+  .nav {
+    padding: 0;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
 .header {
   padding: 20px 0 90px 0;
   overflow: hidden;
@@ -289,6 +303,16 @@ p.paragraph {
 @media (max-width: 900px) {
   .header .heading {
     margin-top: 60px;
+  }
+}
+@media (max-width: 500px) {
+  .header .heading {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 350px) {
+  .header .editor-window code span {
+    font-size: 14px;
   }
 }
 .ctas-button,
@@ -358,7 +382,7 @@ p.paragraph {
 @media (max-width: 420px) {
   .editor-window code,
   .editor-window code span {
-    font-size: 13pt;
+    font-size: 16px;
   }
 }
 .editor-window pre {
