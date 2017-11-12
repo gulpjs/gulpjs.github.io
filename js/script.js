@@ -49,7 +49,7 @@
 
     supportersToDisplay.forEach(function(supporter) {
       var img = new Image();
-      img.src = supporter.avatar;
+      img.src = 'https://opencollective.com/proxy/images/?width=80&height=80&src=' + supporter.avatar;
       img.width = 80;
       img.onload = function(e) {
         e.currentTarget.parentNode.classList.remove('supporter--skeleton');
