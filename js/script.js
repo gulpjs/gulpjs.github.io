@@ -48,7 +48,6 @@
     var supportersToDisplay = entries.slice(0, 10);
 
     supportersToDisplay.forEach(function(supporter) {
-      console.log(supporter);
       var img = new Image();
       img.src = supporter.avatar;
       img.width = 80;
