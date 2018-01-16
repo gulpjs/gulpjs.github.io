@@ -59,10 +59,13 @@
       link.className = 'supporter supporter--skeleton';
       if (supporter.website) {
         link.href = supporter.website;
+        img.alt = supporter.website;
       } else if (supporter.twitterHandle) {
         link.href = 'https://twitter.com/' + supporter.twitterHandle
+        img.alt = supporter.twitterHandle;
       } else {
         link.href = 'https://opencollective.com/' + supporter.slug
+        img.alt = supporter.slug;
       }
 
       link.appendChild(img);

@@ -79,7 +79,7 @@ div.logo-cli {
   margin-top: 10px;
 }
 p.paragraph {
-  color: rgba(0, 0, 0, .5);
+  color: #767676;
 }
 .text-center {
   text-align: center;
@@ -358,7 +358,7 @@ p.paragraph {
   color: rgba(130 ,140,91,1);
 }
 .hljs-built_in {
-  color: rgba(112,75,40,1);
+  color: #7b5c44;
 }
 .editor-prefixed:before {
   content: "$ ";
