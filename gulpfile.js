@@ -21,7 +21,7 @@ const fmOptions = {
 };
 
 function fetchDocs() {
-  return download(owner, repo, directory);
+  return download(owner, repo, directory, { sha: "wip-docs" });
 }
 
 function removeComments(cb) {
