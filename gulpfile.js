@@ -10,7 +10,7 @@ const frontMatter = require('gray-matter');
 const download = require('github-download-directory');
 
 // Exports for task registration
-exports.default = series(fetchDocs, removeComments);
+exports.default = series(fetchDocs, convertComments);
 
 const owner = 'gulpjs';
 const repo = 'gulp';
@@ -24,7 +24,7 @@ function fetchDocs() {
   return download(owner, repo, directory, { sha: "wip-docs" });
 }
 
-function removeComments(cb) {
+function convertComments(cb) {
   pump([
     // Only process markdown files in the directory we fetched
     src('**/*.md', { cwd: directory }),
