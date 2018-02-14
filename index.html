@@ -150,15 +150,13 @@ gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><s
     .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/css'</span><span class="mobile-show"><br />    </span>))
 });
 
-
 gulp.task(<span class="hljs-string">'js'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
   <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/javascript/*.js'</span><span class="mobile-show"><br />    </span>)
     .pipe(sourcemaps.init())
     .pipe(concat(<span class="mobile-show"><br />      </span><span class="hljs-string">'app.min.js'</span><span class="mobile-show"><br />    </span>))
-    .pipe(sourcemaps.write(<span class="mobile-show"><br />      </span><span class="hljs-string">'.'</span><span class="mobile-show"><br />    </span>))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/js'</span><span class="mobile-show"><br />    </span>))
 });
-
 
 gulp.task(<span class="hljs-string">'default'</span>, <span class="mobile-show"><br />  </span>[ <span class="hljs-string">'html'</span>, <span class="hljs-string">'css'</span>, <span class="hljs-string">'js'</span> ]<span class="mobile-show"><br /></span>);
           </code></pre>
