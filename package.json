@@ -1,0 +1,18 @@
+{
+  "name": "gulpjs.github.io",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docs": "gulp"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "github-download-directory": "^1.1.1",
+    "gray-matter": "^3.1.1",
+    "gulp": "^4.0.0",
+    "pump": "^2.0.1",
+    "through2": "^2.0.3"
+  }
+}

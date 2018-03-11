@@ -1,0 +1,51 @@
+{
+  "docs": {
+    "Get Started": [
+      "getting-started"
+    ],
+    "Why use Pump": [
+      "why-use-pump"
+    ],
+    "Writing a Plugin": [
+      "dealing-with-streams",
+      "guidelines",
+      "recommended-modules",
+      "testing",
+      "using-buffers"
+    ],
+    "Recipes": [
+      "automate-release-workflow",
+      "browserify-multiple-destination",
+      "browserify-transforms",
+      "browserify-uglify-sourcemap",
+      "browserify-with-globs",
+      "combining-streams-to-handle-errors",
+      "cron-task",
+      "delete-files-folder",
+      "export-as-tasks",
+      "fast-browserify-builds-with-watchify",
+      "handling-the-delete-event-on-watch",
+      "incremental-builds-with-concatenate",
+      "maintain-directory-structure-while-globbing",
+      "make-stream-from-buffer",
+      "minified-and-non-minified",
+      "minimal-browsersync-setup-with-gulp4",
+      "mocha-test-runner-with-gulp",
+      "only-pass-through-changed-files",
+      "pass-arguments-from-cli",
+      "rebuild-only-files-that-change",
+      "rollup-with-rollup-stream",
+      "run-grunt-tasks-from-gulp",
+      "running-shell-commands",
+      "running-task-steps-per-folder",
+      "running-tasks-in-series",
+      "server-with-livereload-and-css-inject",
+      "sharing-streams-with-stream-factories",
+      "specifying-a-cwd",
+      "split-tasks-across-multiple-files",
+      "templating-with-swig-and-yaml-front-matter",
+      "using-external-config-file",
+      "using-multiple-sources-in-one-task"
+    ]
+  }
+}
