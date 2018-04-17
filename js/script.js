@@ -57,6 +57,7 @@
 
       var link = document.createElement('a');
       link.className = 'supporter supporter--skeleton';
+      link.rel = 'nofollow';
       if (supporter.website) {
         link.href = supporter.website;
         img.alt = supporter.website;
