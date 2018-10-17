@@ -1,2 +1,8 @@
 .DS_Store
 *.log
+node_modules
+docs
+converted-docs
+package-lock.json
+yarn.lock
+website/build

@@ -1,0 +1,30 @@
+{
+  "docs": {
+    "Getting Started": [
+      "quick-start",
+      "javascript-and-gulpfiles",
+      "creating-tasks",
+      "async-completion",
+      "working-with-files",
+      "explaining-globs",
+      "using-plugins",
+      "watching-files"
+    ],
+    "API": [
+      "api-concepts",
+      "api-src",
+      "api-dest",
+      "api-symlink",
+      "api-lastrun",
+      "api-series",
+      "api-parallel",
+      "api-watch",
+      "api-task",
+      "api-registry",
+      "api-tree",
+      "api-vinyl",
+      "api-vinyl-isvinyl",
+      "api-vinyl-iscustomprop"
+    ]
+  }
+}

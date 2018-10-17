@@ -1,0 +1,149 @@
+/* your custom css */
+
+small {
+  font-size: 14px;
+  font-style: italic;
+}
+
+code {
+  font-size: 16px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+body,
+.mainContainer,
+nav.toc .toggleNav,
+nav.toc .toggleNav .navGroup,
+nav.toc .toggleNav .navGroup.navGroupActive  {
+  background: #fff;
+}
+
+.mainContainer {
+  padding: 40px 0;
+}
+
+.mainContainer .wrapper blockquote p {
+  padding: 0;
+}
+
+.mainContainer .wrapper .post .postHeader {
+  margin-bottom: 0;
+}
+
+nav.toc .toggleNav .navToggle::before,
+nav.toc .toggleNav .navToggle::after {
+  border-color: #fff;
+}
+
+nav.toc .toggleNav .navToggle i::before,
+nav.toc .toggleNav .navToggle i::after {
+  border-color: transparent #fff;
+}
+
+.navBreadcrumb i {
+  color: #fff;
+}
+
+.navBreadcrumb span {
+  color: #fff;
+}
+
+.docsNavContainer {
+  background: none;
+}
+
+.docsNavContainer nav.toc .navBreadcrumb,
+.docsSliderActive nav.toc .navBreadcrumb {
+  background: #cf4647;
+  border-top: 2px solid #fff;
+}
+
+.navigationSlider .slidingNav ul {
+  justify-content: space-around;
+}
+
+.navigationSlider .slidingNav ul li a {
+  justify-content: unset;
+  padding: 10px 20px;
+}
+
+/* Tables */
+table {
+  border: none;
+  display: block;
+  overflow-x: auto;
+}
+
+table thead {
+  border-bottom: none;
+}
+
+table tr th {
+  text-transform: none;
+  color: #fff;
+  border-right-color: #fff;
+}
+
+table tr th,
+table tr td {
+  border-right-style: solid;
+}
+
+table tr th code,
+table tr td code {
+  word-break: normal;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  min-width: 175px;
+  width: 100%;
+}
+
+table tr:nth-of-type(odd) {
+  background: none;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #E8E8E8;
+}
+
+table thead tr:nth-of-type(odd) {
+  background-color: #cf4547;
+}
+
+@media (max-width: 375px) {
+  .logo {
+    display: initial;
+  }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+  /* Better use of screen on mobile */
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .docMainWrapper > * {
+    margin: 0 10px;
+  }
+
+  .docOnPageNav,
+  .separateOnPageNav .docsNavContainer {
+    flex: 1 0 180px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
