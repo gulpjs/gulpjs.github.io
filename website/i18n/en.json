@@ -266,7 +266,8 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Quick Start": "Quick Start",
+      "API": "API",
       "Plugins": "Plugins",
       "Twitter": "Twitter",
       "Contribute": "Contribute"

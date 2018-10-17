@@ -66,7 +66,6 @@ nav.toc .toggleNav .navToggle i::after {
 }
 
 .navigationSlider .slidingNav ul li a {
-  justify-content: unset;
   padding: 10px 20px;
 }
 
