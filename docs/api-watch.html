@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>watch() · undefined</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# watch()"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="watch() · undefined"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gulpjs.com//index.html"/><meta property="og:description" content="# watch()"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/gulp.svg"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/" target="_self">Docs</a></li><li class=""><a href="https://gulpjs.com/plugins" target="_self">Plugins</a></li><li class=""><a href="https://twitter.com/gulpjs" target="_self">Twitter</a></li><li class=""><a href="https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md" target="_self">Contribute</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/quick-start">Quick Start</a></li><li class="navListItem"><a class="navItem" href="/docs/javascript-and-gulpfiles">JavaScript and Gulpfiles</a></li><li class="navListItem"><a class="navItem" href="/docs/creating-tasks">Creating Tasks</a></li><li class="navListItem"><a class="navItem" href="/docs/async-completion">Async Completion</a></li><li class="navListItem"><a class="navItem" href="/docs/working-with-files">Working with Files</a></li><li class="navListItem"><a class="navItem" href="/docs/explaining-globs">Explaining Globs</a></li><li class="navListItem"><a class="navItem" href="/docs/using-plugins">Using Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/watching-files">Watching Files</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/api-concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/api-src">src()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-dest">dest()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-symlink">symlink()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-lastrun">lastRun()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-series">series()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-parallel">parallel()</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/api-watch">watch()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-task">task()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-registry">registry()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-tree">tree()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-vinyl">Vinyl</a></li><li class="navListItem"><a class="navItem" href="/docs/api-vinyl-isvinyl">Vinyl.isVinyl()</a></li><li class="navListItem"><a class="navItem" href="/docs/api-vinyl-iscustomprop">Vinyl.isCustomProp()</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="watch"></a><a href="#watch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>watch()</h1>
+<p>Allows watching globs and running a task when a change occurs. Tasks are handled uniformly with the rest of the task system.</p>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+watch([<span class="hljs-string">'input/*.js'</span>, <span class="hljs-string">'!input/something.js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+  <span class="hljs-comment">// body omitted</span>
+  cb();
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="signature"></a><a href="#signature" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Signature</h2>
+<pre><code class="hljs css language-js">watch(globs, [options], [task])
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="parameters"></a><a href="#parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">parameter</th><th style="text-align:center">type</th><th>note</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">globs <br> <strong>(required)</strong></td><td style="text-align:center">string <br> array</td><td><a href="concepts.md#globs">Globs</a> to watch on the file system.</td></tr>
+<tr><td style="text-align:center">options</td><td style="text-align:center">object</td><td>Detailed in [Options][options-section] below.</td></tr>
+<tr><td style="text-align:center">task</td><td style="text-align:center">function <br> string</td><td>A <a href="concepts.md#tasks">task function</a> or composed task - generated by <code>series()</code> and <code>parallel()</code>.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="returns"></a><a href="#returns" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returns</h3>
+<p>An instance of <a href="#chokidar-instance">chokidar</a> for fine-grained control over your watch setup.</p>
+<h3><a class="anchor" aria-hidden="true" id="errors"></a><a href="#errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Errors</h3>
+<p>When a non-string or array with any non-strings is passed as <code>globs</code>, throws an error with the message, &quot;Non-string provided as watch path&quot;.</p>
+<p>When a string or array is passed as <code>task</code>, throws an error with the message, &quot;watch task has to be a function (optionally generated by using gulp.parallel or gulp.series)&quot;.</p>
+<h3><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">name</th><th style="text-align:center">type</th><th>default</th><th>note</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">ignoreInitial</td><td style="text-align:center">boolean</td><td>true</td><td>If false, the task is called during instantiation as file paths are discovered. Use to trigger the task during startup. <br> <strong>Note:</strong> This option is passed to <a href="https://github.com/paulmillr/chokidar">chokidar</a> but is defaulted to <code>true</code> instead of <code>false</code>.</td></tr>
+<tr><td style="text-align:center">delay</td><td style="text-align:center">number</td><td>200</td><td>The millisecond delay between a file change and task execution. Allows for waiting on many changes before executing a task, e.g. find-and-replace on many files.</td></tr>
+<tr><td style="text-align:center">queue</td><td style="text-align:center">boolean</td><td>true</td><td>When true and the task is already running, any file changes will queue a single task execution. Keeps long running tasks from overlapping.</td></tr>
+<tr><td style="text-align:center">events</td><td style="text-align:center">string <br> array</td><td>[ 'add', <br> 'change', <br> 'unlink' ]</td><td>The events being watched to trigger task execution. Can be <code>'add'</code>, <code>'addDir'</code>, <code>'change'</code>, <code>'unlink'</code>, <code>'unlinkDir'</code>, <code>'ready'</code>, and/or <code>'error'</code>. Additionally <code>'all'</code> is available, which represents all events other than <code>'ready'</code> and <code>'error'</code>. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">persistent</td><td style="text-align:center">boolean</td><td>true</td><td>If false, the watcher will not keep the Node process running. Disabling this option is not recommended. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">ignored</td><td style="text-align:center">array <br> string <br> RegExp <br> function</td><td></td><td>Defines globs to be ignored. If a function is provided, it will be called twice per path - once with just the path, then with the path and the <code>fs.Stats</code> object of that file. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">followSymlinks</td><td style="text-align:center">boolean</td><td>true</td><td>When true, changes to both symbolic links and the linked files trigger events. If false, only changes to the symbolic links trigger events. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">cwd</td><td style="text-align:center">string</td><td></td><td>The directory that will be combined with any relative path to form an absolute path. Is ignored for absolute paths. Use to avoid combining <code>globs</code> with <code>path.join()</code>. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">disableGlobbing</td><td style="text-align:center">boolean</td><td>false</td><td>If true, all <code>globs</code> are treated as literal path names, even if they have special characters. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">usePolling</td><td style="text-align:center">boolean</td><td>false</td><td>When false, the watcher will use <code>fs.watch()</code> (or <a href="https://github.com/strongloop/fsevents">fsevents</a> on Mac) for watching. If true, use <code>fs.watchFile()</code> polling instead - needed for successfully watching files over a network or other non-standard situations. Overrides the <code>useFsEvents</code> default. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">interval</td><td style="text-align:center">number</td><td>100</td><td>Combine with <code>usePolling: true</code>. Interval of file system polling. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">binaryInterval</td><td style="text-align:center">number</td><td>300</td><td>Combine with <code>usePolling: true</code>. Interval of file system polling for binary files. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">useFsEvents</td><td style="text-align:center">boolean</td><td>true</td><td>When true, uses fsevents for watching if available. If explicitly set to true, supersedes the <code>usePolling</code> option. If set to false, automatically sets <code>usePolling</code> to true. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">alwaysStat</td><td style="text-align:center">boolean</td><td>false</td><td>If true, always calls <code>fs.stat()</code> on changed files - will slow down file watcher. The <code>fs.Stat</code> object is only available if you are using the chokidar instance directly. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">depth</td><td style="text-align:center">number</td><td></td><td>Indicates how many nested levels of directories will be watched. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">awaitWriteFinish</td><td style="text-align:center">boolean</td><td>false</td><td>Do not use this option, use <code>delay</code> instead. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">ignorePermissionErrors</td><td style="text-align:center">boolean</td><td>false</td><td>Set to true to watch files that don't have read permissions. Then, if watching fails due to EPERM or EACCES errors, they will be skipped silently. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+<tr><td style="text-align:center">atomic</td><td style="text-align:center">number</td><td>100</td><td>Only active if <code>useFsEvents</code> and <code>usePolling</code> are false. Automatically filters out artifacts that occur from &quot;atomic writes&quot; by some editors. If a file is re-added within the specified milliseconds of being deleted, a change event - instead of unlink then add - will be emitted. <br> <em>This option is passed directly to <a href="https://github.com/paulmillr/chokidar">chokidar</a>.</em></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="chokidar-instance"></a><a href="#chokidar-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chokidar instance</h2>
+<p>The <code>watch()</code> method returns the underlying instance of <a href="https://github.com/paulmillr/chokidar">chokidar</a>, providing fine-grained control over your watch setup. Most commonly used to register individual event handlers that provide the <code>path</code> or <code>stats</code> of the changed files.</p>
+<p><strong>When using the chokidar instance directly, you will not have access to the task system integrations, including async completion, queueing, and delay.</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<span class="hljs-keyword">const</span> watcher = watch([<span class="hljs-string">'input/*.js'</span>]);
+
+watcher.on(<span class="hljs-string">'change'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">path, stats</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File <span class="hljs-subst">${path}</span> was changed`</span>);
+});
+
+watcher.on(<span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">path, stats</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File <span class="hljs-subst">${path}</span> was added`</span>);
+});
+
+watcher.on(<span class="hljs-string">'unlink'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">path, stats</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File <span class="hljs-subst">${path}</span> was removed`</span>);
+});
+
+watcher.close();
+</code></pre>
+<p><code>watcher.on(eventName, eventHandler)</code></p>
+<p>Registers <code>eventHandler</code> functions to be called when the specified event occurs.</p>
+<table>
+<thead>
+<tr><th style="text-align:center">parameter</th><th style="text-align:center">type</th><th>note</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">eventName</td><td style="text-align:center">string</td><td>The events that may be watched are <code>'add'</code>, <code>'addDir'</code>, <code>'change'</code>, <code>'unlink'</code>, <code>'unlinkDir'</code>, <code>'ready'</code>, <code>'error'</code>, or <code>'all'</code>.</td></tr>
+<tr><td style="text-align:center">eventHandler</td><td style="text-align:center">function</td><td>Function to be called when the specified event occurs. Arguments detailed in the table below.</td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th style="text-align:center">argument</th><th style="text-align:center">type</th><th>note</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">path</td><td style="text-align:center">string</td><td>The path of the file that changed. If the <code>cwd</code> option was set, the path will be made relative by removing the <code>cwd</code>.</td></tr>
+<tr><td style="text-align:center">stats</td><td style="text-align:center">object</td><td>An <a href="concepts.md#file-system-stats">fs.Stat</a> object, but could be <code>undefined</code>. If the <code>alwaysStat</code> option was set to <code>true</code>, <code>stats</code> will always be provided.</td></tr>
+</tbody>
+</table>
+<p><code>watcher.close()</code></p>
+<p>Shuts down the file watcher. Once shut down, no more events will be emitted.</p>
+<p><code>watcher.add(globs)</code></p>
+<p>Adds additional globs to an already-running watcher instance.</p>
+<table>
+<thead>
+<tr><th style="text-align:center">parameter</th><th style="text-align:center">type</th><th>note</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">globs</td><td style="text-align:center">string <br> array</td><td>The additional globs to be watched.</td></tr>
+</tbody>
+</table>
+<p><code>watcher.unwatch(globs)</code></p>
+<p>Removes globs that are being watched, while the watcher continues with the remaining paths.</p>
+<table>
+<thead>
+<tr><th style="text-align:center">parameter</th><th style="text-align:center">type</th><th>note</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">globs</td><td style="text-align:center">string <br> array</td><td>The globs to be removed.</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/api-parallel"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/api-task"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#signature">Signature</a><ul class="toc-headings"><li><a href="#parameters">Parameters</a></li><li><a href="#returns">Returns</a></li><li><a href="#errors">Errors</a></li><li><a href="#options">Options</a></li></ul></li><li><a href="#chokidar-instance">Chokidar instance</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/gulp.svg" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started.html">Getting Started</a><a href="/docs/en/api.html">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/gulp" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/gulpjs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/gulpjs/gulp">GitHub</a><a class="github-button" href="https://github.com/gulpjs/gulp" data-icon="octicon-star" data-count-href="/gulpjs/gulp/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 GulpJS</section></footer></div></body></html>

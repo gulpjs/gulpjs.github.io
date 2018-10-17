@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Why Use Pump · undefined</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Why Use Pump?"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Why Use Pump · undefined"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gulpjs.com//index.html"/><meta property="og:description" content="# Why Use Pump?"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/gulp.svg"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/" target="_self">Docs</a></li><li class=""><a href="https://gulpjs.com/plugins" target="_self">Plugins</a></li><li class=""><a href="https://twitter.com/gulpjs" target="_self">Twitter</a></li><li class=""><a href="https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md" target="_self">Contribute</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="why-use-pump"></a><a href="#why-use-pump" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why Use Pump?</h1>
+<p>When using <code>pipe</code> from the Node.js streams, errors are not propagated forward
+through the piped streams, and source streams aren’t closed if a destination
+stream closed. The <a href="https://github.com/mafintosh/pump"><code>pump</code></a> module normalizes these problems and passes
+you the errors in a callback.</p>
+<h2><a class="anchor" aria-hidden="true" id="a-common-gulpfile-example"></a><a href="#a-common-gulpfile-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A common gulpfile example</h2>
+<p>A common pattern in gulp files is to simply return a Node.js stream, and expect
+the gulp tool to handle errors.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// example of a common gulpfile</span>
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-uglify'</span>);
+
+gulp.task(<span class="hljs-string">'compress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// returns a Node.js stream, but no handling of error messages</span>
+  <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'lib/*.js'</span>)
+    .pipe(uglify())
+    .pipe(gulp.dest(<span class="hljs-string">'dist'</span>));
+});
+</code></pre>
+<p><img src="pipe-error.png" alt="pipe error"></p>
+<p>There’s an error in one of the JavaScript files, but that error message is the
+opposite of helpful. You want to know what file and line contains the error. So
+what is this mess?</p>
+<p>When there’s an error in a stream, the Node.js stream fire the 'error' event,
+but if there’s no handler for this event, it instead goes to the defined
+<a href="https://nodejs.org/api/process.html#process_event_uncaughtexception">uncaught exception</a> handler. The default behavior of the
+uncaught exception handler is documented:</p>
+<blockquote>
+<p>By default, Node.js handles such exceptions by printing the stack trace to
+stderr and exiting.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="handling-the-errors"></a><a href="#handling-the-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handling the Errors</h2>
+<p>Since allowing the errors to make it to the uncaught exception handler isn’t
+useful, we should handle the exceptions properly. Let’s give that a quick shot.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-uglify'</span>);
+
+gulp.task(<span class="hljs-string">'compress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'lib/*.js'</span>)
+    .pipe(uglify())
+    .pipe(gulp.dest(<span class="hljs-string">'dist'</span>))
+    .on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+      <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Error in compress task'</span>, err.toString());
+    });
+});
+</code></pre>
+<p>Unfortunately, Node.js stream’s <code>pipe</code> function doesn’t forward errors through
+the chain, so this error handler only handles the errors given by
+<code>gulp.dest</code>. Instead we need to handle errors for each stream.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-uglify'</span>);
+
+gulp.task(<span class="hljs-string">'compress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createErrorHandler</span>(<span class="hljs-params">name</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+      <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Error from '</span> + name + <span class="hljs-string">' in compress task'</span>, err.toString());
+    };
+  }
+
+  <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'lib/*.js'</span>)
+    .on(<span class="hljs-string">'error'</span>, createErrorHandler(<span class="hljs-string">'gulp.src'</span>))
+    .pipe(uglify())
+    .on(<span class="hljs-string">'error'</span>, createErrorHandler(<span class="hljs-string">'uglify'</span>))
+    .pipe(gulp.dest(<span class="hljs-string">'dist'</span>))
+    .on(<span class="hljs-string">'error'</span>, createErrorHandler(<span class="hljs-string">'gulp.dest'</span>));
+});
+</code></pre>
+<p>This is a lot of complexity to add in each of your gulp tasks, and it’s easy to
+forget to do it. In addition, it’s still not perfect, as it doesn’t properly
+signal to gulp’s task system that the task has failed. We can fix this, and we
+can handle the other pesky issues with error propogations with streams, but it’s
+even more work!</p>
+<h2><a class="anchor" aria-hidden="true" id="using-pump"></a><a href="#using-pump" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using pump</h2>
+<p>The <a href="https://github.com/mafintosh/pump"><code>pump</code></a> module is a cheat code of sorts. It’s a wrapper around the
+<code>pipe</code> functionality that handles these cases for you, so you can stop hacking
+on your gulpfiles, and get back to hacking new features into your app.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-uglify'</span>);
+<span class="hljs-keyword">var</span> pump = <span class="hljs-built_in">require</span>(<span class="hljs-string">'pump'</span>);
+
+gulp.task(<span class="hljs-string">'compress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cb</span>) </span>{
+  pump([
+      gulp.src(<span class="hljs-string">'lib/*.js'</span>),
+      uglify(),
+      gulp.dest(<span class="hljs-string">'dist'</span>)
+    ],
+    cb
+  );
+});
+</code></pre>
+<p>The gulp task system provides a gulp task with a callback, which can signal
+successful task completion (being called with no arguments), or a task failure
+(being called with an Error argument). Fortunately, this is the exact same
+format <code>pump</code> uses!</p>
+<p><img src="pump-error.png" alt="pump error"></p>
+<p>Now it’s very clear what plugin the error was from, what the error actually was,
+and from what file and line number.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#a-common-gulpfile-example">A common gulpfile example</a></li><li><a href="#handling-the-errors">Handling the Errors</a></li><li><a href="#using-pump">Using pump</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/gulp.svg" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started.html">Getting Started</a><a href="/docs/en/api.html">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/gulp" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/gulpjs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/gulpjs/gulp">GitHub</a><a class="github-button" href="https://github.com/gulpjs/gulp" data-icon="octicon-star" data-count-href="/gulpjs/gulp/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 GulpJS</section></footer></div></body></html>
