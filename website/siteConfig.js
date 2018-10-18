@@ -27,6 +27,7 @@ const siteConfig = {
   separateCss: ['static/css'],
   onPageNav: 'separate',
   cleanUrl: true,
+  useEnglishUrl: true,
   scripts: ['https://buttons.github.io/buttons.js'],
   repoUrl: 'https://github.com/gulpjs/gulp',
 };
