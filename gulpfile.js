@@ -4,8 +4,6 @@
 // No need to use any of this if working on the main website
 
 const { src, dest, series } = require('gulp');
-const fs = require('fs');
-const path = require('path');
 const pump = require('pump');
 const through2 = require('through2');
 const frontMatter = require('gray-matter');
@@ -40,14 +38,10 @@ function convertComments(cb) {
 /* utils */
 function convertToDocusaurus(file) {
   var config = frontMatter(file.contents, fmOptions);
-  // This fixes the problem with more than 1 file being named README.md
-  if (config.data.id) {
-    file.stem = config.data.id;
-  } else {
+  if (!config.data.id) {
     console.error(`File missing front-matter. Path: ${file.path}`);
     return; // Filter out any file without frontmatter
   }
-  file.base = path.dirname(file.path);
 
   file.contents = Buffer.from(config.stringify());
 

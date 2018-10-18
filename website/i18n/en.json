@@ -4,269 +4,269 @@
     "next": "Next",
     "previous": "Previous",
     "docs": {
-      "api-concepts": {
+      "api/concepts": {
         "title": "API Concepts",
         "sidebar_label": "Concepts"
       },
-      "api-dest": {
+      "api/dest": {
         "title": "dest()",
         "sidebar_label": "dest()"
       },
-      "api-lastrun": {
+      "api/lastrun": {
         "title": "lastRun()",
         "sidebar_label": "lastRun()"
       },
-      "api-parallel": {
+      "api/parallel": {
         "title": "parallel()",
         "sidebar_label": "parallel()"
       },
-      "api-registry": {
+      "api/registry": {
         "title": "registry()",
         "sidebar_label": "registry()"
       },
-      "api-series": {
+      "api/series": {
         "title": "series()",
         "sidebar_label": "series()"
       },
-      "api-src": {
+      "api/src": {
         "title": "src()",
         "sidebar_label": "src()"
       },
-      "api-symlink": {
+      "api/symlink": {
         "title": "symlink()",
         "sidebar_label": "symlink()"
       },
-      "api-task": {
+      "api/task": {
         "title": "task()",
         "sidebar_label": "task()"
       },
-      "api-tree": {
+      "api/tree": {
         "title": "tree()",
         "sidebar_label": "tree()"
       },
-      "api-vinyl-iscustomprop": {
+      "api/vinyl-iscustomprop": {
         "title": "Vinyl.isCustomProp()",
         "sidebar_label": "Vinyl.isCustomProp()"
       },
-      "api-vinyl-isvinyl": {
+      "api/vinyl-isvinyl": {
         "title": "Vinyl.isVinyl()",
         "sidebar_label": "Vinyl.isVinyl()"
       },
-      "api-vinyl": {
+      "api/vinyl": {
         "title": "Vinyl",
         "sidebar_label": "Vinyl"
       },
-      "api-watch": {
+      "api/watch": {
         "title": "watch()",
         "sidebar_label": "watch()"
-      },
-      "async-completion": {
-        "title": "Async Completion",
-        "sidebar_label": "Async Completion"
-      },
-      "automate-release-workflow": {
-        "title": "Automate Release Workflow",
-        "sidebar_label": "Automate Release Workflow"
-      },
-      "browserify-multiple-destination": {
-        "title": "Browserify w/ Multiple Destinations",
-        "sidebar_label": "Browserify w/ Multiple Destinations"
-      },
-      "browserify-transforms": {
-        "title": "Browserify + Transforms",
-        "sidebar_label": "Browserify + Transforms"
-      },
-      "browserify-uglify-sourcemap": {
-        "title": "Browserify + Uglify2 with Sourcemaps",
-        "sidebar_label": "Browserify + Uglify2 with Sourcemaps"
-      },
-      "browserify-with-globs": {
-        "title": "Browserify + Globs",
-        "sidebar_label": "Browserify + Globs"
       },
       "cli": {
         "title": "CLI",
         "sidebar_label": "CLI"
       },
-      "combining-streams-to-handle-errors": {
-        "title": "Combining Streams to Handle Errors",
-        "sidebar_label": "Combining Streams to Handle Errors"
+      "faq": {
+        "title": "FAQ",
+        "sidebar_label": "FAQ"
       },
-      "creating-tasks": {
+      "getting-started/quick-start": {
+        "title": "Quick Start",
+        "sidebar_label": "Quick Start"
+      },
+      "getting-started/javascript-and-gulpfiles": {
+        "title": "JavaScript and Gulpfiles",
+        "sidebar_label": "JavaScript and Gulpfiles"
+      },
+      "getting-started/creating-tasks": {
         "title": "Creating Tasks",
         "sidebar_label": "Creating Tasks"
       },
-      "cron-task": {
-        "title": "Cron Task",
-        "sidebar_label": "Cron Task"
+      "getting-started/async-completion": {
+        "title": "Async Completion",
+        "sidebar_label": "Async Completion"
       },
-      "dealing-with-streams": {
-        "title": "Dealing with Streams",
-        "sidebar_label": "Dealing with Streams"
+      "getting-started/working-with-files": {
+        "title": "Working with Files",
+        "sidebar_label": "Working with Files"
       },
-      "delete-files-folder": {
-        "title": "Delete files and folders",
-        "sidebar_label": "Delete files and folders"
+      "getting-started/explaining-globs": {
+        "title": "Explaining Globs",
+        "sidebar_label": "Explaining Globs"
+      },
+      "getting-started/using-plugins": {
+        "title": "Using Plugins",
+        "sidebar_label": "Using Plugins"
+      },
+      "getting-started/watching-files": {
+        "title": "Watching Files",
+        "sidebar_label": "Watching Files"
       },
       "docs": {
         "title": "Docs",
         "sidebar_label": "Docs"
       },
-      "explaining-globs": {
-        "title": "Explaining Globs",
-        "sidebar_label": "Explaining Globs"
+      "recipes/automate-release-workflow": {
+        "title": "Automate Release Workflow",
+        "sidebar_label": "Automate Release Workflow"
       },
-      "export-as-tasks": {
+      "recipes/browserify-multiple-destination": {
+        "title": "Browserify w/ Multiple Destinations",
+        "sidebar_label": "Browserify w/ Multiple Destinations"
+      },
+      "recipes/browserify-transforms": {
+        "title": "Browserify + Transforms",
+        "sidebar_label": "Browserify + Transforms"
+      },
+      "recipes/browserify-uglify-sourcemap": {
+        "title": "Browserify + Uglify2 with Sourcemaps",
+        "sidebar_label": "Browserify + Uglify2 with Sourcemaps"
+      },
+      "recipes/browserify-with-globs": {
+        "title": "Browserify + Globs",
+        "sidebar_label": "Browserify + Globs"
+      },
+      "recipes/combining-streams-to-handle-errors": {
+        "title": "Combining Streams to Handle Errors",
+        "sidebar_label": "Combining Streams to Handle Errors"
+      },
+      "recipes/cron-task": {
+        "title": "Cron Task",
+        "sidebar_label": "Cron Task"
+      },
+      "recipes/delete-files-folder": {
+        "title": "Delete files and folders",
+        "sidebar_label": "Delete files and folders"
+      },
+      "recipes/export-as-tasks": {
         "title": "Export as Tasks",
         "sidebar_label": "Export as Tasks"
       },
-      "faq": {
-        "title": "FAQ",
-        "sidebar_label": "FAQ"
-      },
-      "fast-browserify-builds-with-watchify": {
+      "recipes/fast-browserify-builds-with-watchify": {
         "title": "Fast Browserify builds with Watchify",
         "sidebar_label": "Fast Browserify builds with Watchify"
       },
-      "guidelines": {
-        "title": "Guidelines",
-        "sidebar_label": "Guidelines"
-      },
-      "handling-the-delete-event-on-watch": {
+      "recipes/handling-the-delete-event-on-watch": {
         "title": "Handling the Delete Event on Watch",
         "sidebar_label": "Handling the Delete Event on Watch"
       },
-      "incremental-builds-with-concatenate": {
+      "recipes/incremental-builds-with-concatenate": {
         "title": "Incremental Rebuilding",
         "sidebar_label": "Incremental Rebuilding"
       },
-      "javascript-and-gulpfiles": {
-        "title": "JavaScript and Gulpfiles",
-        "sidebar_label": "JavaScript and Gulpfiles"
-      },
-      "maintain-directory-structure-while-globbing": {
+      "recipes/maintain-directory-structure-while-globbing": {
         "title": "Maintain Directory Structure while Globbing",
         "sidebar_label": "Maintain Directory Structure while Globbing"
       },
-      "make-stream-from-buffer": {
+      "recipes/make-stream-from-buffer": {
         "title": "Make Stream from Buffer",
         "sidebar_label": "Make Stream from Buffer"
       },
-      "minified-and-non-minified": {
+      "recipes/minified-and-non-minified": {
         "title": "Outputting Minified and non-minified",
         "sidebar_label": "Outputting Minified and non-minified"
       },
-      "minimal-browsersync-setup-with-gulp4": {
+      "recipes/minimal-browsersync-setup-with-gulp4": {
         "title": "Minimal BrowserSync setup with Gulp 4",
         "sidebar_label": "Minimal BrowserSync setup with Gulp 4"
       },
-      "mocha-test-runner-with-gulp": {
+      "recipes/mocha-test-runner-with-gulp": {
         "title": "Mocha test-runner with Gulp",
         "sidebar_label": "Mocha test-runner with Gulp"
       },
-      "only-pass-through-changed-files": {
+      "recipes/only-pass-through-changed-files": {
         "title": "Only Pass Through Changed Files",
         "sidebar_label": "Only Pass Through Changed Files"
       },
-      "pass-arguments-from-cli": {
+      "recipes/pass-arguments-from-cli": {
         "title": "Pass Arguments from the CLI",
         "sidebar_label": "Pass Arguments from the CLI"
       },
-      "quick-start": {
-        "title": "Quick Start",
-        "sidebar_label": "Quick Start"
-      },
-      "rebuild-only-files-that-change": {
-        "title": "Rebuild only files that Change",
-        "sidebar_label": "Rebuild only files that Change"
-      },
-      "recipes": {
+      "recipes/recipes": {
         "title": "Recipes",
         "sidebar_label": "Recipes"
       },
-      "recommended-modules": {
-        "title": "Recommended Modules",
-        "sidebar_label": "Recommended Modules"
+      "recipes/rebuild-only-files-that-change": {
+        "title": "Rebuild only files that Change",
+        "sidebar_label": "Rebuild only files that Change"
       },
-      "rollup-with-rollup-stream": {
+      "recipes/rollup-with-rollup-stream": {
         "title": "Rollup with Rollup-Stream",
         "sidebar_label": "Rollup with Rollup-Stream"
       },
-      "run-grunt-tasks-from-gulp": {
+      "recipes/run-grunt-tasks-from-gulp": {
         "title": "Run Grunt Tasks from Gulp",
         "sidebar_label": "Run Grunt Tasks from Gulp"
       },
-      "running-shell-commands": {
+      "recipes/running-shell-commands": {
         "title": "Running Shell Commands",
         "sidebar_label": "Running Shell Commands"
       },
-      "running-task-steps-per-folder": {
+      "recipes/running-task-steps-per-folder": {
         "title": "Generating a file per Folder",
         "sidebar_label": "Generating a file per Folder"
       },
-      "running-tasks-in-series": {
+      "recipes/running-tasks-in-series": {
         "title": "Running Tasks in Series",
         "sidebar_label": "Running Tasks in Series"
       },
-      "server-with-livereload-and-css-inject": {
+      "recipes/server-with-livereload-and-css-inject": {
         "title": "Server with Live-Reloading and CSS Injection",
         "sidebar_label": "Server with Live-Reloading and CSS Injection"
       },
-      "sharing-streams-with-stream-factories": {
+      "recipes/sharing-streams-with-stream-factories": {
         "title": "Sharing Streams with Stream Factories",
         "sidebar_label": "Sharing Streams with Stream Factories"
       },
-      "specifying-a-cwd": {
+      "recipes/specifying-a-cwd": {
         "title": "Specifying a New cwd",
         "sidebar_label": "Specifying a New cwd"
       },
-      "split-tasks-across-multiple-files": {
+      "recipes/split-tasks-across-multiple-files": {
         "title": "Split Tasks Across Multiple Files",
         "sidebar_label": "Split Tasks Across Multiple Files"
       },
-      "templating-with-swig-and-yaml-front-matter": {
+      "recipes/templating-with-swig-and-yaml-front-matter": {
         "title": "Templating with Swig and YAML front-matter",
         "sidebar_label": "Templating with Swig and YAML front-matter"
       },
-      "testing": {
-        "title": "Testing",
-        "sidebar_label": "Testing"
-      },
-      "using-buffers": {
-        "title": "Using Buffers",
-        "sidebar_label": "Using Buffers"
-      },
-      "using-external-config-file": {
+      "recipes/using-external-config-file": {
         "title": "Using External Config File",
         "sidebar_label": "Using External Config File"
       },
-      "using-multiple-sources-in-one-task": {
+      "recipes/using-multiple-sources-in-one-task": {
         "title": "Using Multiple Sources in One Task",
         "sidebar_label": "Using Multiple Sources in One Task"
       },
-      "using-plugins": {
-        "title": "Using Plugins",
-        "sidebar_label": "Using Plugins"
-      },
-      "watching-files": {
-        "title": "Watching Files",
-        "sidebar_label": "Watching Files"
-      },
-      "why-use-pump": {
+      "why-use-pump/why-use-pump": {
         "title": "Why Use Pump",
         "sidebar_label": "Why Use Pump"
       },
-      "working-with-files": {
-        "title": "Working with Files",
-        "sidebar_label": "Working with Files"
+      "writing-a-plugin/dealing-with-streams": {
+        "title": "Dealing with Streams",
+        "sidebar_label": "Dealing with Streams"
       },
-      "writing-a-plugin": {
+      "writing-a-plugin/guidelines": {
+        "title": "Guidelines",
+        "sidebar_label": "Guidelines"
+      },
+      "writing-a-plugin/writing-a-plugin": {
         "title": "Writing a Plugin",
         "sidebar_label": "Writing a Plugin"
+      },
+      "writing-a-plugin/recommended-modules": {
+        "title": "Recommended Modules",
+        "sidebar_label": "Recommended Modules"
+      },
+      "writing-a-plugin/testing": {
+        "title": "Testing",
+        "sidebar_label": "Testing"
+      },
+      "writing-a-plugin/using-buffers": {
+        "title": "Using Buffers",
+        "sidebar_label": "Using Buffers"
       }
     },
     "links": {
-      "Quick Start": "Quick Start",
+      "Getting Started": "Getting Started",
       "API": "API",
       "Plugins": "Plugins",
       "Twitter": "Twitter",

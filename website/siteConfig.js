@@ -7,8 +7,8 @@ const siteConfig = {
   organizationName: 'gulpjs',
   projectName: 'gulpjs.github.io',
   headerLinks: [
-    {doc: 'quick-start', label: 'Quick Start'},
-    {doc: 'api-concepts', label: 'API'},
+    {doc: 'getting-started/quick-start', label: 'Getting Started'},
+    {doc: 'api/concepts', label: 'API'},
     {href: 'https://gulpjs.com/plugins', label: 'Plugins'},
     {href: 'https://twitter.com/gulpjs', label: 'Twitter'},
     {href: 'https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md', label: 'Contribute'},
