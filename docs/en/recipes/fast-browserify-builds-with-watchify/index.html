@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Fast Browserify builds with Watchify · undefined</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Fast browserify builds with watchify"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Fast Browserify builds with Watchify · undefined"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gulpjs.com//index.html"/><meta property="og:description" content="# Fast browserify builds with watchify"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/gulp.svg"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/getting-started/quick-start" target="_self">Getting Started</a></li><li class=""><a href="/docs/en/api/concepts" target="_self">API</a></li><li class=""><a href="https://gulpjs.com/plugins" target="_self">Plugins</a></li><li class=""><a href="https://twitter.com/gulpjs" target="_self">Twitter</a></li><li class=""><a href="https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md" target="_self">Contribute</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="fast-browserify-builds-with-watchify"></a><a href="#fast-browserify-builds-with-watchify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fast browserify builds with watchify</h1>
+<p>As a <a href="https://github.com/browserify/browserify">browserify</a> project begins to expand, the time to bundle it slowly gets longer and longer. While it might start at 1 second, it's possible to be waiting 30 seconds for your project to build on particularly large projects.</p>
+<p>That's why <a href="https://github.com/substack">substack</a> wrote <a href="https://github.com/browserify/watchify">watchify</a>, a persistent browserify bundler that watches files for changes and <em>only rebuilds what it needs to</em>. This way, that first build might still take 30 seconds, but subsequent builds can still run in under 100ms – which is a huge improvement.</p>
+<p>Watchify doesn't have a gulp plugin, and it doesn't need one: you can use <a href="https://github.com/hughsk/vinyl-source-stream">vinyl-source-stream</a> to pipe the bundle stream into your gulp pipeline.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-meta">'use strict'</span>;
+
+<span class="hljs-keyword">var</span> watchify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'watchify'</span>);
+<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browserify'</span>);
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vinyl-source-stream'</span>);
+<span class="hljs-keyword">var</span> buffer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vinyl-buffer'</span>);
+<span class="hljs-keyword">var</span> log = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulplog'</span>);
+<span class="hljs-keyword">var</span> sourcemaps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sourcemaps'</span>);
+<span class="hljs-keyword">var</span> assign = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lodash.assign'</span>);
+
+<span class="hljs-comment">// add custom browserify options here</span>
+<span class="hljs-keyword">var</span> customOpts = {
+  <span class="hljs-attr">entries</span>: [<span class="hljs-string">'./src/index.js'</span>],
+  <span class="hljs-attr">debug</span>: <span class="hljs-literal">true</span>
+};
+<span class="hljs-keyword">var</span> opts = assign({}, watchify.args, customOpts);
+<span class="hljs-keyword">var</span> b = watchify(browserify(opts));
+
+<span class="hljs-comment">// add transformations here</span>
+<span class="hljs-comment">// i.e. b.transform(coffeeify);</span>
+
+gulp.task(<span class="hljs-string">'js'</span>, bundle); <span class="hljs-comment">// so you can run `gulp js` to build the file</span>
+b.on(<span class="hljs-string">'update'</span>, bundle); <span class="hljs-comment">// on any dep update, runs the bundler</span>
+b.on(<span class="hljs-string">'log'</span>, log.info); <span class="hljs-comment">// output build logs to terminal</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bundle</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> b.bundle()
+    <span class="hljs-comment">// log errors if they happen</span>
+    .on(<span class="hljs-string">'error'</span>, log.error.bind(log, <span class="hljs-string">'Browserify Error'</span>))
+    .pipe(source(<span class="hljs-string">'bundle.js'</span>))
+    <span class="hljs-comment">// optional, remove if you don't need to buffer file contents</span>
+    .pipe(buffer())
+    <span class="hljs-comment">// optional, remove if you dont want sourcemaps</span>
+    .pipe(sourcemaps.init({<span class="hljs-attr">loadMaps</span>: <span class="hljs-literal">true</span>})) <span class="hljs-comment">// loads map from browserify file</span>
+       <span class="hljs-comment">// Add transformation tasks to the pipeline here.</span>
+    .pipe(sourcemaps.write(<span class="hljs-string">'./'</span>)) <span class="hljs-comment">// writes .map file</span>
+    .pipe(gulp.dest(<span class="hljs-string">'./dist'</span>));
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav docOnPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/gulp.svg" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started/quick-start">Getting Started</a><a href="/docs/en/api/concepts">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/gulp" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/gulpjs" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/gulpjs/gulp">GitHub</a><a class="github-button" href="https://github.com/gulpjs/gulp" data-icon="octicon-star" data-count-href="/gulpjs/gulp/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 GulpJS</section></footer></div></body></html>
