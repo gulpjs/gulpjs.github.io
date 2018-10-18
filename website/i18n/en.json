@@ -64,6 +64,9 @@
         "title": "CLI",
         "sidebar_label": "CLI"
       },
+      "documentation-missing": {
+        "title": "Documentation Missing"
+      },
       "faq": {
         "title": "FAQ",
         "sidebar_label": "FAQ"
