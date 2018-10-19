@@ -1,7 +1,7 @@
 (function(){
   var services = [
     'https://opencollective.com/api/groups/gulpjs/backers',
-    'https://api.npmjs.org/downloads/point/last-day/gulp',
+    'https://api.npmjs.org/downloads/point/last-week/gulp',
     'https://api.npms.io/v2/search?q=keywords%3Agulpplugin',
   ].map(function (url) {
     return fetch(url).then(asJson);
