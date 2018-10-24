@@ -6,7 +6,7 @@ small {
 }
 
 code {
-  font-size: 16px;
+  background-color: rgba(27, 31, 35, 0.1);
 }
 
 h1 {
@@ -66,6 +66,7 @@ nav.toc .toggleNav .navToggle i::after {
 }
 
 .navigationSlider .slidingNav ul li a {
+  color: #fff;
   padding: 10px 20px;
 }
 
@@ -77,18 +78,22 @@ table {
 }
 
 table thead {
-  border-bottom: none;
+  border: none;
+}
+
+table tr {
+  border: none;
 }
 
 table tr th {
   text-transform: none;
   color: #fff;
-  border-right-color: #fff;
+  border: none;
 }
 
 table tr th,
 table tr td {
-  border-right-style: solid;
+  border: none;
 }
 
 table tr th code,
@@ -99,6 +104,10 @@ table tr td code {
 table tr th:last-child,
 table tr td:last-child {
   min-width: 175px;
+}
+
+table tr th + th + th:last-child,
+table tr td + td + td:last-child {
   width: 100%;
 }
 
@@ -114,6 +123,12 @@ table thead tr:nth-of-type(odd) {
   background-color: #cf4547;
 }
 
+/* Code Blocks */
+.hljs {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 375px) {
   .logo {
     display: initial;
@@ -125,6 +140,10 @@ table thead tr:nth-of-type(odd) {
   .wrapper {
     width: 100%;
   }
+
+  /* table tr {
+    box-shadow: -10px 0px 10px -12px #000000 inset;
+  } */
 }
 
 @media only screen and (min-width: 1024px) {
