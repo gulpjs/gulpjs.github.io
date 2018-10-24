@@ -108,6 +108,7 @@ table tr td:last-child {
 
 table tr th + th + th:last-child,
 table tr td + td + td:last-child {
+  min-width: 320px;
   width: 100%;
 }
 
@@ -116,7 +117,7 @@ table tr:nth-of-type(odd) {
 }
 
 table tbody tr:nth-of-type(even) {
-  background-color: #E8E8E8;
+  background-color: rgba(76, 76, 76, 0.1);
 }
 
 table thead tr:nth-of-type(odd) {
@@ -135,15 +136,26 @@ table thead tr:nth-of-type(odd) {
   }
 }
 
+@media only screen and (max-width: 735px) {
+  .docs-next {
+    clear: unset;
+    float: right;
+  }
+
+  table {
+    box-shadow: -10px 0px 10px -10px #000000 inset;
+    display: inline-block;
+    max-width: 100%;
+    width: unset;
+  }
+}
+
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
   /* Better use of screen on mobile */
   .wrapper {
     width: 100%;
   }
-
-  /* table tr {
-    box-shadow: -10px 0px 10px -12px #000000 inset;
-  } */
 }
 
 @media only screen and (min-width: 1024px) {
