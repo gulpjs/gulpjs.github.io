@@ -12,6 +12,7 @@ const siteConfig = {
     {href: 'https://gulpjs.com/plugins', label: 'Plugins'},
     {href: 'https://twitter.com/gulpjs', label: 'Twitter'},
     {href: 'https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md', label: 'Contribute'},
+    {search: true},
   ],
   headerIcon: 'img/gulp.svg',
   footerIcon: 'img/gulp.svg',
@@ -30,6 +31,11 @@ const siteConfig = {
   useEnglishUrl: true,
   scripts: ['https://buttons.github.io/buttons.js'],
   repoUrl: 'https://github.com/gulpjs/gulp',
+  algolia: {
+    apiKey: 'my-api-key',
+    indexName: 'my-index-name',
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
 };
 
 module.exports = siteConfig;

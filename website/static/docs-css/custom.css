@@ -131,6 +131,11 @@ table thead tr:nth-of-type(odd) {
   margin-bottom: 2rem;
 }
 
+/* Search */
+input#search_input_react {
+  line-height: 25px;
+}
+
 @media (max-width: 375px) {
   .logo {
     display: initial;
@@ -141,6 +146,9 @@ table thead tr:nth-of-type(odd) {
   .fixedHeaderContainer a {
     display: none;
   }
+  .navSearchWrapper {
+    display: none;
+  }
 
   .navigationSlider .slidingNav ul {
     margin-top: 0;
@@ -148,6 +156,7 @@ table thead tr:nth-of-type(odd) {
 }
 
 @media only screen and (max-width: 735px) {
+
   .docs-next {
     clear: unset;
     float: right;
