@@ -63,6 +63,7 @@ nav.toc .toggleNav .navToggle i::after {
 
 .navigationSlider .slidingNav ul {
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .navigationSlider .slidingNav ul li a {
@@ -133,6 +134,16 @@ table thead tr:nth-of-type(odd) {
 @media (max-width: 375px) {
   .logo {
     display: initial;
+  }
+}
+
+@media only screen and (max-width: 488px) {
+  .fixedHeaderContainer a {
+    display: none;
+  }
+
+  .navigationSlider .slidingNav ul {
+    margin-top: 0;
   }
 }
 
