@@ -22,7 +22,7 @@ const fmOptions = {
 };
 
 function fetchDocs() {
-  return download(owner, repo, directory, { sha: "wip-docs" });
+  return download(owner, repo, directory, { sha: "master" });
 }
 
 function convertComments(cb) {
