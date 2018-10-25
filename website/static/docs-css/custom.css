@@ -13,6 +13,10 @@ h1 {
   margin-top: 0;
 }
 
+i {
+  font-style: normal;
+}
+
 body,
 .mainContainer,
 nav.toc .toggleNav,
@@ -134,6 +138,12 @@ table thead tr:nth-of-type(odd) {
 /* Search */
 input#search_input_react {
   line-height: 25px;
+  border-radius: 4px;
+}
+
+input#search_input_react:focus,
+input#search_input_react:active {
+  background-color: #a91b1c;
 }
 
 @media (max-width: 375px) {
@@ -183,6 +193,10 @@ input#search_input_react {
     margin: 0 10px;
   }
 
+  .docsNavContainer {
+    height: unset;
+  }
+
   .docOnPageNav,
   .separateOnPageNav .docsNavContainer {
     flex: 1 0 180px;
@@ -190,6 +204,20 @@ input#search_input_react {
 }
 
 @media only screen and (max-width: 1023px) {
+  .mainContainer {
+    padding-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .reactNavSearchWrapper input#search_input_react {
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  .reactNavSearchWrapper input#search_input_react:focus,
+  .reactNavSearchWrapper input#search_input_react:active {
+    background-color: #a91b1c;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
