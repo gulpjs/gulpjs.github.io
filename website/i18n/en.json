@@ -3,6 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
+    "tagline": "The streaming build system",
     "docs": {
       "api/concepts": {
         "title": "API Concepts",
