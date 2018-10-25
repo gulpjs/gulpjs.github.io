@@ -33,11 +33,11 @@ const siteConfig = {
   useEnglishUrl: true,
   scripts: ['https://buttons.github.io/buttons.js'],
   repoUrl: 'https://github.com/gulpjs/gulp',
-  algolia: {
-    apiKey: 'my-api-key',
-    indexName: 'my-index-name',
-    algoliaOptions: {} // Optional, if provided by Algolia
-  },
+  // algolia: {
+  //   apiKey: 'my-api-key',
+  //   indexName: 'my-index-name',
+  //   algoliaOptions: {} // Optional, if provided by Algolia
+  // },
   gaGtag: true,
   gaTrackingId: 'UA-128126650-1',
 };
