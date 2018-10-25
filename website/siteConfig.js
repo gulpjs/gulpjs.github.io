@@ -1,6 +1,8 @@
 const siteConfig = {
   disableHeaderTitle: true,
   disableHeaderTagline: true,
+  title: 'gulp.js',
+  tagline: 'The streaming build system',
   url: 'https://gulpjs.com/',
   baseUrl: '/',
   customDocsPath: 'converted-docs',
@@ -36,6 +38,8 @@ const siteConfig = {
     indexName: 'my-index-name',
     algoliaOptions: {} // Optional, if provided by Algolia
   },
+  gaGtag: true,
+  gaTrackingId: 'UA-128126650-1',
 };
 
 module.exports = siteConfig;
