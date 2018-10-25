@@ -268,6 +268,10 @@ p.paragraph {
     font-size: 22px;
   }
 }
+.nav {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .nav-link {
   text-decoration: none;
   font-size: 18px;
@@ -275,7 +279,7 @@ p.paragraph {
   color: inherit;
 }
 .nav-link:not(:first-of-type) {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 @media (max-width: 370px) {
   .nav {
@@ -644,6 +648,9 @@ p.paragraph {
   height: 32px;
   line-height: 18px;
   padding: 6px 8px;
+  width: 100%;
+  max-width: 411px;
+  text-align: center;
 }
 .tidelift-logo {
   max-width: 100%;
