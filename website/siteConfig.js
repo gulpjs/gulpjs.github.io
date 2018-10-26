@@ -14,7 +14,7 @@ const siteConfig = {
     {href: 'https://gulpjs.com/plugins', label: 'Plugins'},
     {href: 'https://twitter.com/gulpjs', label: 'Twitter'},
     {href: 'https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md', label: 'Contribute'},
-    // {search: true},
+    {search: true},
   ],
   headerIcon: 'img/gulp.svg',
   footerIcon: 'img/gulp.svg',
