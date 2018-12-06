@@ -299,10 +299,10 @@ p.paragraph {
   overflow: hidden;
 }
 .header .heading {
-  margin: 120px 0 0 0;
+  margin: 40px 0 0 0;
 }
 .header .centerdevices {
-  margin: 60px 0 60px;
+  margin: 40px 0 60px;
 }
 @media (max-width: 900px) {
   .header .heading {
@@ -632,6 +632,7 @@ p.paragraph {
   100% {transform: translate(27px, -50%); opacity: 0;}
 }
 
+
 .tidelift-cta {
   /* From ctas-button */
   display: inline-block;
@@ -649,7 +650,7 @@ p.paragraph {
   line-height: 18px;
   padding: 6px 8px;
   width: 100%;
-  max-width: 411px;
+  max-width: 362px;
   text-align: center;
 }
 .tidelift-logo {
@@ -659,8 +660,38 @@ p.paragraph {
   margin-right: 5px;
   height: 14px;
 }
+.opencollective-cta {
+  /* From ctas-button */
+  display: inline-block;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  text-decoration: none;
+  /* Custom for Open Collective */
+  background: #fff;
+  color: rgb(51, 133, 255);
+  border-color: #fff;
+  font-size: 12px;
+  height: 32px;
+  line-height: 18px;
+  padding: 6px 8px;
+  width: 100%;
+  max-width: 362px;
+  text-align: center;
+  margin-top: 6px;
+}
+.opencollective-logo {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  margin-right: 5px;
+  height: 18px;
+}
+
 @media (max-width: 350px) {
-  .tidelift-cta {
+  .tidelift-cta,
+  .opencollective-cta {
     font-size: 11px;
   }
 }
