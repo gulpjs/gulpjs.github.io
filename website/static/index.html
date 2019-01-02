@@ -158,39 +158,34 @@
             <span class="editor-filename">gulpfile.js</span>
           </div>
           <pre><code class="javascript hljs">
-<span class="hljs-keyword">const</span> {
-  src,
-  dest,
-  parallel
-} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
-
-<span class="hljs-keyword">const</span> pug = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-pug'</span>);
+<span class="hljs-keyword">const</span> { <span class="mobile-show"><br />  </span>src, <span class="mobile-show"><br />  </span>dest, <span class="mobile-show"><br />  </span>parallel <span class="mobile-show"><br /></span>} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">const</span> pug = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-pug'</span>);
 <span class="hljs-keyword">const</span> less = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-less'</span>);
 <span class="hljs-keyword">const</span> minifyCSS = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-csso'</span>);
 <span class="hljs-keyword">const</span> concat = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-concat'</span>);
-<span class="hljs-keyword">const</span> sourcemaps = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sourcemaps'</span>);
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">html</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">return</span> src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.pug'</span><span class="mobile-show"><br />    </span>)
     .pipe(pug())
-    .pipe(dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/html'</span><span class="mobile-show"><br />    </span>))
+    .pipe(dest(<span class="hljs-string">'build/html'</span>))
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">css</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">return</span> src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.less'</span><span class="mobile-show"><br />    </span>)
     .pipe(less())
     .pipe(minifyCSS())
-    .pipe(dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/css'</span><span class="mobile-show"><br />    </span>))
+    .pipe(dest(<span class="hljs-string">'build/css'</span>))
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">js</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-keyword">return</span> src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/javascript/*.js'</span><span class="mobile-show"><br />    </span>)
-    .pipe(sourcemaps.init())
-    .pipe(concat(<span class="mobile-show"><br />      </span><span class="hljs-string">'app.min.js'</span><span class="mobile-show"><br />    </span>))
-    .pipe(sourcemaps.write())
-    .pipe(dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/js'</span><span class="mobile-show"><br />    </span>))
+  <span class="hljs-keyword">return</span> src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/javascript/*.js'</span>,<span class="mobile-show"><br />     </span> { sourcemaps: true }<span class="mobile-show"><br />    </span>)
+    .pipe(concat(<span class="hljs-string">'app.min.js'</span>))
+    .pipe(dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/js'</span>,<span class="mobile-show"><br />     </span> { sourcemaps: true }<span class="mobile-show"><br />    </span>))
 }
 
+exports.<span class="hljs-keyword">js</span> = js;
+exports.<span class="hljs-keyword">css</span> = css;
+exports.<span class="hljs-keyword">html</span> = html;
 exports.<span class="hljs-keyword">default</span> = <span class="mobile-show"><br />  </span>parallel(html, css, js);
           </code></pre>
         </div>
