@@ -547,6 +547,10 @@ p.paragraph {
     width: 100%;
     margin-top: 30px;
   }
+
+  .feature3 .container-lrg .mobile-col-6:nth-of-type(n+3) {
+    margin-top: 40px;
+  }
 }
 
 
