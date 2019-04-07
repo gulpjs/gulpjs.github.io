@@ -410,14 +410,14 @@ p.paragraph {
   margin-left: 10px;
 }
 .editor-menubar .close {
-  background-color: red;
+  background-color: #fc5753;
   margin-left: 10px;
 }
 .editor-menubar .minimize {
-  background-color: yellow;
+  background-color: #fdbc40;
 }
 .editor-menubar .maximize {
-  background-color: green;
+  background-color: #33c748;
 }
 .socialproof {
   padding: 90px 0;
