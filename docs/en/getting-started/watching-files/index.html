@@ -52,10 +52,12 @@
   cb();
 }
 
-<span class="hljs-comment">// You can use a single task</span>
-watch(<span class="hljs-string">'src/*.css'</span>, css);
-<span class="hljs-comment">// Or a composed task</span>
-watch(<span class="hljs-string">'src/*.js'</span>, series(clean, javascript));
+exports.default = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// You can use a single task</span>
+  watch(<span class="hljs-string">'src/*.css'</span>, css);
+  <span class="hljs-comment">// Or a composed task</span>
+  watch(<span class="hljs-string">'src/*.js'</span>, series(clean, javascript));
+};
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="warning-avoid-synchronous"></a><a href="#warning-avoid-synchronous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Warning: avoid synchronous</h2>
 <p>A watcher's task cannot be synchronous, like tasks registered into the task system. If you pass a sync task, the completion can't be determined and the task won't run again - it is assumed to still be running.</p>
@@ -65,44 +67,52 @@ watch(<span class="hljs-string">'src/*.js'</span>, series(clean, javascript));
 If you need to use different events, you can use the <code>events</code> option when calling <code>watch()</code>. The available events are <code>'add'</code>, <code>'addDir'</code>, <code>'change'</code>, <code>'unlink'</code>, <code>'unlinkDir'</code>, <code>'ready'</code>, <code>'error'</code>. Additionally <code>'all'</code> is available, which represents all events other than <code>'ready'</code> and <code>'error'</code>.</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 
-<span class="hljs-comment">// All events will be watched</span>
-watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">events</span>: <span class="hljs-string">'all'</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
-  <span class="hljs-comment">// body omitted</span>
-  cb();
-});
+exports.default = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// All events will be watched</span>
+  watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">events</span>: <span class="hljs-string">'all'</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+    <span class="hljs-comment">// body omitted</span>
+    cb();
+  });
+};
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="initial-execution"></a><a href="#initial-execution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initial execution</h2>
 <p>Upon calling <code>watch()</code>, the tasks won't be executed, instead they'll wait for the first file change.</p>
 <p>To execute tasks before the first file change, set the <code>ignoreInitial</code> option to <code>false</code>.</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 
-<span class="hljs-comment">// The task will be executed upon startup</span>
-watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">ignoreInitial</span>: <span class="hljs-literal">false</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
-  <span class="hljs-comment">// body omitted</span>
-  cb();
-});
+exports.default = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// The task will be executed upon startup</span>
+  watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">ignoreInitial</span>: <span class="hljs-literal">false</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+    <span class="hljs-comment">// body omitted</span>
+    cb();
+  });
+};
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="queueing"></a><a href="#queueing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Queueing</h2>
 <p>Each <code>watch()</code> guarantees that its currently running task won't execute again concurrently. When a file change is made while a watcher task is running, another execution will queue up to run when the task finishes. Only one run can be queued up at a time.</p>
 <p>To disable queueing, set the <code>queue</code> option to <code>false</code>.</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 
-<span class="hljs-comment">// The task will be run (concurrently) for every change made</span>
-watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">queue</span>: <span class="hljs-literal">false</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
-  <span class="hljs-comment">// body omitted</span>
-  cb();
-});
+exports.default = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// The task will be run (concurrently) for every change made</span>
+  watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">queue</span>: <span class="hljs-literal">false</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+    <span class="hljs-comment">// body omitted</span>
+    cb();
+  });
+};
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="delay"></a><a href="#delay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delay</h2>
 <p>Upon file change, a watcher task won't run until a 200ms delay has elapsed. This is to avoid starting a task too early when many files are being changed at once - like find-and-replace.</p>
 <p>To adjust the delay duration, set the <code>delay</code> option to a positive integer.</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
 
-<span class="hljs-comment">// The task won't be run until 500ms have elapsed since the first change</span>
-watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
-  <span class="hljs-comment">// body omitted</span>
-  cb();
-});
+exports.default = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// The task won't be run until 500ms have elapsed since the first change</span>
+  watch(<span class="hljs-string">'src/*.js'</span>, { <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+    <span class="hljs-comment">// body omitted</span>
+    cb();
+  });
+};
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="using-the-watcher-instance"></a><a href="#using-the-watcher-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the watcher instance</h2>
 <p>You likely won't use this feature, but if you need full control over changed files - like access to paths or metadata - use the <a href="https://www.npmjs.com/package/chokidar">chokidar</a> instance returned from <code>watch()</code>.</p>
