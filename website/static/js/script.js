@@ -1,6 +1,6 @@
 (function(){
   var services = [
-    'https://opencollective.com/api/groups/gulpjs/backers',
+    'https://rest.opencollective.com/v2/gulpjs/orders/incoming/active',
     'https://api.npmjs.org/downloads/point/last-week/gulp',
     'https://api.npms.io/v2/search?q=keywords%3Agulpplugin',
   ].map(function (url) {
@@ -9,6 +9,10 @@
 
   function asJson(resp) {
     return resp.json();
+  }
+
+  function uniqify(array, predicate) {
+    return array.reduce((acc, curr) => acc.find(a => predicate(a) === predicate(curr)) ? acc : acc.push(curr) && acc, []);
   }
 
   var supporters = services[0];
@@ -42,31 +46,34 @@
     }
   })
 
-  supporters.then(function (entries) {
+  supporters.then(function (orders) {
     var fragment = document.createDocumentFragment();
     var nodes = [];
-    var supportersToDisplay = entries.slice(0, 10);
+    var uniqueSupporters = uniqify(orders.nodes.sort((a, b) => a.totalDonations.value < b.totalDonations.value), o => o.fromAccount.slug);
+    var supportersToDisplay = uniqueSupporters.slice(0, 10);
 
     supportersToDisplay.forEach(function(supporter) {
+      var { fromAccount: { name, slug, website, twitterHandle, imageUrl }, totalDonations } = supporter;
+
       var img = new Image();
-      img.src = supporter.avatar;
+      img.src = imageUrl;
       img.width = 80;
       img.onload = function(e) {
         e.currentTarget.parentNode.classList.remove('supporter--skeleton');
       }
+      img.alt = name;
 
       var link = document.createElement('a');
       link.className = 'supporter supporter--skeleton';
       link.rel = 'nofollow';
-      if (supporter.website) {
-        link.href = supporter.website;
-        img.alt = supporter.website;
-      } else if (supporter.twitterHandle) {
-        link.href = 'https://twitter.com/' + supporter.twitterHandle
-        img.alt = supporter.twitterHandle;
+      link.title = `${name} with $${totalDonations.value} total`;
+
+      if (website) {
+        link.href = website;
+      } else if (twitterHandle) {
+        link.href = 'https://twitter.com/' + twitterHandle
       } else {
-        link.href = 'https://opencollective.com/' + supporter.slug
-        img.alt = supporter.slug;
+        link.href = 'https://opencollective.com/' + slug
       }
 
       link.appendChild(img);
