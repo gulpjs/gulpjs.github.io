@@ -16,9 +16,9 @@
       return o.fromAccount.slug;
     }
     return array.reduce(function(acc, curr) {
-      return acc.find(function (a) {
+      return acc.filter(function (a) {
         return predicate(a) === predicate(curr);
-      }) ? acc : acc.push(curr) && acc
+      }).length ? acc : acc.push(curr) && acc
     }, []);
   }
 
