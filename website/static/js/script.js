@@ -11,8 +11,19 @@
     return resp.json();
   }
 
-  function uniqify(array, predicate) {
-    return array.reduce((acc, curr) => acc.find(a => predicate(a) === predicate(curr)) ? acc : acc.push(curr) && acc, []);
+  function uniqueBySlug(array) {
+    var predicate = function (o) {
+      return o.fromAccount.slug;
+    }
+    return array.reduce(function(acc, curr) {
+      return acc.find(function (a) {
+        return predicate(a) === predicate(curr);
+      }) ? acc : acc.push(curr) && acc
+    }, []);
+  }
+
+  function sortByTotalDonations(a, b) {
+    return a.totalDonations.value < b.totalDonations.value;
   }
 
   var supporters = services[0];
@@ -49,11 +60,18 @@
   supporters.then(function (orders) {
     var fragment = document.createDocumentFragment();
     var nodes = [];
-    var uniqueSupporters = uniqify(orders.nodes.sort((a, b) => a.totalDonations.value < b.totalDonations.value), o => o.fromAccount.slug);
+    var uniqueSupporters = uniqueBySlug(orders.nodes.sort(sortByTotalDonations));
     var supportersToDisplay = uniqueSupporters.slice(0, 10);
 
     supportersToDisplay.forEach(function(supporter) {
-      var { fromAccount: { name, slug, website, twitterHandle, imageUrl }, totalDonations } = supporter;
+      var fromAccount = supporter.fromAccount;
+      var totalDonations = supporter.totalDonations;
+
+      var name = fromAccount.name;
+      var slug = fromAccount.slug;
+      var website = fromAccount.website;
+      var twitterHandle = fromAccount.twitterHandle;
+      var imageUrl = fromAccount.imageUrl;
 
       var img = new Image();
       img.src = imageUrl;
@@ -66,7 +84,7 @@
       var link = document.createElement('a');
       link.className = 'supporter supporter--skeleton';
       link.rel = 'nofollow';
-      link.title = `${name} with $${totalDonations.value} total`;
+      link.title = name + ' with $' + totalDonations.value + ' total';
 
       if (website) {
         link.href = website;
