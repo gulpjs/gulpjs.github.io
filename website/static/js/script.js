@@ -23,7 +23,7 @@
   }
 
   function sortByTotalDonations(a, b) {
-    return a.totalDonations.value < b.totalDonations.value;
+    return b.totalDonations.value - a.totalDonations.value;
   }
 
   var supporters = services[0];
