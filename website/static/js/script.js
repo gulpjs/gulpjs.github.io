@@ -1,6 +1,6 @@
 (function(){
   var services = [
-    'https://rest.opencollective.com/v2/gulpjs/orders/incoming/active',
+    'https://rest.opencollective.com/v2/gulpjs/orders/incoming?status=active,cancelled,paid&limit=1000',
     'https://api.npmjs.org/downloads/point/last-week/gulp',
     'https://api.npms.io/v2/search?q=keywords%3Agulpplugin',
   ].map(function (url) {
