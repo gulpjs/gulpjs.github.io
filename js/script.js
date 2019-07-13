@@ -1,6 +1,6 @@
 (function(){
   var services = [
-    'https://opencollective.com/api/groups/gulpjs/backers',
+    'https://rest.opencollective.com/v2/gulpjs/orders/incoming?status=active,cancelled,paid&limit=1000',
     'https://api.npmjs.org/downloads/point/last-week/gulp',
     'https://api.npms.io/v2/search?q=keywords%3Agulpplugin',
   ].map(function (url) {
@@ -9,6 +9,21 @@
 
   function asJson(resp) {
     return resp.json();
+  }
+
+  function uniqueBySlug(array) {
+    var predicate = function (o) {
+      return o.fromAccount.slug;
+    }
+    return array.reduce(function(acc, curr) {
+      return acc.filter(function (a) {
+        return predicate(a) === predicate(curr);
+      }).length ? acc : acc.push(curr) && acc
+    }, []);
+  }
+
+  function sortByTotalDonations(a, b) {
+    return b.totalDonations.value - a.totalDonations.value;
   }
 
   var supporters = services[0];
@@ -42,31 +57,41 @@
     }
   })
 
-  supporters.then(function (entries) {
+  supporters.then(function (orders) {
     var fragment = document.createDocumentFragment();
     var nodes = [];
-    var supportersToDisplay = entries.slice(0, 10);
+    var uniqueSupporters = uniqueBySlug(orders.nodes.sort(sortByTotalDonations));
+    var supportersToDisplay = uniqueSupporters.slice(0, 10);
 
     supportersToDisplay.forEach(function(supporter) {
+      var fromAccount = supporter.fromAccount;
+      var totalDonations = supporter.totalDonations;
+
+      var name = fromAccount.name;
+      var slug = fromAccount.slug;
+      var website = fromAccount.website;
+      var twitterHandle = fromAccount.twitterHandle;
+      var imageUrl = fromAccount.imageUrl;
+
       var img = new Image();
-      img.src = supporter.avatar;
+      img.src = imageUrl;
       img.width = 80;
       img.onload = function(e) {
         e.currentTarget.parentNode.classList.remove('supporter--skeleton');
       }
+      img.alt = name;
 
       var link = document.createElement('a');
       link.className = 'supporter supporter--skeleton';
       link.rel = 'nofollow';
-      if (supporter.website) {
-        link.href = supporter.website;
-        img.alt = supporter.website;
-      } else if (supporter.twitterHandle) {
-        link.href = 'https://twitter.com/' + supporter.twitterHandle
-        img.alt = supporter.twitterHandle;
+      link.title = name + ' with $' + totalDonations.value + ' total';
+
+      if (website) {
+        link.href = website;
+      } else if (twitterHandle) {
+        link.href = 'https://twitter.com/' + twitterHandle
       } else {
-        link.href = 'https://opencollective.com/' + supporter.slug
-        img.alt = supporter.slug;
+        link.href = 'https://opencollective.com/' + slug
       }
 
       link.appendChild(img);
