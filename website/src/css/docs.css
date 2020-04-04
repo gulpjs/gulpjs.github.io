@@ -1,4 +1,5 @@
 :root {
+  --ifm-global-radius: 4px;
   --ifm-background-color: var(--ifm-color-white);
   --ifm-color-primary: #cf4647;
   --ifm-color-primary-dark: #c63334;
@@ -7,32 +8,40 @@
   --ifm-color-primary-light: #d55c5d;
   --ifm-color-primary-lighter: #d86768;
   --ifm-color-primary-lightest: #e08889;
+  /* Navbar */
   --ifm-navbar-background-color: var(--ifm-color-primary);
   --ifm-navbar-link-color: var(--ifm-color-white);
-  --ifm-footer-background-color: #20232a;
-  --ifm-footer-color: var(--ifm-color-white);
-  --ifm-footer-link-color: var(--ifm-color-white);
+  --ifm-navbar-link-hover-color: var(--ifm-color-white);
+  --ifm-navbar-link-hover-decoration: underline;
+  /* Search */
   --ifm-navbar-search-input-background-color: var(--ifm-color-primary-darkest);
   --ifm-navbar-search-input-color: var(--ifm-color-white);
   --ifm-navbar-search-input-placeholder-color: var(--ifm-color-white);
   --ifm-navbar-search-input-icon: url('data:image/svg+xml;utf8,<svg fill="white" alt="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16px" width="16px"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z" /></svg>');
+  /* Footer */
+  --ifm-footer-background-color: #20232a;
+  --ifm-footer-color: var(--ifm-color-white);
+  --ifm-footer-link-color: var(--ifm-color-white);
+  /* Tables */
+  --ifm-table-border-width: 0;
+  --ifm-table-head-background: var(--ifm-color-primary);
+  --ifm-table-head-color: var(--ifm-color-white);
+  --ifm-table-stripe-background: rgba(76, 76, 76, 0.1);
 }
 
+/* Element defaults */
 small {
   font-size: 14px;
   font-style: italic;
 }
 
-code {
-  background-color: rgba(27, 31, 35, 0.1);
-}
-
-h1 {
-  margin-top: 0;
-}
-
 i {
   font-style: normal;
+}
+
+/* hash links */
+h1 .hash-link {
+  display: none;
 }
 
 /* Navbar */
@@ -40,30 +49,18 @@ i {
   color: var(--ifm-navbar-link-color);
 }
 
+.navbar .navbar__link:hover {
+  text-decoration: var(--ifm-navbar-link-hover-decoration);
+}
+
 /* Tables */
-table {
-  border: none;
-  display: block;
-  overflow-x: auto;
+th, td {
+  text-align: start;
 }
 
-table thead {
-  border: none;
-}
-
-table tr {
-  border: none;
-}
-
-table tr th {
-  text-transform: none;
-  color: #fff;
-  border: none;
-}
-
-table tr th,
-table tr td {
-  border: none;
+th[align="center"],
+td[align="center"] {
+  text-align: center;
 }
 
 table tr th code,
@@ -82,27 +79,16 @@ table tr td + td + td:last-child {
   width: 100%;
 }
 
-table tr:nth-of-type(odd) {
-  background: none;
-}
-
-table tbody tr:nth-of-type(even) {
-  background-color: rgba(76, 76, 76, 0.1);
-}
-
-table thead tr:nth-of-type(odd) {
-  background-color: #cf4547;
-}
-
 /* Code Blocks */
 .prism-code {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  border-radius: var(--ifm-global-radius);
 }
 
 /* Search */
 .navbar .navbar__search .navbar__search-input {
-  border-radius: 4px;
+  border-radius: var(--ifm-global-radius);
   transition: width 0.5s ease 0s;
 }
 

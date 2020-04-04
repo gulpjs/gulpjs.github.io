@@ -14,18 +14,17 @@ module.exports = {
   // The theme
   themeConfig: {
     disableDarkMode: true,
-    sidebarCollapsible: false,
     navbar: {
       logo: {
         alt: 'gulp',
         src: 'img/gulp.svg',
       },
       links: [
-        { to: 'getting-started/quick-start',
+        { to: 'docs/getting-started/quick-start',
           label: 'Getting Started',
           position: 'left',
         },
-        { to: 'api/concepts',
+        { to: 'docs/api/concepts',
           label: 'API',
           position: 'left',
         },
