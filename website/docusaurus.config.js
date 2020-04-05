@@ -33,11 +33,17 @@ module.exports = {
           position: 'left',
         },
         { href: 'https://twitter.com/gulpjs',
-          label: 'Twitter',
+          logo: {
+            alt: 'Gulp on Twitter',
+            src: 'img/twitter.svg',
+          },
           position: 'right'
         },
         { href: 'https://medium.com/gulpjs',
-          label: 'Blog',
+          logo: {
+            alt: 'The gulp blog',
+            src: 'img/medium.svg',
+          },
           position: 'right'
         },
       ]
@@ -45,7 +51,7 @@ module.exports = {
     footer: {
       links: [
         { items: [
-            { html: '<img src="/img/gulp.svg" alt="gulp" href="/" />' }
+            { html: '<img src="/img/gulp-white-logo.svg" alt="gulp" href="/" />' }
           ]
         },
         { title: 'Docs',
@@ -60,18 +66,14 @@ module.exports = {
         },
         { title: 'Community',
           items: [
+            { href: 'https://github.com/gulpjs/gulp',
+              label: 'GitHub',
+            },
             { href: 'https://stackoverflow.com/questions/tagged/gulp',
               label: 'Stack Overflow',
             },
             { href: 'https://twitter.com/gulpjs',
               label: 'Twitter',
-            }
-          ]
-        },
-        { title: 'More',
-          items: [
-            { href: 'https://github.com/gulpjs/gulp',
-              label: 'GitHub',
             }
           ]
         },
