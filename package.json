@@ -2,24 +2,46 @@
   "name": "gulpjs.github.io",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "clean": "rm -r docs converted-docs",
-    "fetch-docs": "gulp",
-    "prestart": "npm run fetch-docs",
-    "start": "cd website && npm run start",
-    "prebuild": "npm run fetch-docs",
-    "build": "cd website && npm run build",
-    "pregh-pages": "npm run fetch-docs",
-    "gh-pages": "cd website && npm run publish-gh-pages"
-  },
   "engines": {
     "node": ">=8.0.0"
   },
+  "scripts": {
+    "fetch-docs": "gulp",
+    "prestart": "npm run fetch-docs",
+    "start": "docusaurus start",
+    "prebuild": "npm run fetch-docs",
+    "build": "docusaurus build",
+    "predeploy": "npm run fetch-docs",
+    "deploy": "docusaurus deploy",
+    "swizzle": "docusaurus swizzle"
+  },
   "devDependencies": {
-    "github-download-directory": "^1.1.1",
+    "@docusaurus/core": "^2.0.0-alpha.50",
+    "@docusaurus/plugin-content-docs": "^2.0.0-alpha.50",
+    "@docusaurus/plugin-google-analytics": "^2.0.0-alpha.50",
+    "@docusaurus/plugin-google-gtag": "^2.0.0-alpha.50",
+    "@docusaurus/plugin-sitemap": "^2.0.0-alpha.50",
+    "@docusaurus/theme-classic": "^2.0.0-alpha.50",
+    "@docusaurus/theme-search-algolia": "^2.0.0-alpha.50",
+    "del": "^5.1.0",
+    "github-download-directory": "^1.2.0",
     "gray-matter": "^3.1.1",
-    "gulp": "^4.0.0",
-    "pump": "^2.0.1",
-    "through2": "^2.0.3"
+    "gulp": "^4.0.2",
+    "gulplog": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "remark-admonitions": "^1.2.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

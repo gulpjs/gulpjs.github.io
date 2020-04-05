@@ -109,7 +109,7 @@ module.exports = {
   ],
   plugins: [
     ['@docusaurus/plugin-content-docs', {
-      path: '../docs',
+      path: 'docs',
       sidebarPath: require.resolve('./sidebars.json'),
       // This is a holdover because we set up original docusaurus
       // to support translations and v2 doesn't support them yet
