@@ -1,0 +1,190 @@
+:root {
+  --ifm-global-radius: 4px;
+  --ifm-background-color: var(--ifm-color-white);
+  /* Primary color */
+  --ifm-color-primary: #cf4647;
+  --ifm-color-primary-dark: #c63334;
+  --ifm-color-primary-darker: #bb3132;
+  --ifm-color-primary-darkest: #9a2829;
+  --ifm-color-primary-light: #d55c5d;
+  --ifm-color-primary-lighter: #d86768;
+  --ifm-color-primary-lightest: #e08889;
+  /* Secondary color */
+  --ifm-color-secondary: #20232a;
+  /* Navbar */
+  --ifm-navbar-height: unset;
+  --ifm-navbar-item-padding-horizontal: 0.5rem;
+  --ifm-navbar-background-color: var(--ifm-color-primary);
+  --ifm-navbar-link-color: var(--ifm-color-white);
+  --ifm-navbar-link-hover-color: var(--ifm-color-white);
+  --ifm-navbar-link-hover-decoration: underline;
+  /* Search */
+  --ifm-navbar-search-input-background-color: var(--ifm-color-primary-darkest);
+  --ifm-navbar-search-input-color: var(--ifm-color-white);
+  --ifm-navbar-search-input-placeholder-color: var(--ifm-color-white);
+  --ifm-navbar-search-input-icon: url('data:image/svg+xml;utf8,<svg fill="white" alt="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16px" width="16px"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z" /></svg>');
+  /* Footer */
+  --ifm-footer-background-color: var(--ifm-color-secondary);
+  --ifm-footer-color: var(--ifm-color-white);
+  --ifm-footer-link-color: var(--ifm-color-white);
+  /* Tables */
+  --ifm-table-border-width: 0;
+  --ifm-table-head-background: var(--ifm-color-primary);
+  --ifm-table-head-color: var(--ifm-color-white);
+  --ifm-table-stripe-background: rgba(76, 76, 76, 0.1);
+  /* Button */
+  --ifm-button-background-color: var(--ifm-color-primary);
+}
+
+/* Element defaults */
+small {
+  font-size: 14px;
+  font-style: italic;
+}
+
+i {
+  font-style: normal;
+}
+
+/* hash links */
+h1 .hash-link {
+  display: none;
+}
+
+/* Navbar */
+.navbar .navbar__logo {
+  max-width: unset;
+}
+
+.navbar .navbar__toggle {
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar .navbar__link:hover {
+  text-decoration: var(--ifm-navbar-link-hover-decoration);
+}
+
+@media (max-width: 996px) {
+  .navbar .navbar__item {
+    display: unset;
+  }
+}
+
+/* Buttons */
+.button.button--secondary {
+  --ifm-button-border-color: var(--ifm-color-white);
+}
+
+.button.button--secondary:not(.button--outline) {
+  --ifm-button-background-color: var(--ifm-color-primary);
+
+  color: var(--ifm-color-white);
+}
+
+.button.button--secondary:not(.button--outline):hover {
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-white);
+}
+
+.button.button.button--secondary:active,
+.button.button.button--secondary.button--active {
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-white);
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-white);
+}
+
+/* Tables */
+th, td {
+  text-align: start;
+}
+
+th[align="center"],
+td[align="center"] {
+  text-align: center;
+}
+
+table tr th code,
+table tr td code {
+  word-break: normal;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  min-width: 175px;
+}
+
+table tr th + th + th:last-child,
+table tr td + td + td:last-child {
+  min-width: 320px;
+  width: 100%;
+}
+
+/* Code Blocks */
+.prism-code {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+/* Search */
+.navbar .navbar__search .navbar__search-input {
+  width: 15.5rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+/* Footer (for logo) */
+.footer__col:first-of-type .footer__item {
+  text-align: center;
+}
+.footer__item img {
+  width: 60px;
+}
+
+@media only screen and (max-width: 720px) {
+  table {
+    box-shadow: -10px 0px 10px -10px #000000 inset;
+  }
+}
+
+/* TODO: These will need to be update when "Enterprise" is added */
+@media only screen and (max-width: 767px) {
+  .navbar .navbar__items {
+    padding-top: var(--ifm-navbar-item-padding-vertical);
+    padding-bottom: var(--ifm-navbar-item-padding-vertical);
+    justify-content: space-around;
+  }
+
+  .navbar .navbar__items.navbar__items--right {
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar .navbar__search .navbar__search-input {
+    width: 12.5rem;
+    transition: width 0.5s ease 0s;
+  }
+
+  .navbar .navbar__search .navbar__search-input:active,
+  .navbar .navbar__search .navbar__search-input:focus {
+    width: 16.5rem;
+  }
+}
+
+
+@media only screen and (max-width: 996px) {
+  .footer .col.col.col {
+    --ifm-col-width: 33%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /* This is our logo */
+  .footer__col:first-of-type {
+    display: none;
+  }
+  .footer .col.col.col {
+    --ifm-col-width: 50%;
+  }
+}
