@@ -115,6 +115,7 @@ module.exports = {
       // to support translations and v2 doesn't support them yet
       routeBasePath: 'docs/en/',
     }],
+    ['@docusaurus/plugin-content-pages', {}],
     isProd && ['@docusaurus/plugin-google-analytics', {}],
     isProd && ['@docusaurus/plugin-google-gtag', {}],
     isProd && ['@docusaurus/plugin-sitemap', {}],
