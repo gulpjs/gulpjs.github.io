@@ -18,13 +18,16 @@ module.exports = {
       logo: {
         alt: 'gulp',
         src: 'img/gulp.svg',
+        // TODO: Remove these when we have a homepage in the router
+        href: 'https://gulpjs.com/',
+        target: '_self',
       },
       links: [
-        { to: 'docs/getting-started/quick-start',
+        { to: 'docs/en/getting-started/quick-start',
           label: 'Getting Started',
           position: 'left',
         },
-        { to: 'docs/api/concepts',
+        { to: 'docs/en/api/concepts',
           label: 'API',
           position: 'left',
         },
@@ -56,10 +59,10 @@ module.exports = {
         },
         { title: 'Docs',
           items: [
-            { to: 'getting-started/quick-start',
+            { to: 'docs/en/getting-started/quick-start',
               label: 'Getting Started',
             },
-            { to: 'api/concepts',
+            { to: 'docs/en/api/concepts',
               label: 'API',
             },
           ]
@@ -106,8 +109,11 @@ module.exports = {
   ],
   plugins: [
     ['@docusaurus/plugin-content-docs', {
-      path: '../converted-docs',
+      path: '../docs',
       sidebarPath: require.resolve('./sidebars.json'),
+      // This is a holdover because we set up original docusaurus
+      // to support translations and v2 doesn't support them yet
+      routeBasePath: 'docs/en/',
     }],
     isProd && ['@docusaurus/plugin-google-analytics', {}],
     isProd && ['@docusaurus/plugin-google-gtag', {}],
