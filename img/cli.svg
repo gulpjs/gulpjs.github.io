@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1210" height="937" viewBox="0 0 1210 937"><g fill="none" fill-rule="evenodd"><path fill="#002b36" d="M0 0h1210v937H0z"/><text fill="#85FF00" font-family="Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace" font-size="40" font-weight="300"><tspan x="38" y="63">$ npm install gulp-cli -g</tspan> <tspan x="38" y="111">$ npm install gulp -D</tspan> <tspan x="38" y="159">$ touch gulpfile.js</tspan> <tspan x="38" y="207">$ gulp --help</tspan></text></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1210" height="937" viewBox="0 0 1210 937">
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#002b36" d="M0 0h1210v937H0z"/>
+    <text fill="#85FF00" font-family="Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace" font-size="40" font-weight="300">
+      <tspan x="38" y="63">$ npm install gulp-cli -g</tspan> <tspan x="38" y="111">$ npm install gulp -D</tspan> <tspan x="38" y="159">$ touch gulpfile.js</tspan> <tspan x="38" y="207">$ gulp --help</tspan>
+    </text>
+  </g>
+</svg>
