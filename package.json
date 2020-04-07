@@ -31,7 +31,12 @@
     "gulplog": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "remark-admonitions": "^1.2.1"
+    "remark-admonitions": "^1.2.1",
+    "react-burger-menu": "^2.6.13",
+    "react-device-detect": "^1.11.14",
+    "react-multi-carousel": "^2.5.4",
+    "react-transition-group": "^4.3.0",
+    "styled-components": "^5.0.1"
   },
   "browserslist": {
     "production": [
