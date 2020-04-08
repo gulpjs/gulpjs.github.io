@@ -5,10 +5,11 @@ const PluginContainer = styled.div`
   box-shadow: 1px 2px 5px 1px #ddd;
   background: white;
   padding: var(--small);
+  min-height: 184px;
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
 
   @media(min-width: 768px) {
     transform: scale(0.95);

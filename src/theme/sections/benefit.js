@@ -4,16 +4,17 @@ import styled from 'styled-components';
 const BenefitContainer = styled.div`
   background: var(--light-gray);
   box-shadow: 1px 2px 5px 1px #ddd;
-  padding: var(--medium);
+  padding: var(--big) var(--medium);
 
   @media(min-width: 768px) {
     min-height: 52vh;
-    // transition: box-shadow .2s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 
-    // &:hover {
-    //   box-shadow: 4px 5px 7px 3px #ddd;
-    //   transition: box-shadow .2s ease-in;
-    // }
+    p {
+      margin: var(--big) 0;
+    }
   }
 `
 
@@ -22,6 +23,12 @@ const Heading = styled.div`
 
   img {
     margin-right: var(--tiny);
+  }
+
+  h3 {
+    margin: 0;
+    display: flex;
+    align-self: center;
   }
 `
 const Benefit = (props) => {

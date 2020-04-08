@@ -6,6 +6,10 @@ import GulpGraph from './graph';
 import GulpSource from './source';
 
 const AnimationContainer = styled.div`
+  .fade {
+    min-height: 78vh;
+  }
+
   .fade-entering, .fade-exiting {
     opacity: 1%;
   }
@@ -54,9 +58,11 @@ class Animation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {viewSource: false}
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick() {
     this.setState({
       viewSource: !this.state.viewSource
     });

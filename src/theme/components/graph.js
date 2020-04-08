@@ -1,10 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-// const animatedSvg = useBaseUrl('img/gulp-graph1.svg');
-
-// import { ReactComponent as GulpVisual } from animatedSvg;
+import Svg from './svg';
 
 const fill = keyframes`
   0% {
@@ -42,7 +38,7 @@ const stroke = keyframes`
   }
 `
 
-const GulpVisual = styled.object` 
+const GulpVisual = styled.div` 
   width: 100%;
   height: 100%;
 
@@ -100,7 +96,9 @@ const Graph = (props) => {
           <p>or any otehr templating language</p>
         </li>
       </TechList>
-      <GulpVisual type="image/svg+xml" data={useBaseUrl('img/gulp-graph1.svg')} />
+      <GulpVisual>
+        <Svg />
+      </GulpVisual>
       <TechList>
         <li>
           <p className="uppercase">html</p>
