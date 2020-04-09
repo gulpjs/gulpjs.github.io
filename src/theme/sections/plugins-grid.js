@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import Plugin from './plugin';
-
+import pluginsStyles from '../scss/plugins.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const plugins = [
@@ -31,26 +30,11 @@ const plugins = [
   }
 ]
 
-const PluginsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 168px);
-  align-items: center;
-  justify-content: center;
-  grid-column-gap: var(--medium);
-  grid-row-gap: var(--medium);
-
-  @media(min-width: 1200px) {
-    grid-template-columns: repeat(3, 184px);
-    grid-column-gap: var(--big);
-    grid-row-gap: var(--big);
-  }  
-`
-
 const PluginsGrid = (props) => {
   return (
-    <PluginsContainer>
+    <div className={pluginsStyles.plugins__grid}>
       {plugins.map((plugin, index) => <Plugin key={index} title={plugin.title} imgSrc={useBaseUrl(plugin.img)}/>)}
-    </PluginsContainer>
+    </div>
   )
 }
 

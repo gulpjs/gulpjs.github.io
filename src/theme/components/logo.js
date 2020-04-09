@@ -1,19 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 
+import navStyles from '../scss/navigation.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-const LinkLogo = styled.a`
-  img {
-    max-width: var(--xxl);
-  }
-`
 
 const Logo = ({ props }) => {
   return (
-    <LinkLogo href="#">
+    <a className={navStyles.logo} href="#">
       <img src={useBaseUrl('img/gulp-new.svg')} alt='gulp' />
-    </LinkLogo>
+    </a>
   )
 }
 

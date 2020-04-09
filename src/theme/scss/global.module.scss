@@ -83,6 +83,7 @@ h4, .uppercase {
   font-size: calc(.9rem + .1vw);
 }
 
+// header
 header {
   background: var(--red);
   position: relative;
@@ -122,6 +123,7 @@ header {
   }
 }
 
+//footer
 footer {
   background: var(--purple);
   position: relative;
@@ -154,5 +156,32 @@ footer {
     text-align: end;
     align-self: end;
     margin: var(--small);
+  }
+
+  .footer__nav {
+    // display: grid;
+    // grid-template-columns: repeat(2, 45%);
+    // grid-column-gap: var(--big);
+
+    // @media(min-width: 768px) {
+    //   grid-column-gap: var(--xxl);
+    // }
+
+    // display: grid;
+    // grid-template-columns: repeat(2, 45%);
+    // grid-column-gap: var(--big);
+
+    // @media(min-width: 768px) {
+    //   grid-column-gap: var(--xxl);
+    // }
+  }
+}
+
+// grey container
+.grey {
+  display: block;
+
+  @media(min-width: 768px) {
+    background: var(--light-gray);
   }
 }
