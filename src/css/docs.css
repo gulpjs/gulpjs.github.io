@@ -34,6 +34,10 @@
   --ifm-table-stripe-background: rgba(76, 76, 76, 0.1);
   /* Button */
   --ifm-button-background-color: var(--ifm-color-primary);
+
+  /* Cards */
+  --ifm-card-border-radius: var(--ifm-global-radius);
+  --ifm-global-shadow-lw: 0 1px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Element defaults */
