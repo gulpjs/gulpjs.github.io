@@ -1,0 +1,47 @@
+.searchContainer {
+  // I hate grid utilities
+  display: flex !important;
+}
+
+.searchInput {
+  flex-grow: 1;
+
+  appearance: none;
+  background-color: var(--ifm-navbar-search-input-background-color);
+  background-image: var(--ifm-navbar-search-input-icon);
+  background-position-x: 0.75rem;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  border-radius: var(--ifm-global-radius);
+  border-width: 0;
+  cursor: text;
+  color: var(--ifm-navbar-search-input-color);
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 3rem;
+  outline: none;
+  padding: 0 0.5rem 0 2.25rem;
+
+  &::placeholder {
+    color: var(--ifm-navbar-search-input-placeholder-color);
+  }
+}
+
+.pluginCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.pluginCardKeywords {
+  border-top: 1px solid #f4f4f4;
+}
+
+.primaryUrl {
+  color: var(--ifm-font-base-color);
+}
