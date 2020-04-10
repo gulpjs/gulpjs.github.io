@@ -31,7 +31,7 @@ function Index() {
           <Plugins />
         </div>
         <Backers />
-        <Slider themed/>
+        <Slider light/>
       </main>
 
       <footer>

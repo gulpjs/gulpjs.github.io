@@ -1,16 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const SourceContainer = styled.div`
-  font-size: 14px;
-  line-height: 1.2;
-  background: var(--light-gray);
-  padding: var(--tiny) 0;
-`
+import heroStyles from '../scss/hero.module.scss';
 
 const Source = (props) => {
   return (
-    <SourceContainer><pre>{`
+    <div className={heroStyles.source}><pre>{`
     const { src, dest, parallel } = require('gulp');
     const pug = require('gulp-pug');
     const less = require('gulp-less');
@@ -41,7 +34,7 @@ const Source = (props) => {
     exports.html = html;
     exports.default = parallel(html, css, js);
     `}
-  </pre></SourceContainer>
+  </pre></div>
   )
 }
 

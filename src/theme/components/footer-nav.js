@@ -1,7 +1,6 @@
 import React from 'react';
 
 import globalStyles from '../scss/global.module.scss';
-// import styled from 'styled-components';
 
 const FooterNav = ({ props }) => {
   return (

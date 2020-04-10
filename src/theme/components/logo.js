@@ -1,5 +1,4 @@
 import React from 'react';
-
 import navStyles from '../scss/navigation.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

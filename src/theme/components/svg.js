@@ -1,4 +1,5 @@
 import React from "react";
+import heroStyles from '../scss/hero.module.scss';
 
 function Svg() {
   return (
@@ -23,60 +24,55 @@ function Svg() {
             stroke="#0A0908"
             strokeWidth="6"
             d="M66 4L66 118"
-            className="line-up"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M66 4L66 118"
-            className="line-up-anim"
+            className={heroStyles.line_up_anim}
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M281 4L281 99"
-            className="line-up"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M281 4L281 99"
-            className="line-up-anim"
+            className={heroStyles.line_up_anim}
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M293 191L293 304"
-            className="line-down"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M293 191L293 304"
-            className="line-down-anim"
+            className={heroStyles.line_down_anim}
             opacity="0.1"
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M63 121L267 121"
-            className="line-up"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M63 121L267 121"
-            className="line-up-anim second"
+            className={`${heroStyles.line_up_anim} ${heroStyles.second}`}
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M0 -3L114 -3"
-            className="line-up"
             opacity="0.1"
             transform="matrix(0 1 1 0 509 4)"
           ></path>
@@ -84,14 +80,13 @@ function Svg() {
             stroke="#CF4647"
             strokeWidth="6"
             d="M0 -3L114 -3"
-            className="line-up-anim"
+            className={heroStyles.line_up_anim}
             transform="matrix(0 1 1 0 509 4)"
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M0 -3L191 -3"
-            className="line-up"
             opacity="0.1"
             transform="matrix(-1 0 0 1 509 124)"
           ></path>
@@ -99,7 +94,7 @@ function Svg() {
             stroke="#CF4647"
             strokeWidth="6"
             d="M0 -3L191 -3"
-            className="line-up-anim second"
+            className={`${heroStyles.line_up_anim} ${heroStyles.second}`}
             opacity="0.1"
             transform="matrix(-1 0 0 1 509 124)"
           ></path>
@@ -107,56 +102,52 @@ function Svg() {
             stroke="#0A0908"
             strokeWidth="6"
             d="M278 183H98"
-            className="line-down"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M278 183H98"
-            className="line-down-anim"
+            className={heroStyles.line_down_anim}
             opacity="0.1"
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M101.216 186L101 302"
-            className="line-down"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M101.216 186L101 302"
-            className="line-down-anim second"
+            className={`${heroStyles.line_down_anim} ${heroStyles.second}`}
             opacity="0.1"
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M304 154l162 .003"
-            className="line-down"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M304 154l162 .003"
-            className="line-down-anim"
+            className={heroStyles.line_down_anim}
             opacity="0.1"
           ></path>
           <path
             stroke="#0A0908"
             strokeWidth="6"
             d="M463 156l.3 148"
-            className="line-down"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
             d="M463 156l.3 148"
-            className="line-down-anim second"
+            className={`${heroStyles.line_down_anim} ${heroStyles.second}`}
             opacity="0.1"
           ></path>
           <g filter="url(#filter0_d)">
@@ -167,7 +158,7 @@ function Svg() {
             stroke="#CF4647"
             strokeWidth="6"
             d="M210.5 56.5H373.5V220.5H210.5z"
-            className="line-rectangle"
+            className={heroStyles.line_rectangle}
           ></path>
         </g>
       </g>
