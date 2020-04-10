@@ -161,7 +161,7 @@ function PluginsPage() {
           </div>
         </div>
         {plugins.map((plugin) => (
-          <PluginComponent plugin={plugin} />
+          <PluginComponent key={plugin.name} plugin={plugin} />
         ))}
       </main>
     </Layout>
