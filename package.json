@@ -36,8 +36,7 @@
     "react-dom": "^16.13.1",
     "react-multi-carousel": "^2.5.4",
     "react-transition-group": "^4.3.0",
-    "remark-admonitions": "^1.2.1",
-    "styled-components": "^5.0.1"
+    "remark-admonitions": "^1.2.1"
   },
   "browserslist": {
     "production": [
