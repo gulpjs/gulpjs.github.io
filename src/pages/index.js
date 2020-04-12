@@ -1,44 +1,26 @@
 import React from 'react';
 
-import { isMobile } from 'react-device-detect';
+import Layout from '@theme/Layout';
 
-import globalStyles from '../theme/scss/global.module.scss';
-import Logo from '@theme/components/logo';
-import Nav from '@theme/components/nav';
-import Socials from '@theme/components/socials';
-import FooterNav from '@theme/components/footer-nav';
-import Benefits from '@theme/sections/benefits';
-import Plugins from '@theme/sections/plugins';
-import Backers from '@theme/sections/backers';
-import Hero from '@theme/sections/hero';
-import Slider from '@theme/components/slider';
+import Hero from '@theme/Hero';
+import CompanyBanner from '@theme/CompanyBanner';
+import BenefitSection from '@theme/BenefitSection';
+import PluginSection from '@theme/PluginSection';
+import BackerSection from '@theme/BackerSection';
+import BackerBanner from '@theme/BackerBanner';
 
 function Index() {
   return (
-    <div className="App">
-      <header>
-        <Logo />
-        <Nav />
-        {!isMobile &&
-          <Socials />
-        }
-      </header>
+    <Layout>
       <main>
         <Hero />
-        <Slider />
-        <Benefits />
-        <div className={globalStyles.grey}>
-          <Plugins />
-        </div>
-        <Backers />
-        <Slider light/>
+        <CompanyBanner />
+        <BenefitSection />
+        <PluginSection />
+        <BackerSection />
+        <BackerBanner />
       </main>
-
-      <footer>
-        <FooterNav />
-        <Logo />
-      </footer>
-    </div>
+    </Layout>
   );
 }
 

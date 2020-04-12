@@ -1,0 +1,62 @@
+.visual {
+  width: 100%;
+  height: 100%;
+}
+
+.line_up_anim {
+  animation: fill infinite 3s linear;
+
+  &.second {
+    animation: opacity 2s linear forwards, fill infinite 3s linear 1s;
+  }
+}
+
+.line_down_anim {
+  animation: opacity 4s linear forwards, fill infinite 3s linear 2.3s;
+
+  &.second {
+    animation-delay: .5s;
+  }
+}
+
+.line_rectangle {
+  opacity: 0;
+  animation: opacity 3s infinite 1s ease-out;
+}
+
+
+@keyframes fill {
+  0% {
+    stroke-dasharray: 100 400;
+    stroke-dashoffset: 200;
+  }
+
+  50% {
+    stroke: var(--ifm-color-primary);
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 100 400;
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes opacity {
+  0%, 50%, 75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes stroke {
+  from {
+    stroke-dashoffset: 900;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

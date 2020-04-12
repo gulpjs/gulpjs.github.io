@@ -18,22 +18,33 @@ module.exports = {
       logo: {
         alt: 'gulp',
         src: 'img/gulp.svg',
-        // TODO: Remove these when we have a homepage in the router
-        href: 'https://gulpjs.com/',
+        href: '/',
         target: '_self',
       },
       links: [
         { to: 'docs/en/getting-started/quick-start',
-          label: 'Getting Started',
+          label: 'Get Started',
           position: 'left',
         },
         { to: 'docs/en/api/concepts',
           label: 'API',
           position: 'left',
         },
+        // TODO: Remove when plugins is part of the site
         { href: 'https://gulpjs.com/plugins',
           label: 'Plugins',
           position: 'left',
+        },
+        {
+          href: 'https://github.com/sponsors/gulpjs',
+          label: 'Donate',
+          position: 'left',
+        },
+        {
+          to: 'docs/en/support/for-enterprise',
+          label: 'Enterprise',
+          position: 'left',
+          emphasis: true,
         },
         { href: 'https://twitter.com/gulpjs',
           logo: {
@@ -81,7 +92,6 @@ module.exports = {
           ]
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} GulpJS`,
     },
     prism: {
       // One of:
@@ -100,7 +110,57 @@ module.exports = {
     gtag: {
       trackingID: 'UA-128126650-1',
     },
+    companyLogos: [
+      {
+        href: 'https://stickermule.com',
+        src: 'sponsor-logos/sticker-mule.svg',
+        alt: 'Sticker Mule logo',
+        title: 'Sticker Mule',
+        style: {
+          flexBasis: '120px',
+        },
+      },
+      {
+        href: 'https://icons8.com/',
+        src: 'sponsor-logos/icons8.svg',
+        alt: 'Icons8 logo',
+        title: 'Icons8',
+        style: {
+          flexBasis: '80px',
+        },
+      },
+      {
+        href: 'https://frontendmasters.com/',
+        src: 'sponsor-logos/frontend-masters.png',
+        alt: 'Frontend Masters logo',
+        title: 'Frontend Masters',
+        style: {
+          flexBasis: '200px',
+        },
+      },
+      {
+        href: 'https://www.codeinwp.com/',
+        src: 'sponsor-logos/codeinwp.svg',
+        alt: 'CodeinWP',
+        title: 'CodeinWP',
+        style: {
+          flexBasis: '150px',
+        },
+      },
+      {
+        href: 'https://clay.global/',
+        src: 'sponsor-logos/clay.png',
+        alt: 'Clay logo',
+        title: 'Clay',
+        style: {
+          flexBasis: '150px',
+        },
+      },
+    ]
   },
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Roboto:wght@900&display=swap'
+  ],
   themes: [
     ['@docusaurus/theme-classic', {
       customCss: require.resolve('./src/css/docs.css')

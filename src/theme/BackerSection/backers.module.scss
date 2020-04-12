@@ -1,0 +1,88 @@
+.backers {
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @media screen and (min-width: 425px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 5rem 2rem 2rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    justify-content: center;
+  }
+}
+
+.backersText {
+  @media screen and (min-width: 1024px) {
+    flex: 1 1 25rem;
+    margin-right: 1rem;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 2rem;
+  }
+  @media screen and (min-width: 1920px) {
+    max-width: 40rem;
+    margin-right: 4rem;
+  }
+}
+
+.tier {
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  flex: 1 0 10rem;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1440px) {
+    margin-right: 2rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 20rem;
+
+    &:last-of-type {
+      margin-right: 0
+    }
+  }
+}
+
+.tierTitle {
+  color: var(--ifm-color-primary);
+  font-size: 1.2rem;
+}
+
+.tierButton {
+  background: var(--ifm-color-white);
+  padding: 0.5rem 1rem;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-secondary);
+  font-size: 1.1rem;
+
+  color: var(--ifm-color-secondary);
+  border: 2px solid var(--ifm-color-secondary);
+  box-shadow: 7px 7px 0 2px var(--ifm-color-secondary);
+  transition: box-shadow .1s ease-in, transform .1s ease-in;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--ifm-color-secondary);
+    outline: none;
+    transform: translate(2px, 10%);
+    box-shadow: 6px 6px 0 0 var(--ifm-color-secondary);
+    transition: box-shadow .1s ease-in, transform .1s ease-in;
+  }
+
+  @media screen and (min-width: 425px) {
+    margin-top: auto;
+  }
+}

@@ -25,6 +25,9 @@
       "api/vinyl",
       "api/vinyl-isvinyl",
       "api/vinyl-iscustomprop"
+    ],
+    "Support": [
+      "support/for-enterprise"
     ]
   }
 }

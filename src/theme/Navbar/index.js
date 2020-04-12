@@ -20,6 +20,7 @@ import useLogo from '@theme/hooks/useLogo';
 
 import styles from './styles.module.css';
 
+function noop() {}
 
 const useLinkLogo = (logo = {}) => {
   const {
@@ -81,11 +82,12 @@ function NavLink({activeBasePath, to, href, logo, label, position, ...props}) {
   );
 }
 
-function NavItem({items, position, ...props}) {
+function NavItem({items, emphasis, position, ...props}) {
   if (!items) {
     return <NavLink className={classnames('navbar__item', 'navbar__link', {
+      'navbar__link--icon': props.logo,
+      [styles.emphasis]: emphasis,
       [styles.noWrap]: true,
-      [styles.navbarIconLink]: props.logo,
     })} {...props} />;
   }
 
@@ -120,8 +122,6 @@ function Navbar() {
     },
     isClient,
   } = useDocusaurusContext();
-  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
-
   const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
   const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll);
   const {logoLink, logoLinkProps, logoImageUrl, logoAlt} = useLogo();
@@ -149,14 +149,6 @@ function Navbar() {
                 alt={logoAlt}
               />
             )}
-            {title != null && (
-              <strong
-                className={classnames('navbar__title', {
-                  [styles.hideLogoText]: isSearchBarExpanded,
-                })}>
-                {title}
-              </strong>
-            )}
           </Link>
           {links
             .filter(linkItem => linkItem.position === 'left')
@@ -179,8 +171,8 @@ function Navbar() {
             />
           )}
           <SearchBar
-            handleSearchBarToggle={setIsSearchBarExpanded}
-            isSearchBarExpanded={isSearchBarExpanded}
+            handleSearchBarToggle={noop}
+            isSearchBarExpanded={true}
           />
         </div>
       </div>

@@ -33,3 +33,7 @@
   vertical-align: middle;
   max-width: unset;
 }
+
+.emphasis {
+  border: 2px solid var(--ifm-navbar-link-color);
+}

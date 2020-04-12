@@ -30,12 +30,9 @@
     "gray-matter": "^3.1.1",
     "gulp": "^4.0.2",
     "gulplog": "^1.0.0",
+    "lodash.shuffle": "^4.2.0",
     "react": "^16.13.1",
-    "react-burger-menu": "^2.6.13",
-    "react-device-detect": "^1.11.14",
     "react-dom": "^16.13.1",
-    "react-multi-carousel": "^2.5.4",
-    "react-transition-group": "^4.3.0",
     "remark-admonitions": "^1.2.1"
   },
   "browserslist": {

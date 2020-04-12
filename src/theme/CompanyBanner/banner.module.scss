@@ -1,0 +1,103 @@
+.banner {
+  color: var(--ifm-color-white);
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  min-height: 10rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: 98%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 90%;
+  }
+}
+
+.companyLogos {
+  background-color: var(--ifm-color-secondary);
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  flex: 1 1 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media screen and (max-width: 425px) {
+    flex-wrap: wrap;
+  }
+}
+
+.companyListItem {
+  flex-grow: 0;
+  flex-shrink: 1;
+  margin: 1rem;
+}
+
+.companyLink {
+  display: block;
+}
+
+.companyLogo {
+}
+
+.supportButton {
+  flex: 0 0 35%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--ifm-color-primary);
+  margin: 2rem 1rem;
+
+  padding: 0.5rem 1.5rem;
+
+  transform: translate(5px, -10px);
+  box-shadow: -7px 7px 0 3px var(--ifm-color-secondary);
+  transition: box-shadow .1s ease-in, transform .1s ease-in;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    transform: none;
+    box-shadow: none;
+    transition: box-shadow .1s ease-in, transform .1s ease-in;
+
+    &:hover,
+    &:active {
+      transform: translate(5px, -10px);
+      box-shadow: -7px 10px 0 3px var(--ifm-color-secondary);
+      transition: box-shadow .1s ease-in, transform .1s ease-in;
+    }
+  }
+}
+
+.supportTitle {
+  color: var(--ifm-color-white);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-secondary);
+  font-size: 1.1rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.4rem;
+  }
+}
+
+.supportDescription {
+  color: var(--ifm-color-white);
+  font-size: 0.8rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}

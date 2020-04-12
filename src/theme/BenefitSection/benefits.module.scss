@@ -1,0 +1,24 @@
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+
+    padding: 4rem 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 5rem 2rem;
+  }
+}
+
+.benefitCard {
+  flex: 0 1 30%;
+
+  margin-bottom: 1rem;
+  max-width: 30rem;
+}
