@@ -43,7 +43,7 @@ This command generates static content into the `build` directory and can be serv
 
 Many thanks are owed for this website!
 
-* The very talented @vaninawohlleb for the website design
-* All the content work by @janiceilene
+* The very talented [@vaninawohlleb](https://github.com/vaninawohlleb) for the website design
+* All the content work by [@janiceilene](https://github.com/janiceilene)
 * Code screenshots from [Carbon](https://github.com/carbon-app/carbon)
 * [Docusaurus](https://v2.docusaurus.io/) for the entire framework
