@@ -7,7 +7,7 @@ module.exports = {
   favicon: 'img/favicon.png',
   url: 'https://gulpjs.com/',
   baseUrl: '/',
-  tagline: 'The streaming build system',
+  tagline: 'A toolkit to automate & enhance your workflow',
   // Used by the deployment
   organizationName: 'gulpjs',
   projectName: 'gulpjs.github.io',
