@@ -3,6 +3,7 @@ import shuffle from 'lodash.shuffle';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import ExternalLink from '@theme/ExternalLink';
 
 import styles from './banner.module.scss';
@@ -25,7 +26,6 @@ function CompanyLogo({ logo }) {
 }
 
 function CompaniesBanner() {
-  // TODO: Select only a random 5 logos
   const {
     siteConfig: {
       themeConfig: {
@@ -37,7 +37,9 @@ function CompaniesBanner() {
   return (
     <div className={styles.banner}>
       <ul className={styles.companyLogos}>
-        {randomLogos(companyLogos).map((logo) => <CompanyLogo key={logo.href} logo={logo} />)}
+        <BrowserOnly>
+          {() => randomLogos(companyLogos).map((logo) => <CompanyLogo key={logo.href} logo={logo} />)}
+        </BrowserOnly>
       </ul>
       <ExternalLink href="https://github.com/sponsors/gulpjs?tier_id=24682" className={styles.supportButton}>
         <span className={styles.supportTitle}>Organization Support</span>
