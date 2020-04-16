@@ -38,3 +38,12 @@ $ npm build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Thanks
+
+Many thanks are owed for this website!
+
+* The very talented @vaninawohlleb for the website design
+* All the content work by @janiceilene
+* Code screenshots from [Carbon](https://github.com/carbon-app/carbon)
+* [Docusaurus](https://v2.docusaurus.io/) for the entire framework
