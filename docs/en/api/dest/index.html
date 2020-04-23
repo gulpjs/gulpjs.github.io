@@ -20,28 +20,28 @@
 <link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.png">
 
 
-<link rel="stylesheet" href="/styles.290096ea.css">
+<link rel="stylesheet" href="/styles.964967b9.css">
 
 
-<link rel="preload" href="/styles.ec16c7ed.js" as="script">
+<link rel="preload" href="/styles.e6c9c13c.js" as="script">
 
-<link rel="preload" href="/runtime~main.be9e26a6.js" as="script">
+<link rel="preload" href="/runtime~main.89876a35.js" as="script">
 
-<link rel="preload" href="/main.ef52107a.js" as="script">
+<link rel="preload" href="/main.a0bde01a.js" as="script">
 
-<link rel="preload" href="/1.85e8c34d.js" as="script">
+<link rel="preload" href="/1.f68878ce.js" as="script">
 
-<link rel="preload" href="/2.97d4f00e.js" as="script">
+<link rel="preload" href="/2.187606e9.js" as="script">
 
-<link rel="preload" href="/1be78505.681259b1.js" as="script">
+<link rel="preload" href="/1be78505.29544e18.js" as="script">
 
-<link rel="preload" href="/36.16427f99.js" as="script">
+<link rel="preload" href="/35.f4ab9d27.js" as="script">
 
-<link rel="preload" href="/10002e1b.c2aebb66.js" as="script">
+<link rel="preload" href="/10002e1b.da6ac192.js" as="script">
 
-<link rel="preload" href="/17896441.47dab251.js" as="script">
+<link rel="preload" href="/17896441.b82d9462.js" as="script">
 
-<link rel="preload" href="/a9d856e8.57a48e58.js" as="script">
+<link rel="preload" href="/a9d856e8.27b0760c.js" as="script">
 
 </head>
 <body>
@@ -55,25 +55,25 @@ Whenever a Vinyl object is passed through the stream, it writes the contents and
 </span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token function" style="color:rgb(220, 220, 170)">src</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;input/**/*.js&#x27;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"> sourcemaps</span><span class="token punctuation" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token boolean">true</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token plain"></span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token method function property-access" style="color:rgb(220, 220, 170)">pipe</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token function" style="color:rgb(220, 220, 170)">uglify</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token plain"></span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token method function property-access" style="color:rgb(220, 220, 170)">pipe</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token function" style="color:rgb(220, 220, 170)">dest</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;output/&#x27;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"> sourcemaps</span><span class="token punctuation" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;.&#x27;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">;</span></div></div></div></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="symbolic-links-on-windows"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#symbolic-links-on-windows" title="Direct link to heading">#</a>Symbolic links on Windows</h2><p>When creating symbolic links on Windows, a <code>type</code> argument is passed to Node&#x27;s <code>fs.symlink()</code> method which specifies the kind of target being linked. The link type is set to:</p><ul><li><code>&#x27;file&#x27;</code> when the target is a regular file</li><li><code>&#x27;junction&#x27;</code> when the target is a directory</li><li><code>&#x27;dir&#x27;</code> when the target is a directory and the user disables the <code>useJunctions</code> option</li></ul><p>If you try to create a dangling (pointing to a non-existent target) link, the link type can&#x27;t be determined automatically. In these cases, behavior will vary depending on whether the dangling link is being created via <code>symlink()</code> or via <code>dest()</code>.</p><p>For dangling links created via <code>symlink()</code>, the incoming Vinyl object represents the target, so its stats will determine the desired link type. If <code>isDirectory()</code> returns false then a <code>&#x27;file&#x27;</code> link is created, otherwise a <code>&#x27;junction&#x27;</code> or a <code>&#x27;dir&#x27;</code> link is created depending on the value of the <code>useJunctions</code> option.</p><p>For dangling links created via <code>dest()</code>, the incoming Vinyl object represents the link - typically loaded from disk via <code>src(..., { resolveSymlinks: false })</code>. In this case, the link type can&#x27;t be reasonably determined and defaults to using <code>&#x27;file&#x27;</code>. This may cause unexpected behavior if you are creating a dangling link to a directory. <strong>Avoid this scenario.</strong></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/en/api/src"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« src()</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/en/api/symlink"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">symlink() »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#usage" class="contents__link">Usage</a></li><li><a href="#signature" class="contents__link">Signature</a><ul><li><a href="#parameters" class="contents__link">Parameters</a></li><li><a href="#returns" class="contents__link">Returns</a></li><li><a href="#errors" class="contents__link">Errors</a></li><li><a href="#options" class="contents__link">Options</a></li></ul></li><li><a href="#metadata-updates" class="contents__link">Metadata updates</a></li><li><a href="#sourcemaps" class="contents__link">Sourcemaps</a></li><li><a href="#symbolic-links-on-windows" class="contents__link">Symbolic links on Windows</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="row footer__links"><div class="col footer__col"><ul class="footer__items"><li class="footer__item"><img src="/img/gulp-white-logo.svg" alt="gulp" href="/"></li></ul></div><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/en/getting-started/quick-start">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/en/api/concepts">API</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/gulpjs/gulp">GitHub</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/gulp">Stack Overflow</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://twitter.com/gulpjs">Twitter</a></li></ul></div></div><div class="text--center"><div></div></div></div></footer>
 </div>
 
-<script src="/styles.ec16c7ed.js"></script>
+<script src="/styles.e6c9c13c.js"></script>
 
-<script src="/runtime~main.be9e26a6.js"></script>
+<script src="/runtime~main.89876a35.js"></script>
 
-<script src="/main.ef52107a.js"></script>
+<script src="/main.a0bde01a.js"></script>
 
-<script src="/1.85e8c34d.js"></script>
+<script src="/1.f68878ce.js"></script>
 
-<script src="/2.97d4f00e.js"></script>
+<script src="/2.187606e9.js"></script>
 
-<script src="/1be78505.681259b1.js"></script>
+<script src="/1be78505.29544e18.js"></script>
 
-<script src="/36.16427f99.js"></script>
+<script src="/35.f4ab9d27.js"></script>
 
-<script src="/10002e1b.c2aebb66.js"></script>
+<script src="/10002e1b.da6ac192.js"></script>
 
-<script src="/17896441.47dab251.js"></script>
+<script src="/17896441.b82d9462.js"></script>
 
-<script src="/a9d856e8.57a48e58.js"></script>
+<script src="/a9d856e8.27b0760c.js"></script>
 
 
 </body>

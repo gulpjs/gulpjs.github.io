@@ -20,28 +20,28 @@
 <link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.png">
 
 
-<link rel="stylesheet" href="/styles.290096ea.css">
+<link rel="stylesheet" href="/styles.964967b9.css">
 
 
-<link rel="preload" href="/styles.ec16c7ed.js" as="script">
+<link rel="preload" href="/styles.e6c9c13c.js" as="script">
 
-<link rel="preload" href="/runtime~main.be9e26a6.js" as="script">
+<link rel="preload" href="/runtime~main.89876a35.js" as="script">
 
-<link rel="preload" href="/main.ef52107a.js" as="script">
+<link rel="preload" href="/main.a0bde01a.js" as="script">
 
-<link rel="preload" href="/1.85e8c34d.js" as="script">
+<link rel="preload" href="/1.f68878ce.js" as="script">
 
-<link rel="preload" href="/2.97d4f00e.js" as="script">
+<link rel="preload" href="/2.187606e9.js" as="script">
 
-<link rel="preload" href="/1be78505.681259b1.js" as="script">
+<link rel="preload" href="/1be78505.29544e18.js" as="script">
 
-<link rel="preload" href="/36.16427f99.js" as="script">
+<link rel="preload" href="/35.f4ab9d27.js" as="script">
 
-<link rel="preload" href="/10002e1b.c2aebb66.js" as="script">
+<link rel="preload" href="/10002e1b.da6ac192.js" as="script">
 
-<link rel="preload" href="/17896441.47dab251.js" as="script">
+<link rel="preload" href="/17896441.b82d9462.js" as="script">
 
-<link rel="preload" href="/77c5b800.b6d60d0a.js" as="script">
+<link rel="preload" href="/77c5b800.7fbe2445.js" as="script">
 
 </head>
 <body>
@@ -52,25 +52,25 @@
 </span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">exports</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token method-variable function-variable method function property-access" style="color:rgb(220, 220, 170)">default</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(86, 156, 214)">function</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token function" style="color:rgb(220, 220, 170)">watch</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;src/images/**/*.jpg&#x27;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> images</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">;</span></div></div></div></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="signature"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#signature" title="Direct link to heading">#</a>Signature</h2><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-js codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#9CDCFE;background-color:#1E1E1E"><div class="token-line" style="color:#9CDCFE"><span class="token function" style="color:rgb(220, 220, 170)">lastRun</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token plain">task</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">[</span><span class="token plain">precision</span><span class="token punctuation" style="color:rgb(212, 212, 212)">]</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span></div></div></div></div></div><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="parameters"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#parameters" title="Direct link to heading">#</a>Parameters</h3><table><thead><tr><th align="center">parameter</th><th align="center">type</th><th>note</th></tr></thead><tbody><tr><td align="center">task<br><strong>(required)</strong></td><td align="center">function<br>string</td><td>The task function or the string alias of a registered task.</td></tr><tr><td align="center">precision</td><td align="center">number</td><td>Default: <code>1000</code> on Node v0.10, <code>0</code> on Node v0.12+. Detailed in <a aria-current="page" class="active" href="/docs/en/api/lastrun#timestamp-precision">Timestamp precision</a> section below.</td></tr></tbody></table><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="returns"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#returns" title="Direct link to heading">#</a>Returns</h3><p>A timestamp (in milliseconds), matching the last completion time of the task. If the task has not been run or has failed, returns <code>undefined</code>.</p><p>To avoid an invalid state being cached, the returned value will be <code>undefined</code> if a task errors.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="errors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#errors" title="Direct link to heading">#</a>Errors</h3><p>When called with a value other than a string or function, throws an error with the message, &quot;Only functions can check lastRun&quot;.</p><p>When called on a non-extensible function and Node is missing WeakMap, throws an error with the message, &quot;Only extensible functions can check lastRun&quot;.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="timestamp-precision"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#timestamp-precision" title="Direct link to heading">#</a>Timestamp precision</h2><p>While there are sensible defaults for the precision of timestamps, they can be rounded using the <code>precision</code> parameter. Useful if your file system or Node version has a lossy precision on file time attributes.</p><ul><li><code>lastRun(someTask)</code> returns 1426000001111</li><li><code>lastRun(someTask, 100)</code> returns 1426000001100</li><li><code>lastRun(someTask, 1000)</code> returns 1426000001000</li></ul><p>A file&#x27;s <a href="/docs/en/api/concepts#file-system-stats">mtime stat</a> precision may vary depending on the node version and/or the file system used.</p><table><thead><tr><th align="center">platform</th><th align="center">precision</th></tr></thead><tbody><tr><td align="center">Node v0.10</td><td align="center">1000ms</td></tr><tr><td align="center">Node v0.12+</td><td align="center">1ms</td></tr><tr><td align="center">FAT32 file system</td><td align="center">2000ms</td></tr><tr><td align="center">HFS+ or Ext3 file systems</td><td align="center">1000ms</td></tr><tr><td align="center">NTFS using Node v0.10</td><td align="center">1s</td></tr><tr><td align="center">NTFS using Node 0.12+</td><td align="center">100ms</td></tr><tr><td align="center">Ext4 using Node v0.10</td><td align="center">1000ms</td></tr><tr><td align="center">Ext4 using Node 0.12+</td><td align="center">1ms</td></tr></tbody></table></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/en/api/symlink"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« symlink()</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/en/api/series"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">series() »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#usage" class="contents__link">Usage</a></li><li><a href="#signature" class="contents__link">Signature</a><ul><li><a href="#parameters" class="contents__link">Parameters</a></li><li><a href="#returns" class="contents__link">Returns</a></li><li><a href="#errors" class="contents__link">Errors</a></li></ul></li><li><a href="#timestamp-precision" class="contents__link">Timestamp precision</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="row footer__links"><div class="col footer__col"><ul class="footer__items"><li class="footer__item"><img src="/img/gulp-white-logo.svg" alt="gulp" href="/"></li></ul></div><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/en/getting-started/quick-start">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/en/api/concepts">API</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/gulpjs/gulp">GitHub</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/gulp">Stack Overflow</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://twitter.com/gulpjs">Twitter</a></li></ul></div></div><div class="text--center"><div></div></div></div></footer>
 </div>
 
-<script src="/styles.ec16c7ed.js"></script>
+<script src="/styles.e6c9c13c.js"></script>
 
-<script src="/runtime~main.be9e26a6.js"></script>
+<script src="/runtime~main.89876a35.js"></script>
 
-<script src="/main.ef52107a.js"></script>
+<script src="/main.a0bde01a.js"></script>
 
-<script src="/1.85e8c34d.js"></script>
+<script src="/1.f68878ce.js"></script>
 
-<script src="/2.97d4f00e.js"></script>
+<script src="/2.187606e9.js"></script>
 
-<script src="/1be78505.681259b1.js"></script>
+<script src="/1be78505.29544e18.js"></script>
 
-<script src="/36.16427f99.js"></script>
+<script src="/35.f4ab9d27.js"></script>
 
-<script src="/10002e1b.c2aebb66.js"></script>
+<script src="/10002e1b.da6ac192.js"></script>
 
-<script src="/17896441.47dab251.js"></script>
+<script src="/17896441.b82d9462.js"></script>
 
-<script src="/77c5b800.b6d60d0a.js"></script>
+<script src="/77c5b800.7fbe2445.js"></script>
 
 
 </body>

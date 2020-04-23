@@ -20,28 +20,28 @@
 <link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.png">
 
 
-<link rel="stylesheet" href="/styles.290096ea.css">
+<link rel="stylesheet" href="/styles.964967b9.css">
 
 
-<link rel="preload" href="/styles.ec16c7ed.js" as="script">
+<link rel="preload" href="/styles.e6c9c13c.js" as="script">
 
-<link rel="preload" href="/runtime~main.be9e26a6.js" as="script">
+<link rel="preload" href="/runtime~main.89876a35.js" as="script">
 
-<link rel="preload" href="/main.ef52107a.js" as="script">
+<link rel="preload" href="/main.a0bde01a.js" as="script">
 
-<link rel="preload" href="/1.85e8c34d.js" as="script">
+<link rel="preload" href="/1.f68878ce.js" as="script">
 
-<link rel="preload" href="/2.97d4f00e.js" as="script">
+<link rel="preload" href="/2.187606e9.js" as="script">
 
-<link rel="preload" href="/1be78505.681259b1.js" as="script">
+<link rel="preload" href="/1be78505.29544e18.js" as="script">
 
-<link rel="preload" href="/36.16427f99.js" as="script">
+<link rel="preload" href="/35.f4ab9d27.js" as="script">
 
-<link rel="preload" href="/10002e1b.c2aebb66.js" as="script">
+<link rel="preload" href="/10002e1b.da6ac192.js" as="script">
 
-<link rel="preload" href="/17896441.47dab251.js" as="script">
+<link rel="preload" href="/17896441.b82d9462.js" as="script">
 
-<link rel="preload" href="/ac5d7d2f.65133b9d.js" as="script">
+<link rel="preload" href="/ac5d7d2f.9b4269bc.js" as="script">
 
 </head>
 <body>
@@ -53,25 +53,25 @@
 Whenever a Vinyl object is passed through the stream, it creates a symbolic link to the original file on the file system at the given directory.</p><p>Whenever a symbolic link is created on the file system, the Vinyl object will be modified.</p><ul><li>The <code>cwd</code>, <code>base</code>, and <code>path</code> properties will be updated to match the created symbolic link.</li><li>The <code>stat</code> property will be updated to match the symbolic link on the file system.</li><li>The <code>contents</code> property will be set to <code>null</code>.</li><li>The <code>symlink</code> property will be added or replaced with original path.</li></ul><p><strong>Note:</strong> On Windows, directory links are created using junctions by default. The <code>useJunctions</code> option disables this behavior.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="errors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#errors" title="Direct link to heading">#</a>Errors</h3><p>When <code>directory</code> is an empty string, throws an error with the message, &quot;Invalid symlink() folder argument. Please specify a non-empty string or a function.&quot;</p><p>When <code>directory</code> is not a string or function, throws an error with the message, &quot;Invalid symlink() folder argument. Please specify a non-empty string or a function.&quot;</p><p>When <code>directory</code> is a function that returns an empty string or <code>undefined</code>, emits an error with the message, &quot;Invalid output folder&quot;.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="options"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#options" title="Direct link to heading">#</a>Options</h3><p><strong>For options that accept a function, the passed function will be called with each Vinyl object and must return a value of another listed type.</strong></p><table><thead><tr><th align="center">name</th><th align="center">type</th><th>default</th><th>note</th></tr></thead><tbody><tr><td align="center">cwd</td><td align="center">string<br>function</td><td><code>process.cwd()</code></td><td>The directory that will be combined with any relative path to form an absolute path. Is ignored for absolute paths. Use to avoid combining <code>directory</code> with <code>path.join()</code>.</td></tr><tr><td align="center">dirMode</td><td align="center">number<br>function</td><td></td><td>The mode used when creating directories. If not set, the process&#x27; mode will be used.</td></tr><tr><td align="center">overwrite</td><td align="center">boolean<br>function</td><td>true</td><td>When true, overwrites existing files with the same path.</td></tr><tr><td align="center">relativeSymlinks</td><td align="center">boolean<br>function</td><td>false</td><td>When false, any symbolic links created will be absolute.<br><strong>Note</strong>: Ignored if a junction is being created, as they must be absolute.</td></tr><tr><td align="center">useJunctions</td><td align="center">boolean<br>function</td><td>true</td><td>This option is only relevant on Windows and ignored elsewhere. When true, creates directory symbolic link as a junction. Detailed in <a aria-current="page" class="active" href="/docs/en/api/symlink#symbolic-links-on-windows">Symbolic links on Windows</a> below.</td></tr></tbody></table><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="symbolic-links-on-windows"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#symbolic-links-on-windows" title="Direct link to heading">#</a>Symbolic links on Windows</h2><p>When creating symbolic links on Windows, a <code>type</code> argument is passed to Node&#x27;s <code>fs.symlink()</code> method which specifies the type of target being linked. The link type is set to:</p><ul><li><code>&#x27;file&#x27;</code> when the target is a regular file</li><li><code>&#x27;junction&#x27;</code> when the target is a directory</li><li><code>&#x27;dir&#x27;</code> when the target is a directory and the user disables the <code>useJunctions</code> option</li></ul><p>If you try to create a dangling (pointing to a non-existent target) link, the link type can&#x27;t be determined automatically. In these cases, behavior will vary depending on whether the dangling link is being created via <code>symlink()</code> or via <code>dest()</code>.</p><p>For dangling links created via <code>symlink()</code>, the incoming Vinyl object represents the target, so its stats will determine the desired link type. If <code>isDirectory()</code> returns false then a <code>&#x27;file&#x27;</code> link is created, otherwise a <code>&#x27;junction&#x27;</code> or <code>&#x27;dir&#x27;</code> link is created depending on the value of the <code>useJunctions</code> option.</p><p>For dangling links created via <code>dest()</code>, the incoming Vinyl object represents the link - typically loaded from disk via <code>src(..., { resolveSymlinks: false })</code>. In this case, the link type can&#x27;t be reasonably determined and defaults to using <code>&#x27;file&#x27;</code>. This may cause unexpected behavior when creating a dangling link to a directory. <strong>Avoid this scenario.</strong></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/en/api/dest"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« dest()</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/en/api/lastrun"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">lastRun() »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#usage" class="contents__link">Usage</a></li><li><a href="#signature" class="contents__link">Signature</a><ul><li><a href="#parameters" class="contents__link">Parameters</a></li><li><a href="#returns" class="contents__link">Returns</a></li><li><a href="#errors" class="contents__link">Errors</a></li><li><a href="#options" class="contents__link">Options</a></li></ul></li><li><a href="#symbolic-links-on-windows" class="contents__link">Symbolic links on Windows</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="row footer__links"><div class="col footer__col"><ul class="footer__items"><li class="footer__item"><img src="/img/gulp-white-logo.svg" alt="gulp" href="/"></li></ul></div><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/en/getting-started/quick-start">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/en/api/concepts">API</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/gulpjs/gulp">GitHub</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/gulp">Stack Overflow</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://twitter.com/gulpjs">Twitter</a></li></ul></div></div><div class="text--center"><div></div></div></div></footer>
 </div>
 
-<script src="/styles.ec16c7ed.js"></script>
+<script src="/styles.e6c9c13c.js"></script>
 
-<script src="/runtime~main.be9e26a6.js"></script>
+<script src="/runtime~main.89876a35.js"></script>
 
-<script src="/main.ef52107a.js"></script>
+<script src="/main.a0bde01a.js"></script>
 
-<script src="/1.85e8c34d.js"></script>
+<script src="/1.f68878ce.js"></script>
 
-<script src="/2.97d4f00e.js"></script>
+<script src="/2.187606e9.js"></script>
 
-<script src="/1be78505.681259b1.js"></script>
+<script src="/1be78505.29544e18.js"></script>
 
-<script src="/36.16427f99.js"></script>
+<script src="/35.f4ab9d27.js"></script>
 
-<script src="/10002e1b.c2aebb66.js"></script>
+<script src="/10002e1b.da6ac192.js"></script>
 
-<script src="/17896441.47dab251.js"></script>
+<script src="/17896441.b82d9462.js"></script>
 
-<script src="/ac5d7d2f.65133b9d.js"></script>
+<script src="/ac5d7d2f.9b4269bc.js"></script>
 
 
 </body>
