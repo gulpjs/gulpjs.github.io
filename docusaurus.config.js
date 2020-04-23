@@ -156,6 +156,15 @@ module.exports = {
           flexBasis: '150px',
         },
       },
+      {
+        href: 'https://twitter.com/chromiumdev',
+        src: 'sponsor-logos/chrome.svg',
+        alt: 'Chrome logo',
+        title: 'Chrome Developers',
+        style: {
+          flexBasis: '80px',
+        },
+      },
     ]
   },
   stylesheets: [
