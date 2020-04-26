@@ -302,7 +302,9 @@ function PluginsPage() {
                 placeholder={placeholder}
                 value={searchInput}
                 onChange={onChange} />
-              <button className="button button--lg button--primary">Search</button>
+              <button className={classnames("button button--primary", styles.searchButton)}>
+                Search
+              </button>
             </form>
           </div>
         </div>

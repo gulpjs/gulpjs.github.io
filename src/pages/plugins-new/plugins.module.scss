@@ -1,6 +1,5 @@
 .searchContainer {
-  // I hate grid utilities
-  display: flex !important;
+  display: flex;
 }
 
 .searchInput {
@@ -26,6 +25,10 @@
   &::placeholder {
     color: var(--ifm-navbar-search-input-placeholder-color);
   }
+}
+
+.searchButton {
+  font-size: 1.1rem;
 }
 
 .pluginCardHeader {
