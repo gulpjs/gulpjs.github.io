@@ -30,8 +30,7 @@ module.exports = {
           label: 'API',
           position: 'left',
         },
-        // TODO: Remove when plugins is part of the site
-        { href: 'https://gulpjs.com/plugins',
+        { to: 'plugins',
           label: 'Plugins',
           position: 'left',
         },
