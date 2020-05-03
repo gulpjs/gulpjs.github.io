@@ -14,8 +14,7 @@ function PluginSection() {
           Using community-built plugins is a quick way to get started with gulp. Each plugin does a small amount of work, so you can connect them like building blocks. Chain together plugins from a variety of technologies to reach your desired result.
         </p>
         <p className={styles.pluginsCTA}>
-          {/* TODO: convert this to Link when plugins is done */}
-          Browse the <ExternalLink href="https://gulpjs.com/plugins">community plugins</ExternalLink> to see what’s available!
+          Browse the <Link to="plugins">community plugins</Link> to see what’s available!
         </p>
       </div>
       <div className={styles.pluginsGrid}>
