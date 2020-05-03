@@ -169,6 +169,8 @@ table tr td + td + td:last-child {
 /* Search */
 .navbar .navbar__search .navbar__search-input {
   width: 15.5rem;
+  font-size: 1rem;
+  font-family: var(--ifm-font-family-base);
   border-radius: var(--ifm-global-radius);
 }
 
