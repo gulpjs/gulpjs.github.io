@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="generator" content="Docusaurus v2.0.0-alpha.53">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.54">
 <link rel="preconnect" href="https://www.google-analytics.com">
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-128126650-1","auto"),ga("send","pageview")</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
@@ -20,28 +20,28 @@
 <link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.png">
 
 
-<link rel="stylesheet" href="/styles.e2d1c12c.css">
+<link rel="stylesheet" href="/styles.8121b95c.css">
 
 
-<link rel="preload" href="/styles.5cc90309.js" as="script">
+<link rel="preload" href="/styles.10c0193b.js" as="script">
 
-<link rel="preload" href="/runtime~main.137c7eea.js" as="script">
+<link rel="preload" href="/runtime~main.a83b7b15.js" as="script">
 
-<link rel="preload" href="/main.c244522e.js" as="script">
+<link rel="preload" href="/main.3e1928f1.js" as="script">
 
-<link rel="preload" href="/1.b6a7d0a2.js" as="script">
+<link rel="preload" href="/1.fe6bacd8.js" as="script">
 
-<link rel="preload" href="/2.2191fceb.js" as="script">
+<link rel="preload" href="/2.77a8f44b.js" as="script">
 
-<link rel="preload" href="/1be78505.01d59a55.js" as="script">
+<link rel="preload" href="/1be78505.2d41add8.js" as="script">
 
-<link rel="preload" href="/37.f5149019.js" as="script">
+<link rel="preload" href="/37.ee8d4ee9.js" as="script">
 
-<link rel="preload" href="/10002e1b.7d191bf9.js" as="script">
+<link rel="preload" href="/10002e1b.63b80d46.js" as="script">
 
-<link rel="preload" href="/17896441.598763e6.js" as="script">
+<link rel="preload" href="/17896441.f1e2ba83.js" as="script">
 
-<link rel="preload" href="/78aed9ad.22085e9c.js" as="script">
+<link rel="preload" href="/78aed9ad.74f19110.js" as="script">
 
 </head>
 <body>
@@ -56,25 +56,25 @@
 </span></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">watcher</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token method function property-access" style="color:rgb(220, 220, 170)">close</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">;</span></div></div></div></div></div><p><code>watcher.on(eventName, eventHandler)</code></p><p>Registers <code>eventHandler</code> functions to be called when the specified event occurs.</p><table><thead><tr><th align="center">parameter</th><th align="center">type</th><th>note</th></tr></thead><tbody><tr><td align="center">eventName</td><td align="center">string</td><td>The events that may be watched are <code>&#x27;add&#x27;</code>, <code>&#x27;addDir&#x27;</code>, <code>&#x27;change&#x27;</code>, <code>&#x27;unlink&#x27;</code>, <code>&#x27;unlinkDir&#x27;</code>, <code>&#x27;ready&#x27;</code>, <code>&#x27;error&#x27;</code>, or <code>&#x27;all&#x27;</code>.</td></tr><tr><td align="center">eventHandler</td><td align="center">function</td><td>Function to be called when the specified event occurs. Arguments detailed in the table below.</td></tr></tbody></table><table><thead><tr><th align="center">argument</th><th align="center">type</th><th>note</th></tr></thead><tbody><tr><td align="center">path</td><td align="center">string</td><td>The path of the file that changed. If the <code>cwd</code> option was set, the path will be made relative by removing the <code>cwd</code>.</td></tr><tr><td align="center">stats</td><td align="center">object</td><td>An <a href="/docs/en/api/concepts#file-system-stats">fs.Stat</a> object, but could be <code>undefined</code>. If the <code>alwaysStat</code> option was set to <code>true</code>, <code>stats</code> will always be provided.</td></tr></tbody></table><p><code>watcher.close()</code></p><p>Shuts down the file watcher. Once shut down, no more events will be emitted.</p><p><code>watcher.add(globs)</code></p><p>Adds additional globs to an already-running watcher instance.</p><table><thead><tr><th align="center">parameter</th><th align="center">type</th><th>note</th></tr></thead><tbody><tr><td align="center">globs</td><td align="center">string<br>array</td><td>The additional globs to be watched.</td></tr></tbody></table><p><code>watcher.unwatch(globs)</code></p><p>Removes globs that are being watched, while the watcher continues with the remaining paths.</p><table><thead><tr><th align="center">parameter</th><th align="center">type</th><th>note</th></tr></thead><tbody><tr><td align="center">globs</td><td align="center">string<br>array</td><td>The globs to be removed.</td></tr></tbody></table></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/en/api/parallel"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« parallel()</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/en/api/task"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">task() »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#usage" class="contents__link">Usage</a></li><li><a href="#signature" class="contents__link">Signature</a><ul><li><a href="#parameters" class="contents__link">Parameters</a></li><li><a href="#returns" class="contents__link">Returns</a></li><li><a href="#errors" class="contents__link">Errors</a></li><li><a href="#options" class="contents__link">Options</a></li></ul></li><li><a href="#chokidar-instance" class="contents__link">Chokidar instance</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="row footer__links"><div class="col footer__col"><ul class="footer__items"><li class="footer__item"><img src="/img/gulp-white-logo.svg" alt="gulp" href="/"></li></ul></div><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/en/getting-started/quick-start">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/en/api/concepts">API</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/gulpjs/gulp">GitHub</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/gulp">Stack Overflow</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://twitter.com/gulpjs">Twitter</a></li></ul></div></div><div class="text--center"><div></div></div></div></footer>
 </div>
 
-<script src="/styles.5cc90309.js"></script>
+<script src="/styles.10c0193b.js"></script>
 
-<script src="/runtime~main.137c7eea.js"></script>
+<script src="/runtime~main.a83b7b15.js"></script>
 
-<script src="/main.c244522e.js"></script>
+<script src="/main.3e1928f1.js"></script>
 
-<script src="/1.b6a7d0a2.js"></script>
+<script src="/1.fe6bacd8.js"></script>
 
-<script src="/2.2191fceb.js"></script>
+<script src="/2.77a8f44b.js"></script>
 
-<script src="/1be78505.01d59a55.js"></script>
+<script src="/1be78505.2d41add8.js"></script>
 
-<script src="/37.f5149019.js"></script>
+<script src="/37.ee8d4ee9.js"></script>
 
-<script src="/10002e1b.7d191bf9.js"></script>
+<script src="/10002e1b.63b80d46.js"></script>
 
-<script src="/17896441.598763e6.js"></script>
+<script src="/17896441.f1e2ba83.js"></script>
 
-<script src="/78aed9ad.22085e9c.js"></script>
+<script src="/78aed9ad.74f19110.js"></script>
 
 
 </body>
