@@ -1,4 +1,3 @@
-// TODO: This file needs a massive rewrite for GitHub Sponsors
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import shuffle from 'lodash.shuffle';
@@ -6,48 +5,11 @@ import ExternalLink from '@theme/ExternalLink';
 
 import styles from './banner.module.scss';
 
-const collectiveURL ='https://rest.opencollective.com/v2/gulpjs/orders/incoming?status=active,paid&limit=1000';
+const sponsorsURL = 'https://serve.onegraph.com/graphql?app_id=c8251aa1-22ab-4dca-9e57-e7c335ddcd7c';
 
-function uniqueBySlug(array) {
-  const predicate = function (o) {
-    return o.fromAccount.slug;
-  }
-  return array.reduce(function(acc, curr) {
-    return acc.filter(function (a) {
-      return predicate(a) === predicate(curr);
-    }).length ? acc : acc.push(curr) && acc
-  }, []);
-}
-
-const specialFilter = [
-  'addyosmani',
-];
-
-const thirtyTwoDaysAgo = Date.now() - 2.765e+9;
-
-function withinMonth(createdAt) {
-  const datePaid = new Date(createdAt);
-  return datePaid >= thirtyTwoDaysAgo;
-}
-
-function recentNonCompanies(backer) {
-  if (backer.fromAccount && specialFilter.includes(backer.fromAccount.slug)) {
-    return false;
-  }
-
-  if (backer.fromAccount && backer.fromAccount.type === 'ORGANIZATION') {
-    return false;
-  }
-
-  if (backer.tier && backer.tier.slug === 'company') {
-    return false;
-  }
-
-  if (backer.frequency === 'MONTHLY' && backer.status === 'ACTIVE') {
-    return true;
-  }
-
-  if (backer.frequency === 'ONETIME' && backer.status === 'PAID' && withinMonth(backer.createdAt)) {
+function between5And250(backer) {
+  const amount = backer.tier.amountDonated;
+  if (amount >= 500 && amount < 25000) {
     return true;
   }
 
@@ -59,38 +21,54 @@ function selectRandom(backers) {
 }
 
 async function getBackers() {
-  const response = await fetch(collectiveURL);
-  const orders = await response.json();
+  const response = await fetch(sponsorsURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      doc_id: 'fe685787-b348-42a4-960c-2322add1e11b',
+    }),
+  });
 
-  const allBackers = orders.nodes.filter(recentNonCompanies);
+  // TODO: Handle errors
+  const { data, errors } = await response.json();
 
-  const uniqueBackers = uniqueBySlug(allBackers);
-  const backersToDisplay = selectRandom(uniqueBackers)
+  let ghBackers = data.gitHub.organization.sponsors.nodes;
+  let ocBackers = data.openCollective.organization.sponsors.nodes;
+  let allBackers = [].concat(ghBackers, ocBackers);
 
-  return backersToDisplay.map(function(backer) {
-    const fromAccount = backer.fromAccount;
-    const totalDonations = backer.totalDonations;
+  const validBackers = allBackers.filter(between5And250);
 
-    const name = fromAccount.name;
-    const slug = fromAccount.slug;
-    const website = fromAccount.website;
-    const twitterHandle = fromAccount.twitterHandle;
-    const imageUrl = fromAccount.imageUrl;
+  const backersToDisplay = selectRandom(validBackers)
+
+  return backersToDisplay.map(function (backer) {
+    const {
+      name,
+      openCollectiveHandle,
+      twitterHandle,
+      githubHandle,
+      avatarUrl
+    } = backer.sponsor;
+    // It is in US cents
+    const monthlyAmount = (backer.tier.amountDonated / 100);
 
     let href;
-    if (website) {
-      href = website;
+    if (githubHandle) {
+      href = `https://github.com/${githubHandle}`;
     } else if (twitterHandle) {
-      href = 'https://twitter.com/' + twitterHandle
+      href = `https://twitter.com/${twitterHandle}`;
     } else {
-      href = 'https://opencollective.com/' + slug
+      href = `https://opencollective.com/${openCollectiveHandle}`
     }
 
+    let usersName = name || githubHandle || twitterHandle || openCollectiveHandle || '';
+
     return {
-      key: slug,
-      src: imageUrl,
-      alt: name,
-      title: `Thank you ${name} for $${totalDonations.value}!`,
+      key: href,
+      src: avatarUrl,
+      alt: usersName,
+      title: `Thank you ${usersName} for the $${monthlyAmount}/month!`,
       href: href,
     };
   });
