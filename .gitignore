@@ -21,7 +21,6 @@ yarn-error.log*
 *.log
 
 # lock
-package-lock.json
 yarn.lock
 
 # generated
