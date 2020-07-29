@@ -22,15 +22,18 @@ module.exports = {
         target: '_self',
       },
       links: [
-        { to: 'docs/en/getting-started/quick-start',
+        {
+          to: 'docs/en/getting-started/quick-start',
           label: 'Get Started',
           position: 'left',
         },
-        { to: 'docs/en/api/concepts',
+        {
+          to: 'docs/en/api/concepts',
           label: 'API',
           position: 'left',
         },
-        { to: 'plugins',
+        {
+          to: 'plugins',
           label: 'Plugins',
           position: 'left',
         },
@@ -45,14 +48,16 @@ module.exports = {
           position: 'left',
           emphasis: true,
         },
-        { href: 'https://twitter.com/gulpjs',
+        {
+          href: 'https://twitter.com/gulpjs',
           logo: {
             alt: 'Gulp on Twitter',
             src: 'img/twitter.svg',
           },
           position: 'right'
         },
-        { href: 'https://medium.com/gulpjs',
+        {
+          href: 'https://medium.com/gulpjs',
           logo: {
             alt: 'The gulp blog',
             src: 'img/medium.svg',
@@ -63,29 +68,37 @@ module.exports = {
     },
     footer: {
       links: [
-        { items: [
+        {
+          items: [
             { html: '<img src="/img/gulp-white-logo.svg" alt="gulp" href="/" />' }
           ]
         },
-        { title: 'Docs',
+        {
+          title: 'Docs',
           items: [
-            { to: 'docs/en/getting-started/quick-start',
+            {
+              to: 'docs/en/getting-started/quick-start',
               label: 'Getting Started',
             },
-            { to: 'docs/en/api/concepts',
+            {
+              to: 'docs/en/api/concepts',
               label: 'API',
             },
           ]
         },
-        { title: 'Community',
+        {
+          title: 'Community',
           items: [
-            { href: 'https://github.com/gulpjs/gulp',
+            {
+              href: 'https://github.com/gulpjs/gulp',
               label: 'GitHub',
             },
-            { href: 'https://stackoverflow.com/questions/tagged/gulp',
+            {
+              href: 'https://stackoverflow.com/questions/tagged/gulp',
               label: 'Stack Overflow',
             },
-            { href: 'https://twitter.com/gulpjs',
+            {
+              href: 'https://twitter.com/gulpjs',
               label: 'Twitter',
             }
           ]
@@ -164,6 +177,15 @@ module.exports = {
           flexBasis: '80px',
         },
       },
+      {
+        href: 'https://www.decojent.com',
+        src: 'sponsor-logos/decojent.svg',
+        alt: 'Decojent logo',
+        title: 'Decojent',
+        style: {
+          flexBasis: '100px'
+        }
+      }
     ]
   },
   stylesheets: [
