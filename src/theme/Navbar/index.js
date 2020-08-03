@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useState, useEffect} from 'react';
 import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -122,10 +122,14 @@ function Navbar() {
     },
     isClient,
   } = useDocusaurusContext();
+
+  const [disableSearchBarPlugIns, setDisableSearchBarPlugIns] = useState(location.pathname == "/plugins");
+  useEffect(() => {
+    setDisableSearchBarPlugIns(location.pathname == "/plugins");
+  }, [location.pathname]);
   const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
   const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll);
   const {logoLink, logoLinkProps, logoImageUrl, logoAlt} = useLogo();
-
   const onToggleChange = useCallback(
     e => (e.target.checked ? setDarkTheme() : setLightTheme()),
     [setLightTheme, setDarkTheme],
@@ -170,10 +174,12 @@ function Navbar() {
               onChange={onToggleChange}
             />
           )}
-          <SearchBar
-            handleSearchBarToggle={noop}
-            isSearchBarExpanded={true}
-          />
+          {!disableSearchBarPlugIns && (
+            <SearchBar
+              handleSearchBarToggle={noop}
+              isSearchBarExpanded={true}
+            />
+          )}
         </div>
       </div>
     </nav>
