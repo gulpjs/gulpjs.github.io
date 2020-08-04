@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
 
 import Layout from '@theme/Layout';
@@ -62,9 +62,9 @@ class Plugin {
     }
 
     if (homepage &&
-        homepage !== npm &&
-        homepage !== repository &&
-        homepage !== `${repository}#readme`) {
+      homepage !== npm &&
+      homepage !== repository &&
+      homepage !== `${repository}#readme`) {
       links.push({ text: 'homepage', href: homepage });
     }
 
@@ -120,7 +120,7 @@ function noop(evt) {
   evt && evt.preventDefault();
 }
 
-function Paginate({onPage = noop}) {
+function Paginate({ onPage = noop }) {
   return (
     <div className="row padding-vert--md">
       <div className="col col--4 col--offset-4">
@@ -159,11 +159,11 @@ async function fetchPackages(keywords, searchText = '', pageNumber = 0) {
   const text = search.join(' ');
 
   try {
-    const initialUrl = `${baseUrl}?from=${from}&text=${text}`;
+    const initialUrl = `${baseUrl}?from=${from}&text=${text}&quality=0.5&popularity=1.0&maintenance=0.1`;
     const response = await fetch(initialUrl);
     const { total, objects } = await response.json();
     return { total, plugins: objects.map(toPlugin) };
-  } catch(err) {
+  } catch (err) {
     console.log(err);
     return { total: 0, plugins: [] };
   }
@@ -277,7 +277,7 @@ function useSearch() {
 
 
 function PluginsPage() {
-  const [{title, plugins, placeholder, hasMore}, {search, paginate}] = useSearch();
+  const [{ title, plugins, placeholder, hasMore }, { search, paginate }] = useSearch();
   const [searchInput, setSearchInput] = useState(``);
 
   let onSubmit = (evt) => {
