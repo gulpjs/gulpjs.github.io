@@ -159,6 +159,7 @@ async function fetchPackages(keywords, searchText = '', pageNumber = 0) {
   const text = search.join(' ');
 
   try {
+    // https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search
     const initialUrl = `${baseUrl}?from=${from}&text=${text}&quality=0.5&popularity=1.0&maintenance=0.1`;
     const response = await fetch(initialUrl);
     const { total, objects } = await response.json();
