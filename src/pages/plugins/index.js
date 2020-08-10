@@ -16,6 +16,7 @@ function isInternalKeyword(keyword) {
 class Plugin {
   constructor(object) {
     this._package = object.package;
+    this._flags = object.flags ? object.flags : false;
   }
 
   get key() {
@@ -24,6 +25,11 @@ class Plugin {
 
   get name() {
     return this._package.name;
+  }
+
+  get deprecatedMessage() {
+    const deprecatedMessage= this._flags.deprecated ? this._flags.deprecated : false;
+    return deprecatedMessage;
   }
 
   get description() {
@@ -98,13 +104,22 @@ function PluginComponent({ plugin }) {
   return (
     <div className="row padding-vert--md">
       <div className="col col--10 col--offset-1">
-        <div key={plugin.key} className="card">
+        <div key={plugin.key} className={ plugin.deprecatedMessage ? `card ${classnames('card__deprecated', styles.pluginDeprecatedCard)}` : "card"}>
+          {!plugin.deprecatedMessage || (
+            <div className={classnames('card__flag', styles.pluginCardFlag)}>
+              <div className={classnames('card__flag__message', styles.pluginCardFlagMessage)}>
+                <h3>This package has been deprecated</h3>
+                <h4>Author message:</h4>
+                <h4 className={classnames('deprecated-message', styles.deprecatedMessage)}>{plugin.deprecatedMessage}</h4>
+              </div>
+
+            </div>
+          )}
           <div className={classnames('card__header', styles.pluginCardHeader)}>
             <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
             <span className="badge badge--primary">{plugin.version}</span>
           </div>
           <div className="card__body">
-            {plugin.description}
             <div className="padding-top--sm">
               {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
             </div>
@@ -141,7 +156,6 @@ function keywordsToQuerystring(keywords) {
   } else {
     keywordsStr += `gulpplugin`;
   }
-
   return keywordsStr;
 }
 
@@ -150,6 +164,8 @@ async function fetchPackages(keywords, searchText = '', pageNumber = 0) {
 
   let search = [
     keywordsToQuerystring(keywords),
+    "is:unstable",
+    "not:unstable"
   ];
   if (searchText) {
     search.push(encodeURIComponent(searchText));
