@@ -101,21 +101,25 @@ function PluginFooter({ keywords = [] }) {
 }
 
 function PluginComponent({ plugin }) {
+  const cardClasses = classnames(
+    'card',
+    { [styles.pluginDeprecatedCard]: plugin.deprecatedMessage ? true : false }
+  );
+  const deprecatedCard = plugin.deprecatedMessage ? true : false;
+
   return (
     <div className="row padding-vert--md">
       <div className="col col--10 col--offset-1">
-        {plugin.deprecatedMessage ? (
-          <div key={plugin.key} className={`card ${classnames('card__deprecated', styles.pluginDeprecatedCard)}`}>
-            <div className={classnames('card__header', styles.pluginCardHeader)}>
-              <h3 className={classnames('deprecated-banner', styles.deprecated)}>Deprecated</h3>
+        {deprecatedCard ? (
+          <div key={plugin.key} className={cardClasses}>
+            <div className={classnames('card__header', styles.deprecatedCardHeader)}>
+              <span className="badge badge--primary">Deprecated</span>
               <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
             </div>
-            <div className={classnames('card__flag', styles.pluginCardFlag)}>
-              <div className={classnames('card__flag__message', styles.pluginCardFlagMessage)}>
-                <h4 className={classnames('deprecated-message', styles.deprecatedMessage)}>{plugin.deprecatedMessage}</h4>
-                <div className="padding-top--sm">
-                  {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
-                </div>
+            <div className={classnames('card__flag__message', styles.pluginCardFlagMessage)}>
+              <h4 className={classnames('deprecated-message', styles.deprecatedMessage)}>{plugin.deprecatedMessage}</h4>
+              <div className="padding-top--sm">
+                {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
               </div>
             </div>
           </div>
