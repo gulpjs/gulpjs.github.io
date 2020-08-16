@@ -103,37 +103,27 @@ function PluginFooter({ keywords = [] }) {
 function PluginComponent({ plugin }) {
   const deprecatedCard = plugin.deprecatedMessage ? true : false;
   const deprecatedMessage = deprecatedCard && plugin.deprecatedMessage;
+  const cardClasses = classnames('card', { [styles.pluginDeprecatedCard]: plugin.deprecatedMessage ? true : false });
+  const cardHeader = classnames( 'card__header', deprecatedCard ? styles.deprecatedCardHeader : styles.pluginCardHeader );
+  const cardBody = classnames( deprecatedCard ? styles.pluginCardFlagMessage : 'card__body' );
 
   return (
     <div className="row padding-vert--md">
       <div className="col col--10 col--offset-1">
-        {deprecatedCard ? (
-          <div key={plugin.key} className={classnames('card', styles.pluginDeprecatedCard)}>
-            <div className={classnames('card__header', styles.deprecatedCardHeader)}>
-              <span className="badge badge--primary">Deprecated</span>
-              <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
-            </div>
-            <div className={styles.pluginCardFlagMessage}>
-              <h4 className={classnames(styles.deprecatedMessage)}>{deprecatedMessage}</h4>
-              <div className="padding-top--sm">
-                {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
-              </div>
+        <div key={plugin.key} className={cardClasses}>
+          <div className={cardHeader}>
+            {deprecatedCard && <span className="badge badge--primary">Deprecated</span>}
+            <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
+            {deprecatedCard || <span className="badge badge--primary">{plugin.version}</span>}
+          </div>
+          <div className={cardBody}>
+            {deprecatedCard ? ( <h4 className={classnames(styles.deprecatedMessage)}>{deprecatedMessage}</h4> ) : plugin.description}
+            <div className="padding-top--sm">
+              {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
             </div>
           </div>
-        ) : (
-          <div key={plugin.key} className="card">
-            <div className={classnames('card__header', styles.pluginCardHeader)}>
-              <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
-              <span className="badge badge--primary">{plugin.version}</span>
-            </div>
-            <div className="card__body">
-              <div className="padding-top--sm">
-                {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
-              </div>
-            </div>
-            <PluginFooter keywords={plugin.keywords} />
-          </div>
-        )}
+          {deprecatedCard || <PluginFooter keywords={plugin.keywords} /> }
+        </div>
       </div>
     </div>
   )
