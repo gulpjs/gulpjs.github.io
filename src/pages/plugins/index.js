@@ -27,8 +27,13 @@ class Plugin {
     return this._package.name;
   }
 
+  get isDeprecated() {
+    const isDeprecated = this._flags.deprecated ? true : false;
+    return isDeprecated;
+  }
+
   get deprecatedMessage() {
-    const deprecatedMessage= this._flags.deprecated ? this._flags.deprecated : false;
+    const deprecatedMessage= this._flags.deprecated ? this._flags.deprecated : '';
     return deprecatedMessage;
   }
 
@@ -101,28 +106,27 @@ function PluginFooter({ keywords = [] }) {
 }
 
 function PluginComponent({ plugin }) {
-  const deprecatedCard = plugin.deprecatedMessage ? true : false;
-  const deprecatedMessage = deprecatedCard && plugin.deprecatedMessage;
-  const cardClasses = classnames('card', { [styles.pluginDeprecatedCard]: plugin.deprecatedMessage ? true : false });
-  const cardHeader = classnames( 'card__header', deprecatedCard ? styles.deprecatedCardHeader : styles.pluginCardHeader );
-  const cardBody = classnames( deprecatedCard ? styles.pluginCardFlagMessage : 'card__body' );
+  const { isDeprecated, deprecatedMessage } = plugin
+  const cardClasses = classnames('card', { [styles.pluginDeprecatedCard]: isDeprecated } );
+  const cardHeader = classnames( 'card__header', { [styles.deprecatedCardHeader]: isDeprecated } );
+  const cardBody = isDeprecated ? styles.pluginCardFlagMessage : 'card__body';
 
   return (
     <div className="row padding-vert--md">
       <div className="col col--10 col--offset-1">
         <div key={plugin.key} className={cardClasses}>
           <div className={cardHeader}>
-            {deprecatedCard && <span className="badge badge--primary">Deprecated</span>}
+            {isDeprecated && <span className="badge badge--primary">Deprecated</span>}
             <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
-            {deprecatedCard || <span className="badge badge--primary">{plugin.version}</span>}
+            {!isDeprecated && <span className="badge badge--primary">{plugin.version}</span>}
           </div>
           <div className={cardBody}>
-            {deprecatedCard ? ( <h4 className={classnames(styles.deprecatedMessage)}>{deprecatedMessage}</h4> ) : plugin.description}
+            {isDeprecated ? ( <span className={styles.deprecatedMessage}>{deprecatedMessage}</span> ) : plugin.description}
             <div className="padding-top--sm">
               {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
             </div>
           </div>
-          {deprecatedCard || <PluginFooter keywords={plugin.keywords} /> }
+          {!isDeprecated && <PluginFooter keywords={plugin.keywords} /> }
         </div>
       </div>
     </div>
