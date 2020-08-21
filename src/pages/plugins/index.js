@@ -33,7 +33,7 @@ class Plugin {
   }
 
   get deprecatedMessage() {
-    const deprecatedMessage= this._flags.deprecated ? this._flags.deprecated : '';
+    const deprecatedMessage = this._flags.deprecated ? this._flags.deprecated : '';
     return deprecatedMessage;
   }
 
@@ -107,26 +107,29 @@ function PluginFooter({ keywords = [] }) {
 
 function PluginComponent({ plugin }) {
   const { isDeprecated, deprecatedMessage } = plugin
-  const cardClasses = classnames('card', { [styles.pluginDeprecatedCard]: isDeprecated } );
-  const cardHeader = classnames( 'card__header', { [styles.deprecatedCardHeader]: isDeprecated } );
-  const cardBody = isDeprecated ? styles.pluginCardFlagMessage : 'card__body';
+  const cardClasses = classnames('card', { [styles.pluginDeprecatedCard]: isDeprecated });
+  const cardHeaderClasses = classnames('card__header', { 
+    [styles.pluginCardHeader]: !isDeprecated,
+    [styles.deprecatedCardHeader]: isDeprecated
+  });
+  const cardBodyClasses = classnames('card__body', { [styles.pluginCardFlagMessage]: isDeprecated });
 
   return (
     <div className="row padding-vert--md">
       <div className="col col--10 col--offset-1">
         <div key={plugin.key} className={cardClasses}>
-          <div className={cardHeader}>
+          <div className={cardHeaderClasses}>
             {isDeprecated && <span className="badge badge--primary">Deprecated</span>}
             <h2><a className={styles.primaryUrl} href={plugin.primaryUrl}>{plugin.name}</a></h2>
             {!isDeprecated && <span className="badge badge--primary">{plugin.version}</span>}
           </div>
-          <div className={cardBody}>
-            {isDeprecated ? ( <span className={styles.deprecatedMessage}>{deprecatedMessage}</span> ) : plugin.description}
+          <div className={cardBodyClasses}>
+            {isDeprecated ? <span className={styles.deprecatedMessage}>{deprecatedMessage}</span> : plugin.description}
             <div className="padding-top--sm">
               {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
             </div>
           </div>
-          {!isDeprecated && <PluginFooter keywords={plugin.keywords} /> }
+          {!isDeprecated && <PluginFooter keywords={plugin.keywords} />}
         </div>
       </div>
     </div>
