@@ -16,7 +16,7 @@ function isInternalKeyword(keyword) {
 class Plugin {
   constructor(object) {
     this._package = object.package;
-    this._flags = object.flags ? object.flags : false;
+    this._flags = object.flags ? object.flags : {};
   }
 
   get key() {
