@@ -746,7 +746,7 @@ var path_to_regexp_default = /*#__PURE__*/__webpack_require__.n(path_to_regexp);
 var react_is = __webpack_require__(147);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(40);
+var objectWithoutPropertiesLoose = __webpack_require__(41);
 
 // EXTERNAL MODULE: ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js
 var hoist_non_react_statics_cjs = __webpack_require__(201);
@@ -1531,7 +1531,7 @@ module.exports = {
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(31)
+var fs = __webpack_require__(32)
 var polyfills = __webpack_require__(311)
 var legacy = __webpack_require__(313)
 var clone = __webpack_require__(314)
@@ -3159,10 +3159,28 @@ module.exports = {
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = require("url");
+// Exports
+module.exports = {
+	"searchContainer": "searchContainer_33-B",
+	"searchInput": "searchInput_3OHo",
+	"searchButton": "searchButton_1s18",
+	"pluginDeprecatedCard": "pluginDeprecatedCard_2z11",
+	"deprecatedCardHeader": "deprecatedCardHeader_3_qB",
+	"deprecatedMessage": "deprecatedMessage_3ETg",
+	"pluginCardHeader": "pluginCardHeader_3ATt",
+	"pluginCardKeywords": "pluginCardKeywords_2KTe",
+	"primaryUrl": "primaryUrl_1xjY"
+};
+
 
 /***/ }),
 /* 28 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3181,13 +3199,13 @@ module.exports = {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var DOM = __webpack_require__(38);
+var DOM = __webpack_require__(39);
 
 function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
@@ -3319,7 +3337,7 @@ module.exports = {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -3335,13 +3353,13 @@ module.exports = {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var roundingPrecisionFrom = __webpack_require__(118).roundingPrecisionFrom;
@@ -3568,7 +3586,7 @@ module.exports = {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = function clone(obj) {
@@ -3577,7 +3595,7 @@ module.exports = function clone(obj) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3596,7 +3614,7 @@ module.exports = function clone(obj) {
  */
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3677,7 +3695,7 @@ var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 var Link = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/router.js
-var router = __webpack_require__(34);
+var router = __webpack_require__(35);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/interopRequireWildcard.js + 1 modules
 var interopRequireWildcard = __webpack_require__(4);
@@ -3715,7 +3733,7 @@ var Toggle_styles_module_default = /*#__PURE__*/__webpack_require__.n(Toggle_sty
  * LICENSE file in the root directory of this source tree.
  */const Moon=()=>/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(Toggle_styles_module_default.a.toggle,Toggle_styles_module_default.a.moon)});const Sun=()=>/*#__PURE__*/react_default.a.createElement("span",{className:classnames_default()(Toggle_styles_module_default.a.toggle,Toggle_styles_module_default.a.sun)});/* harmony default export */ var Toggle = (function(props){const{isClient}=Object(useDocusaurusContext["a" /* default */])();return/*#__PURE__*/react_default.a.createElement(component_default.a,Object(esm_extends["a" /* default */])({disabled:!isClient,icons:{checked:/*#__PURE__*/react_default.a.createElement(Moon,null),unchecked:/*#__PURE__*/react_default.a.createElement(Sun,null)}},props));});
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useThemeContext.js
-var useThemeContext = __webpack_require__(39);
+var useThemeContext = __webpack_require__(40);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useLocationHash.js
 /**
@@ -3735,7 +3753,7 @@ var useThemeContext = __webpack_require__(39);
 var useLogo = __webpack_require__(82);
 
 // EXTERNAL MODULE: ./src/theme/Navbar/styles.module.css
-var Navbar_styles_module = __webpack_require__(41);
+var Navbar_styles_module = __webpack_require__(42);
 var Navbar_styles_module_default = /*#__PURE__*/__webpack_require__.n(Navbar_styles_module);
 
 // CONCATENATED MODULE: ./src/theme/Navbar/index.js
@@ -3768,7 +3786,7 @@ var Layout_styles = __webpack_require__(399);
  */function Layout(props){const{siteConfig={}}=Object(useDocusaurusContext["a" /* default */])();const{favicon,title:siteTitle,themeConfig:{image:defaultImage},url:siteUrl}=siteConfig;const{children,title,noFooter,description,image,keywords,permalink,version}=props;const metaTitle=title?`${title} | ${siteTitle}`:siteTitle;const metaImage=image||defaultImage;let metaImageUrl=siteUrl+Object(useBaseUrl["a" /* default */])(metaImage);if(!Object(isInternalUrl["a" /* default */])(metaImage)){metaImageUrl=metaImage;}const faviconUrl=Object(useBaseUrl["a" /* default */])(favicon);return/*#__PURE__*/react_default.a.createElement(theme_ThemeProvider,null,/*#__PURE__*/react_default.a.createElement(theme_TabGroupChoiceProvider,null,/*#__PURE__*/react_default.a.createElement(Head["a" /* default */],null,/*#__PURE__*/react_default.a.createElement("html",{lang:"en"}),metaTitle&&/*#__PURE__*/react_default.a.createElement("title",null,metaTitle),metaTitle&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:title",content:metaTitle}),favicon&&/*#__PURE__*/react_default.a.createElement("link",{rel:"shortcut icon",href:faviconUrl}),description&&/*#__PURE__*/react_default.a.createElement("meta",{name:"description",content:description}),description&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:description",content:description}),version&&/*#__PURE__*/react_default.a.createElement("meta",{name:"docsearch:version",content:version}),keywords&&keywords.length&&/*#__PURE__*/react_default.a.createElement("meta",{name:"keywords",content:keywords.join(',')}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:image",content:metaImageUrl}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{property:"twitter:image",content:metaImageUrl}),metaImage&&/*#__PURE__*/react_default.a.createElement("meta",{name:"twitter:image:alt",content:`Image for ${metaTitle}`}),permalink&&/*#__PURE__*/react_default.a.createElement("meta",{property:"og:url",content:siteUrl+permalink}),/*#__PURE__*/react_default.a.createElement("meta",{name:"twitter:card",content:"summary_large_image"})),/*#__PURE__*/react_default.a.createElement(theme_AnnouncementBar,null),/*#__PURE__*/react_default.a.createElement(theme_Navbar,null),/*#__PURE__*/react_default.a.createElement("div",{className:"main-wrapper"},children),!noFooter&&/*#__PURE__*/react_default.a.createElement(theme_Footer,null)));}/* harmony default export */ var theme_Layout = __webpack_exports__["a"] = (Layout);
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -3784,7 +3802,7 @@ module.exports = {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Contains the interpretation of CSS properties, as used by the property optimizer
@@ -4853,7 +4871,7 @@ module.exports = override(compactable, vendorPrefixedCompactable);
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4865,7 +4883,7 @@ module.exports = {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4880,7 +4898,7 @@ module.exports = {
  */function useThemeContext(){return Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_theme_ThemeContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"]);}/* harmony default export */ __webpack_exports__["a"] = (useThemeContext);
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4901,7 +4919,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -4917,7 +4935,7 @@ module.exports = {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 // Exports
@@ -4927,21 +4945,6 @@ module.exports = {
 	"menu": "menu_w2sC",
 	"sidebarMenuIcon": "sidebarMenuIcon_2vk4",
 	"sidebarMenuCloseIcon": "sidebarMenuCloseIcon_1JRa"
-};
-
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-	"searchContainer": "searchContainer_33-B",
-	"searchInput": "searchInput_3OHo",
-	"searchButton": "searchButton_1s18",
-	"pluginCardHeader": "pluginCardHeader_3ATt",
-	"pluginCardKeywords": "pluginCardKeywords_2KTe",
-	"primaryUrl": "primaryUrl_1xjY"
 };
 
 
@@ -5275,7 +5278,7 @@ module.exports = function map(arr, fn) {
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40);
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(41);
 /* harmony import */ var tiny_invariant__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(21);
 
 
@@ -10805,7 +10808,7 @@ var wrapForOptimizing = __webpack_require__(45).all;
 var removeUnused = __webpack_require__(117);
 var restoreFromOptimizing = __webpack_require__(55);
 
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
 
 function optimizeProperties(properties, withOverriding, withMerging, context) {
   var levelOptions = context.options.level[OptimizationLevel.Two];
@@ -12353,7 +12356,7 @@ function renderRoutes(routes, extraProps, switchProps) {
 
 "use strict";
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
-/* harmony import */ var _theme_hooks_useThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var _theme_hooks_useThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(40);
 /* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
 /* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(23);
 /**
@@ -14646,7 +14649,7 @@ module.exports = {
 /* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 var InvalidPropertyError = __webpack_require__(121);
 
 function populateComponents(properties, validator, warnings) {
@@ -14694,7 +14697,7 @@ module.exports = populateComponents;
 /* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 
 function restoreWithComponents(property) {
   var descriptor = compactable[property.name];
@@ -14793,7 +14796,7 @@ module.exports = extractProperties;
 /***/ (function(module, exports, __webpack_require__) {
 
 var path = __webpack_require__(7);
-var url = __webpack_require__(27);
+var url = __webpack_require__(28);
 
 var isRemoteResource = __webpack_require__(57);
 var hasProtocol = __webpack_require__(71);
@@ -15223,7 +15226,7 @@ function bindContext(fn, context) {
 "use strict";
 
 
-var _ = __webpack_require__(29);
+var _ = __webpack_require__(30);
 
 var css = {
   wrapper: {
@@ -15356,7 +15359,7 @@ webpackContext.id = 109;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35);
+/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(36);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -16904,7 +16907,7 @@ module.exports = rebaseLocalMap;
 /***/ (function(module, exports, __webpack_require__) {
 
 var path = __webpack_require__(7);
-var url = __webpack_require__(27);
+var url = __webpack_require__(28);
 
 function rebaseRemoteMap(sourceMap, sourceUri) {
   var sourceDirectory = path.dirname(sourceUri);
@@ -20090,7 +20093,7 @@ IndexCore.prototype.browseFrom = function(cursor, callback) {
 * @param callback (optional)
 */
 IndexCore.prototype.searchForFacetValues = function(params, callback) {
-  var clone = __webpack_require__(33);
+  var clone = __webpack_require__(34);
   var omit = __webpack_require__(154);
   var usage = 'Usage: index.searchForFacetValues({facetName, facetQuery, ...params}[, callback])';
 
@@ -21791,8 +21794,8 @@ function inspect(obj) {
 
 var namespace = 'autocomplete:';
 
-var _ = __webpack_require__(29);
-var DOM = __webpack_require__(38);
+var _ = __webpack_require__(30);
+var DOM = __webpack_require__(39);
 
 // constructor
 // -----------
@@ -22126,11 +22129,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
-/* harmony import */ var _plugins_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
+/* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _plugins_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(27);
 /* harmony import */ var _plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3__);
-const baseUrl=`https://registry.npmjs.com/-/v1/search`;const internalKeywords=['gulp','gulpplugin'];function isInternalKeyword(keyword){return!internalKeywords.includes(keyword);}class Plugin{constructor(object){this._package=object.package;}get key(){return this._package.name;}get name(){return this._package.name;}get description(){return this._package.description;}get version(){return`v${this._package.version}`;}get keywords(){// Unique Keywords
-const keywords=new Set(this._package.keywords);return Array.from(keywords).filter(isInternalKeyword);}get primaryUrl(){const{npm,homepage,repository}=this._package.links;if(npm){return npm;}if(homepage){return homepage;}return repository;}get links(){const{npm,homepage,repository}=this._package.links;const links=[];if(npm){links.push({text:'npm',href:npm});}if(homepage&&homepage!==npm&&homepage!==repository&&homepage!==`${repository}#readme`){links.push({text:'homepage',href:homepage});}if(repository){links.push({text:'repository',href:repository});}return links;}}function toPlugin(object){return new Plugin(object);}function PluginFooter({keywords=[]}){if(keywords.length===0){return null;}else{return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"card__footer"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul",{className:classnames__WEBPACK_IMPORTED_MODULE_1___default()('pills padding-top--sm text--normal text--right',_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.pluginCardKeywords)},keywords.map(keyword=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",{key:keyword,className:"pill-item"},keyword))));}}function PluginComponent({plugin}){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"row padding-vert--md"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"col col--10 col--offset-1"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{key:plugin.key,className:"card"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:classnames__WEBPACK_IMPORTED_MODULE_1___default()('card__header',_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.pluginCardHeader)},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{className:_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.primaryUrl,href:plugin.primaryUrl},plugin.name)),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"badge badge--primary"},plugin.version)),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"card__body"},plugin.description,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"padding-top--sm"},plugin.links.map(link=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{key:link.text,className:"padding-right--sm",href:link.href},link.text)))),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PluginFooter,{keywords:plugin.keywords}))));}function noop(evt){evt&&evt.preventDefault();}function Paginate({onPage=noop}){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"row padding-vert--md"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"col col--4 col--offset-4"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button",{className:"button button--block button--primary",onClick:onPage},"Load more")));}function keywordsToQuerystring(keywords){let keywordsStr=`keywords:`;if(keywords.size){keywordsStr+=[...keywords].join(',');keywordsStr+=`+gulpplugin`;}else{keywordsStr+=`gulpplugin`;}return keywordsStr;}async function fetchPackages(keywords,searchText='',pageNumber=0){const pageSize=20;let search=[keywordsToQuerystring(keywords)];if(searchText){search.push(encodeURIComponent(searchText));}const from=`${pageNumber*pageSize}`;const text=search.join(' ');try{// https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search
+const baseUrl=`https://registry.npmjs.com/-/v1/search`;const internalKeywords=['gulp','gulpplugin'];function isInternalKeyword(keyword){return!internalKeywords.includes(keyword);}class Plugin{constructor(object){this._package=object.package;this._flags=object.flags?object.flags:{};}get key(){return this._package.name;}get name(){return this._package.name;}get isDeprecated(){const isDeprecated=this._flags.deprecated?true:false;return isDeprecated;}get deprecatedMessage(){const deprecatedMessage=this._flags.deprecated?this._flags.deprecated:'';return deprecatedMessage;}get description(){return this._package.description;}get version(){return`v${this._package.version}`;}get keywords(){// Unique Keywords
+const keywords=new Set(this._package.keywords);return Array.from(keywords).filter(isInternalKeyword);}get primaryUrl(){const{npm,homepage,repository}=this._package.links;if(npm){return npm;}if(homepage){return homepage;}return repository;}get links(){const{npm,homepage,repository}=this._package.links;const links=[];if(npm){links.push({text:'npm',href:npm});}if(homepage&&homepage!==npm&&homepage!==repository&&homepage!==`${repository}#readme`){links.push({text:'homepage',href:homepage});}if(repository){links.push({text:'repository',href:repository});}return links;}}function toPlugin(object){return new Plugin(object);}function PluginFooter({keywords=[]}){if(keywords.length===0){return null;}else{return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"card__footer"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul",{className:classnames__WEBPACK_IMPORTED_MODULE_1___default()('pills padding-top--sm text--normal text--right',_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.pluginCardKeywords)},keywords.map(keyword=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",{key:keyword,className:"pill-item"},keyword))));}}function PluginComponent({plugin}){const{isDeprecated,deprecatedMessage}=plugin;const cardClasses=classnames__WEBPACK_IMPORTED_MODULE_1___default()('card',{[_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.pluginDeprecatedCard]:isDeprecated});const cardHeaderClasses=classnames__WEBPACK_IMPORTED_MODULE_1___default()('card__header',{[_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.pluginCardHeader]:!isDeprecated,[_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.deprecatedCardHeader]:isDeprecated});const cardBodyClasses='card__body';return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"row padding-vert--md"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"col col--10 col--offset-1"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{key:plugin.key,className:cardClasses},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:cardHeaderClasses},isDeprecated&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"badge badge--primary"},"Deprecated"),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{className:_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.primaryUrl,href:plugin.primaryUrl},plugin.name)),!isDeprecated&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"badge badge--primary"},plugin.version)),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:cardBodyClasses},isDeprecated?/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:_plugins_module_scss__WEBPACK_IMPORTED_MODULE_3___default.a.deprecatedMessage},deprecatedMessage):plugin.description,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"padding-top--sm"},plugin.links.map(link=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a",{key:link.text,className:"padding-right--sm",href:link.href},link.text)))),!isDeprecated&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PluginFooter,{keywords:plugin.keywords}))));}function noop(evt){evt&&evt.preventDefault();}function Paginate({onPage=noop}){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"row padding-vert--md"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"col col--4 col--offset-4"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button",{className:"button button--block button--primary",onClick:onPage},"Load more")));}function keywordsToQuerystring(keywords){let keywordsStr=`keywords:`;if(keywords.size){keywordsStr+=[...keywords].join(',');keywordsStr+=`+gulpplugin`;}else{keywordsStr+=`gulpplugin`;}return keywordsStr;}async function fetchPackages(keywords,searchText='',pageNumber=0){const pageSize=20;let search=[keywordsToQuerystring(keywords),"is:unstable","not:unstable"];if(searchText){search.push(encodeURIComponent(searchText));}const from=`${pageNumber*pageSize}`;const text=search.join(' ');try{// https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search
 const initialUrl=`${baseUrl}?from=${from}&text=${text}&quality=0.5&popularity=1.0&maintenance=0.1`;const response=await fetch(initialUrl);const{total,objects}=await response.json();return{total,plugins:objects.map(toPlugin)};}catch(err){console.log(err);return{total:0,plugins:[]};}}function keywordsRegExp(){return /keywords:([\S]*)\s*/g;}function extractKeywords(text){// This is really messy, should probably test it
 let newKeywords=new Set();for(const match of text.matchAll(keywordsRegExp())){const kw=match[1].split(`,`);newKeywords=new Set([...newKeywords,...kw]);}let newText=text.replace(keywordsRegExp(),``).trim();return[newKeywords,newText];}function formatSearch(keywords=new Set(),searchText=''){let searchQuery=[];if(keywords.size){searchQuery.push(`keywords:${[...keywords].join(',')}`);}if(searchText){searchQuery.push(searchText);}return searchQuery.join(' ');}function useSearch(){const[isPopular,setIsPopular]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);const[title,setTitle]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(``);const[plugins,setPlugins]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);const[placeholder,setPlaceholder]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(`Search`);const[keywords,setKeywords]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(new Set());const[searchText,setSearchText]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(``);// Pagination stuff
 const[isPaging,setIsPaging]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);const[pageNumber,setPageNumer]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);const[hasMore,setHasMore]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(()=>{fetchPackages(keywords,searchText,pageNumber).then(results=>{if(isPopular){setTitle(`Popular plugins`);setPlaceholder(`Search ${results.total} plugins`);}else{const searchQuery=formatSearch(keywords,searchText);setTitle(`Found ${results.total} searching for \`${searchQuery}\``);}let loadedPlugins;if(isPaging){loadedPlugins=plugins.concat(results.plugins);}else{loadedPlugins=results.plugins;}if(loadedPlugins.length===results.total){setHasMore(false);}else{setHasMore(true);}setPlugins(loadedPlugins);});},[searchText,keywords,pageNumber]);function search(text){// Undo paging upon search
@@ -23104,7 +23107,7 @@ var react = __webpack_require__(2);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/index.js + 12 modules
-var Layout = __webpack_require__(35);
+var Layout = __webpack_require__(36);
 
 // EXTERNAL MODULE: ./src/theme/Hero/hero.module.scss
 var hero_module = __webpack_require__(13);
@@ -23142,7 +23145,7 @@ var ExecutionEnvironment_default = /*#__PURE__*/__webpack_require__.n(ExecutionE
 // CONCATENATED MODULE: ./src/theme/ExternalLink/index.js
 function ExternalLink({className,href,title,children}){return/*#__PURE__*/react_default.a.createElement("a",{className:className,href:href,title:title,target:"_blank",rel:"noopener noreferrer"},children);}/* harmony default export */ var theme_ExternalLink = (ExternalLink);
 // EXTERNAL MODULE: ./src/theme/CompanyBanner/banner.module.scss
-var banner_module = __webpack_require__(30);
+var banner_module = __webpack_require__(31);
 var banner_module_default = /*#__PURE__*/__webpack_require__.n(banner_module);
 
 // CONCATENATED MODULE: ./src/theme/CompanyBanner/index.js
@@ -23205,7 +23208,7 @@ var useDocusaurusContext = __webpack_require__(6);
 var renderRoutes = __webpack_require__(79);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/Layout/index.js + 12 modules
-var Layout = __webpack_require__(35);
+var Layout = __webpack_require__(36);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 var esm_extends = __webpack_require__(1);
@@ -23231,7 +23234,7 @@ var Link = __webpack_require__(17);
 var isInternalUrl = __webpack_require__(23);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/DocSidebar/styles.module.css
-var styles_module = __webpack_require__(42);
+var styles_module = __webpack_require__(43);
 var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/DocSidebar/index.js
@@ -23743,10 +23746,10 @@ var parse_numeric_range = __webpack_require__(112);
 var parse_numeric_range_default = /*#__PURE__*/__webpack_require__.n(parse_numeric_range);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useThemeContext.js
-var useThemeContext = __webpack_require__(39);
+var useThemeContext = __webpack_require__(40);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/CodeBlock/styles.module.css
-var CodeBlock_styles_module = __webpack_require__(36);
+var CodeBlock_styles_module = __webpack_require__(37);
 var CodeBlock_styles_module_default = /*#__PURE__*/__webpack_require__.n(CodeBlock_styles_module);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/CodeBlock/index.js
@@ -23805,7 +23808,7 @@ return/*#__PURE__*/react_default.a.createElement("a",props);}return/*#__PURE__*/
 var NotFound = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/router.js
-var router = __webpack_require__(34);
+var router = __webpack_require__(35);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/DocPage/styles.module.css
 var DocPage_styles_module = __webpack_require__(85);
@@ -25567,13 +25570,13 @@ module.exports = Object.assign(
   __webpack_require__(332),
   __webpack_require__(334),
   __webpack_require__(336),
-  __webpack_require__(28),
+  __webpack_require__(29),
   __webpack_require__(73)
 )
 
 // Export fs.promises as a getter property so that we don't trigger
 // ExperimentalWarning before fs.promises is actually accessed.
-const fs = __webpack_require__(31)
+const fs = __webpack_require__(32)
 if (Object.getOwnPropertyDescriptor(fs, 'promises')) {
   Object.defineProperty(module.exports, 'promises', {
     get () { return fs.promises }
@@ -27221,11 +27224,11 @@ var _extends2 = _interopRequireDefault(__webpack_require__(215));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(216));
 
-var _fs = _interopRequireDefault(__webpack_require__(31));
+var _fs = _interopRequireDefault(__webpack_require__(32));
 
 var _path = _interopRequireDefault(__webpack_require__(7));
 
-var _url = _interopRequireDefault(__webpack_require__(27));
+var _url = _interopRequireDefault(__webpack_require__(28));
 
 var _utils = __webpack_require__(114);
 
@@ -27718,8 +27721,8 @@ var formatFrom = __webpack_require__(64).formatFrom;
 var inlineFrom = __webpack_require__(262);
 var inlineRequestFrom = __webpack_require__(263);
 var inlineTimeoutFrom = __webpack_require__(264);
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
-var optimizationLevelFrom = __webpack_require__(32).optimizationLevelFrom;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
+var optimizationLevelFrom = __webpack_require__(33).optimizationLevelFrom;
 var rebaseFrom = __webpack_require__(265);
 var rebaseToFrom = __webpack_require__(266);
 
@@ -27903,7 +27906,7 @@ var removeUnused = __webpack_require__(117);
 var restoreFromOptimizing = __webpack_require__(55);
 var wrapForOptimizing = __webpack_require__(45).all;
 
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
 
 var Token = __webpack_require__(10);
 var Marker = __webpack_require__(16);
@@ -28959,7 +28962,7 @@ var restructure = __webpack_require__(254);
 
 var optimizeProperties = __webpack_require__(67);
 
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
 
 var Token = __webpack_require__(10);
 
@@ -29093,7 +29096,7 @@ var optimizeProperties = __webpack_require__(67);
 var sortSelectors = __webpack_require__(89);
 var tidyRules = __webpack_require__(90);
 
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
 
 var serializeBody = __webpack_require__(12).body;
 var serializeRules = __webpack_require__(12).rules;
@@ -29146,7 +29149,7 @@ var everyValuesPair = __webpack_require__(119);
 var hasInherit = __webpack_require__(120);
 var populateComponents = __webpack_require__(94);
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 var deepClone = __webpack_require__(68).deep;
 var restoreWithComponents = __webpack_require__(95);
 
@@ -30870,7 +30873,7 @@ var isMergeableShorthand = __webpack_require__(242);
 var overridesNonComponentShorthand = __webpack_require__(243);
 var sameVendorPrefixesIn = __webpack_require__(122).same;
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 var deepClone = __webpack_require__(68).deep;
 var restoreWithComponents = __webpack_require__(95);
 var shallowClone = __webpack_require__(68).shallow;
@@ -31352,7 +31355,7 @@ module.exports = overrideProperties;
 /* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 
 function findComponentIn(shorthand, longhand) {
   var comparator = nameComparator(longhand);
@@ -31398,7 +31401,7 @@ module.exports = findComponentIn;
 /* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 
 function isComponentOf(property1, property2, shallow) {
   return isDirectComponentOf(property1, property2) ||
@@ -31443,7 +31446,7 @@ module.exports = isMergeableShorthand;
 /* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compactable = __webpack_require__(37);
+var compactable = __webpack_require__(38);
 
 function overridesNonComponentShorthand(property1, property2) {
   return property1.name in compactable &&
@@ -31464,7 +31467,7 @@ var extractProperties = __webpack_require__(96);
 var rulesOverlap = __webpack_require__(123);
 
 var serializeRules = __webpack_require__(12).rules;
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
 var Token = __webpack_require__(10);
 
 function mergeMediaQueries(tokens, context) {
@@ -31695,7 +31698,7 @@ var isMergeable = __webpack_require__(66);
 var sortSelectors = __webpack_require__(89);
 var tidyRules = __webpack_require__(90);
 
-var OptimizationLevel = __webpack_require__(32).OptimizationLevel;
+var OptimizationLevel = __webpack_require__(33).OptimizationLevel;
 
 var serializeBody = __webpack_require__(12).body;
 var serializeRules = __webpack_require__(12).rules;
@@ -33583,7 +33586,7 @@ module.exports = fetchFrom;
 
 var http = __webpack_require__(70);
 var https = __webpack_require__(46);
-var url = __webpack_require__(27);
+var url = __webpack_require__(28);
 
 var isHttpResource = __webpack_require__(260);
 var isHttpsResource = __webpack_require__(261);
@@ -33708,7 +33711,7 @@ module.exports = inlineOptionsFrom;
 /* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var url = __webpack_require__(27);
+var url = __webpack_require__(28);
 
 var override = __webpack_require__(44);
 
@@ -35802,7 +35805,7 @@ exports.SourceNode = SourceNode;
 /* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(31);
+var fs = __webpack_require__(32);
 var path = __webpack_require__(7);
 
 var applySourceMaps = __webpack_require__(275);
@@ -36149,7 +36152,7 @@ module.exports = readSources;
 /* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(31);
+var fs = __webpack_require__(32);
 var path = __webpack_require__(7);
 
 var isAllowedResource = __webpack_require__(97);
@@ -36426,7 +36429,7 @@ module.exports = isDataUriResource;
 /* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(31);
+var fs = __webpack_require__(32);
 var path = __webpack_require__(7);
 
 var isAllowedResource = __webpack_require__(97);
@@ -36680,7 +36683,7 @@ module.exports = rebase;
 /***/ (function(module, exports, __webpack_require__) {
 
 var path = __webpack_require__(7);
-var url = __webpack_require__(27);
+var url = __webpack_require__(28);
 
 var DOUBLE_QUOTE = '"';
 var SINGLE_QUOTE = '\'';
@@ -39166,7 +39169,7 @@ module.exports = parseQuery;
 "use strict";
 
 
-var _parseUrl = __webpack_require__(27).parse;
+var _parseUrl = __webpack_require__(28).parse;
 
 
 
@@ -42493,7 +42496,7 @@ module.exports = function (size) {
 const fs = __webpack_require__(14)
 const path = __webpack_require__(7)
 const mkdirp = __webpack_require__(22).mkdirs
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 const utimes = __webpack_require__(142).utimesMillis
 const stat = __webpack_require__(72)
 
@@ -43119,7 +43122,7 @@ const u = __webpack_require__(18).fromCallback
 const path = __webpack_require__(7)
 const fs = __webpack_require__(14)
 const mkdir = __webpack_require__(22)
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 
 function createFile (file, callback) {
   function makeFile () {
@@ -43175,7 +43178,7 @@ const u = __webpack_require__(18).fromCallback
 const path = __webpack_require__(7)
 const fs = __webpack_require__(14)
 const mkdir = __webpack_require__(22)
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 
 function createLink (srcpath, dstpath, callback) {
   function makeLink (srcpath, dstpath) {
@@ -43254,7 +43257,7 @@ const _symlinkType = __webpack_require__(327)
 const symlinkType = _symlinkType.symlinkType
 const symlinkTypeSync = _symlinkType.symlinkTypeSync
 
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 
 function createSymlink (srcpath, dstpath, type, callback) {
   callback = (typeof type === 'function') ? type : callback
@@ -43311,7 +43314,7 @@ module.exports = {
 
 const path = __webpack_require__(7)
 const fs = __webpack_require__(14)
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 
 /**
  * Function that returns two types of paths, one relative to symlink, and one
@@ -43477,7 +43480,7 @@ var _fs
 try {
   _fs = __webpack_require__(14)
 } catch (_) {
-  _fs = __webpack_require__(31)
+  _fs = __webpack_require__(32)
 }
 
 function readFile (file, options, callback) {
@@ -43618,7 +43621,7 @@ module.exports = jsonfile
 
 const path = __webpack_require__(7)
 const mkdir = __webpack_require__(22)
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 const jsonFile = __webpack_require__(101)
 
 function outputJson (file, data, options, callback) {
@@ -43759,7 +43762,7 @@ const path = __webpack_require__(7)
 const copy = __webpack_require__(143).copy
 const remove = __webpack_require__(73).remove
 const mkdirp = __webpack_require__(22).mkdirp
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 const stat = __webpack_require__(72)
 
 function move (src, dest, opts, cb) {
@@ -43830,7 +43833,7 @@ const u = __webpack_require__(18).fromCallback
 const fs = __webpack_require__(14)
 const path = __webpack_require__(7)
 const mkdir = __webpack_require__(22)
-const pathExists = __webpack_require__(28).pathExists
+const pathExists = __webpack_require__(29).pathExists
 
 function outputFile (file, data, encoding, callback) {
   if (typeof encoding === 'function') {
@@ -45217,7 +45220,7 @@ if (false) {}
 debug('loaded the Node.js client');
 
 function algoliasearch(applicationID, apiKey, opts) {
-  var cloneDeep = __webpack_require__(33);
+  var cloneDeep = __webpack_require__(34);
   var reduce = __webpack_require__(368);
 
   if (!opts) {
@@ -45278,7 +45281,7 @@ inherits(AlgoliaSearchNodeJS, AlgoliaSearchServer);
 AlgoliaSearchNodeJS.prototype._request = function request(rawUrl, opts) {
   var http = __webpack_require__(70);
   var https = __webpack_require__(46);
-  var url = __webpack_require__(27);
+  var url = __webpack_require__(28);
 
   var client = this;
 
@@ -46064,7 +46067,7 @@ function createWritableStdioStream (fd) {
       break;
 
     case 'FILE':
-      var fs = __webpack_require__(31);
+      var fs = __webpack_require__(32);
       stream = new fs.SyncWriteStream(fd, { autoClose: false });
       stream._type = 'fs';
       break;
@@ -47364,7 +47367,7 @@ var buildSearchMethod = __webpack_require__(151);
 
 function createPlacesClient(algoliasearch) {
   return function places(appID, apiKey, opts) {
-    var cloneDeep = __webpack_require__(33);
+    var cloneDeep = __webpack_require__(34);
 
     opts = opts && cloneDeep(opts) || {};
     opts.hosts = opts.hosts || [
@@ -47790,7 +47793,7 @@ AlgoliaSearch.prototype.copyIndex = function(srcIndexName, dstIndexName, scopeOr
  *  content: the server answer that contains the task ID
  */
 AlgoliaSearch.prototype.getLogs = function(offset, length, callback) {
-  var clone = __webpack_require__(33);
+  var clone = __webpack_require__(34);
   var params = {};
   if (typeof offset === 'object') {
     // getLogs(params)
@@ -48761,7 +48764,7 @@ Index.prototype.deleteObjects = function(objectIDs, callback) {
 * @deprecated see index.deleteBy
 */
 Index.prototype.deleteByQuery = deprecate(function(query, params, callback) {
-  var clone = __webpack_require__(33);
+  var clone = __webpack_require__(34);
   var map = __webpack_require__(50);
 
   var indexObj = this;
@@ -50021,7 +50024,7 @@ var RESET_APP_DATA_TIMER =
 function AlgoliaSearchCore(applicationID, apiKey, opts) {
   var debug = __webpack_require__(74)('algoliasearch');
 
-  var clone = __webpack_require__(33);
+  var clone = __webpack_require__(34);
   var isArray = __webpack_require__(19);
   var map = __webpack_require__(50);
 
@@ -50702,7 +50705,7 @@ AlgoliaSearchCore.prototype.searchForFacetValues = function(queries) {
       throw new Error(usage);
     }
 
-    var clone = __webpack_require__(33);
+    var clone = __webpack_require__(34);
     var omit = __webpack_require__(154);
 
     var indexName = query.indexName;
@@ -50855,7 +50858,7 @@ AlgoliaSearchCore.prototype._getHostIndexByType = function(hostType) {
 };
 
 AlgoliaSearchCore.prototype._setHostIndexByType = function(hostIndex, hostType) {
-  var clone = __webpack_require__(33);
+  var clone = __webpack_require__(34);
   var newHostIndexes = clone(this._hostIndexes);
   newHostIndexes[hostType] = hostIndex;
   this._partialAppIdDataUpdate({hostIndexes: newHostIndexes});
@@ -51212,7 +51215,7 @@ function getAgent(protocol) {
 }
 
 function getParsedProxy() {
-  var url = __webpack_require__(27);
+  var url = __webpack_require__(28);
   var proxy = process.env.HTTP_PROXY ||
     process.env.HTTPS_PROXY ||
     '';
@@ -52086,11 +52089,11 @@ module.exports = __webpack_require__(378);
 var zepto = __webpack_require__(160);
 
 // setup DOM element
-var DOM = __webpack_require__(38);
+var DOM = __webpack_require__(39);
 DOM.element = zepto;
 
 // setup utils functions
-var _ = __webpack_require__(29);
+var _ = __webpack_require__(30);
 _.isArray = zepto.isArray;
 _.isFunction = zepto.isFunction;
 _.isObject = zepto.isPlainObject;
@@ -52182,8 +52185,8 @@ module.exports = autocomplete;
 
 var attrsKey = 'aaAttrs';
 
-var _ = __webpack_require__(29);
-var DOM = __webpack_require__(38);
+var _ = __webpack_require__(30);
+var DOM = __webpack_require__(39);
 var EventBus = __webpack_require__(161);
 var Input = __webpack_require__(380);
 var Dropdown = __webpack_require__(388);
@@ -52853,8 +52856,8 @@ specialKeyCodeMap = {
   40: 'down'
 };
 
-var _ = __webpack_require__(29);
-var DOM = __webpack_require__(38);
+var _ = __webpack_require__(30);
+var DOM = __webpack_require__(39);
 var EventEmitter = __webpack_require__(107);
 
 // constructor
@@ -53426,8 +53429,8 @@ exports.install = function (t) {
 "use strict";
 
 
-var _ = __webpack_require__(29);
-var DOM = __webpack_require__(38);
+var _ = __webpack_require__(30);
+var DOM = __webpack_require__(39);
 var EventEmitter = __webpack_require__(107);
 var Dataset = __webpack_require__(389);
 var css = __webpack_require__(108);
@@ -53831,8 +53834,8 @@ var datasetKey = 'aaDataset';
 var valueKey = 'aaValue';
 var datumKey = 'aaDatum';
 
-var _ = __webpack_require__(29);
-var DOM = __webpack_require__(38);
+var _ = __webpack_require__(30);
+var DOM = __webpack_require__(39);
 var html = __webpack_require__(162);
 var css = __webpack_require__(108);
 var EventEmitter = __webpack_require__(107);
@@ -54152,7 +54155,7 @@ module.exports = {
 "use strict";
 
 
-var _ = __webpack_require__(29);
+var _ = __webpack_require__(30);
 var version = __webpack_require__(163);
 var parseAlgoliaClientVersion = __webpack_require__(164);
 
@@ -54183,7 +54186,7 @@ module.exports = function search(index, params) {
 "use strict";
 
 
-var _ = __webpack_require__(29);
+var _ = __webpack_require__(30);
 var version = __webpack_require__(163);
 var parseAlgoliaClientVersion = __webpack_require__(164);
 
