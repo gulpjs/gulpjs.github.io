@@ -108,11 +108,11 @@ function PluginFooter({ keywords = [] }) {
 function PluginComponent({ plugin }) {
   const { isDeprecated, deprecatedMessage } = plugin
   const cardClasses = classnames('card', { [styles.pluginDeprecatedCard]: isDeprecated });
-  const cardHeaderClasses = classnames('card__header', { 
+  const cardHeaderClasses = classnames('card__header', {
     [styles.pluginCardHeader]: !isDeprecated,
     [styles.deprecatedCardHeader]: isDeprecated
   });
-  const cardBodyClasses = classnames('card__body', { [styles.pluginCardFlagMessage]: isDeprecated });
+  const cardBodyClasses = 'card__body';
 
   return (
     <div className="row padding-vert--md">
@@ -124,7 +124,7 @@ function PluginComponent({ plugin }) {
             {!isDeprecated && <span className="badge badge--primary">{plugin.version}</span>}
           </div>
           <div className={cardBodyClasses}>
-            {isDeprecated ? <span className={styles.deprecatedMessage}>{deprecatedMessage}</span> : plugin.description}
+            {isDeprecated ? <div className={styles.deprecatedMessage}>{deprecatedMessage}</div> : plugin.description}
             <div className="padding-top--sm">
               {plugin.links.map((link) => <a key={link.text} className="padding-right--sm" href={link.href}>{link.text}</a>)}
             </div>

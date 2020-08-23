@@ -32,41 +32,26 @@
 
 .pluginDeprecatedCard {
   background-color: #ffdfdf;
-  padding: 16px;
 }
 
 .deprecatedCardHeader {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 0;
-  padding: 0 0 12px 0!important;
-  border-bottom: solid 1px rgba(0,0,0,.1);
 
   h2 {
-    margin-left: 8px
+    margin-left: var(--ifm-card-horizontal-spacing);
   }
 }
 
-.pluginCardFlagMessage {
-  margin-top: 8px;
-}
 
 .deprecatedMessage {
-  color: #ff4136;
-  font-size: 0.75rem;
-  background-color: white;
-  padding: .25rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  margin-bottom: 8px;
-  float: left;
-  border-radius: .25rem;
-  border-color: rgba(0,0,0,.3);
+  color: var(--ifm-color-primary-dark);
+  background-color: var(--ifm-color-white);
+  padding: 0.5rem;
+  border-radius: var(--ifm-card-border-radius);
   border-style: solid;
   border-width: 1px;
-  line-height: 16px;
-  width: 100%;
 }
 
 .pluginCardHeader {
