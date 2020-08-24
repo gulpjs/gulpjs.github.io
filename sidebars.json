@@ -10,6 +10,9 @@
       "getting-started/using-plugins",
       "getting-started/watching-files"
     ],
+    "Advanced": [
+      "advanced/creating-custom-registries"
+    ],
     "API": [
       "api/concepts",
       "api/src",
