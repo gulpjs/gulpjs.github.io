@@ -177,15 +177,6 @@ module.exports = {
           flexBasis: '80px',
         },
       },
-      {
-        href: 'https://www.decojent.com',
-        src: 'sponsor-logos/decojent.svg',
-        alt: 'Decojent logo',
-        title: 'Decojent',
-        style: {
-          flexBasis: '100px'
-        }
-      }
     ]
   },
   stylesheets: [
