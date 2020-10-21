@@ -13,6 +13,9 @@
     "Advanced": [
       "advanced/creating-custom-registries"
     ],
+    "Recipes": [
+      "recipes/automate-releases"
+    ],
     "API": [
       "api/concepts",
       "api/src",
