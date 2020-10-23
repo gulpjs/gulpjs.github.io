@@ -299,3 +299,8 @@ table tr td + td + td:last-child {
   box-shadow: 6px 6px 0 0 var(--ifm-color-secondary);
   transition: box-shadow .1s ease-in, transform .1s ease-in;
 }
+
+/* Fix: show "Copy to clipboard" button */
+button.copyButton_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+	color: var(--ifm-color-white);
+}
