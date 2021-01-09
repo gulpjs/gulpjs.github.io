@@ -117,13 +117,13 @@ function Svg() {
           <path
             stroke="#0A0908"
             strokeWidth="6"
-            d="M101.216 186L101 302"
+            d="M101 186L101 302"
             opacity="0.1"
           ></path>
           <path
             stroke="#CF4647"
             strokeWidth="6"
-            d="M101.216 186L101 302"
+            d="M101 186L101 302"
             className={`${styles.line_down_anim} ${styles.second}`}
             opacity="0.1"
           ></path>
