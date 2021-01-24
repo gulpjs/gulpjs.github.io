@@ -17,8 +17,7 @@ import SearchBar from '@theme/SearchBar';
 import Toggle from '@theme/Toggle';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
-import useLogo from '@theme/hooks/useLogo';
-
+import Logo from '@theme/Logo';
 import styles from './styles.module.css';
 
 function noop() { }
@@ -120,7 +119,7 @@ function Navbar() {
   const {
     siteConfig: {
       themeConfig: {
-        navbar: { title, links = [], hideOnScroll = false } = {},
+        navbar: { title, items = [], hideOnScroll = false } = {},
         disableDarkMode = false,
       },
     },
@@ -134,7 +133,7 @@ function Navbar() {
   }, [location]);
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-  const { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
+
   const onToggleChange = useCallback(
     e => (e.target.checked ? setDarkTheme() : setLightTheme()),
     [setLightTheme, setDarkTheme],
@@ -149,24 +148,18 @@ function Navbar() {
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
-          <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
-            {logoImageUrl != null && (
-              <img
-                key={isClient}
-                className="navbar__logo"
-                src={logoImageUrl}
-                alt={logoAlt}
-              />
-            )}
-          </Link>
-          {links
+          <Logo 
+            className="navbar__brand"
+            imageClassName="navbar__logo"
+          />
+          {items
             .filter(linkItem => linkItem.position === 'left')
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
             ))}
         </div>
         <div className="navbar__items navbar__items--right">
-          {links
+          {items
             .filter(linkItem => linkItem.position === 'right')
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
