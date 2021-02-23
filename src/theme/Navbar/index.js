@@ -14,7 +14,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import { useLocation } from '@docusaurus/router';
 
 import SearchBar from '@theme/SearchBar';
-import Toggle from '@theme/Toggle';
+// import Toggle from '@theme/Toggle';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import Logo from '@theme/Logo';
@@ -134,10 +134,10 @@ function Navbar() {
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
-  const onToggleChange = useCallback(
-    e => (e.target.checked ? setDarkTheme() : setLightTheme()),
-    [setLightTheme, setDarkTheme],
-  );
+  // const onToggleChange = useCallback(
+  //   e => (e.target.checked ? setDarkTheme() : setLightTheme()),
+  //   [setLightTheme, setDarkTheme],
+  // );
 
   return (
     <nav
@@ -164,14 +164,14 @@ function Navbar() {
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
             ))}
-          {!disableDarkMode && (
+          {/* {!disableDarkMode && (
             <Toggle
               className={styles.displayOnlyInLargeViewport}
               aria-label="Dark mode toggle"
               checked={isDarkTheme}
               onChange={onToggleChange}
             />
-          )}
+          )} */}
           {enableSearch && (
             <SearchBar
               handleSearchBarToggle={noop}

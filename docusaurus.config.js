@@ -15,7 +15,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: false,
+      disableSwitch: true,
     },
     navbar: {
       logo: {
@@ -72,7 +72,6 @@ module.exports = {
     footer: {
       links: [
         {
-          title: 'logo',
           items: [
             { html: '<img src="/img/gulp-white-logo.svg" alt="gulp" href="/" />' }
           ]

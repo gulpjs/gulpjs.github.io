@@ -44,7 +44,6 @@
   }
 }
 
-
 .deprecatedMessage {
   color: var(--ifm-color-primary-dark);
   background-color: var(--ifm-color-white);
@@ -70,4 +69,12 @@
 
 .primaryUrl {
   color: var(--ifm-font-base-color);
+}
+
+.pillsItem {
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  list-style-type: none;
+  padding: 0.25rem 1rem;
 }
