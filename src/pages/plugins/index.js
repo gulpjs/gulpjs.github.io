@@ -98,7 +98,7 @@ function PluginFooter({ keywords = [] }) {
     return (
       <div className="card__footer">
         <ul className={classnames('pills padding-top--sm text--normal text--right', styles.pluginCardKeywords)}>
-          {keywords.map((keyword) => <li key={keyword} className="pill-item">{keyword}</li>)}
+          {keywords.map((keyword) => <li key={keyword} className={styles.pillsItem}>{keyword}</li>)}
         </ul>
       </div>
     );

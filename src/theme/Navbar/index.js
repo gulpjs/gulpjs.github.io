@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -14,11 +14,9 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import { useLocation } from '@docusaurus/router';
 
 import SearchBar from '@theme/SearchBar';
-import Toggle from '@theme/Toggle';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
-import useLogo from '@theme/hooks/useLogo';
-
+import Logo from '@theme/Logo';
 import styles from './styles.module.css';
 
 function noop() { }
@@ -120,11 +118,9 @@ function Navbar() {
   const {
     siteConfig: {
       themeConfig: {
-        navbar: { title, links = [], hideOnScroll = false } = {},
-        disableDarkMode = false,
+        navbar: { items = [], hideOnScroll = false } = {},
       },
     },
-    isClient,
   } = useDocusaurusContext();
 
   const location = useLocation();
@@ -132,13 +128,7 @@ function Navbar() {
   useEffect(() => {
     setEnableSearch(notPluginPage(location.pathname));
   }, [location]);
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-  const { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
-  const onToggleChange = useCallback(
-    e => (e.target.checked ? setDarkTheme() : setLightTheme()),
-    [setLightTheme, setDarkTheme],
-  );
 
   return (
     <nav
@@ -149,36 +139,22 @@ function Navbar() {
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
-          <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
-            {logoImageUrl != null && (
-              <img
-                key={isClient}
-                className="navbar__logo"
-                src={logoImageUrl}
-                alt={logoAlt}
-              />
-            )}
-          </Link>
-          {links
+          <Logo
+            className="navbar__brand"
+            imageClassName="navbar__logo"
+          />
+          {items
             .filter(linkItem => linkItem.position === 'left')
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
             ))}
         </div>
         <div className="navbar__items navbar__items--right">
-          {links
+          {items
             .filter(linkItem => linkItem.position === 'right')
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
             ))}
-          {!disableDarkMode && (
-            <Toggle
-              className={styles.displayOnlyInLargeViewport}
-              aria-label="Dark mode toggle"
-              checked={isDarkTheme}
-              onChange={onToggleChange}
-            />
-          )}
           {enableSearch && (
             <SearchBar
               handleSearchBarToggle={noop}
