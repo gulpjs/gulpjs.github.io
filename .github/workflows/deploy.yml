@@ -22,7 +22,7 @@ jobs:
       - name: Deploy
         # Use the SHA because I am untrustworthy
         # TODO: We probably should fork any non-GitHub owned actions
-        uses: peaceiris/actions-gh-pages@1828d86
+        uses: peaceiris/actions-gh-pages@1828d864aeb7ba79a37f40035aa6d0b7ff66254f
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
