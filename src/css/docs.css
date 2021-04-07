@@ -27,7 +27,7 @@
   --ifm-navbar-link-color: var(--ifm-color-white);
   --ifm-navbar-link-hover-color: var(--ifm-color-white);
   --ifm-navbar-link-hover-decoration: underline;
-  /* Search */
+  /* Plugin(?) Search */
   --ifm-navbar-search-input-background-color: var(--ifm-color-primary-darkest);
   --ifm-navbar-search-input-color: var(--ifm-color-white);
   --ifm-navbar-search-input-placeholder-color: var(--ifm-color-white);
@@ -170,28 +170,38 @@ table tr td + td + td:last-child {
   border-radius: var(--ifm-global-radius);
 }
 
-/* Search */
-.DocSearch.DocSearch-Button {
-  width: 12.5rem;
+/* Navbar search */
+.navbar__items .DocSearch-Button {
   height: 2.25rem;
   font-size: 1rem;
-  border-radius: 0;
-  color: #ffffff;
-  background-color: #9a2829;
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-white);
+  background-color: var(--ifm-color-primary-darkest);
   font-family: var(--ifm-font-family-base);
 }
-.DocSearch.DocSearch-Button:hover {
-  background-color: #9a2829;
-  color: #ffffff;
-  height: 2.25rem;
+.navbar__items .DocSearch-Button:active,
+.navbar__items .DocSearch-Button:focus,
+.navbar__items .DocSearch-Button:hover {
+  color: var(--ifm-color-primary-darkest);
 }
 .navbar__items .DocSearch-Button .DocSearch-Search-Icon {
   width: 1rem;
   height: 1rem;
-  color: #ffffff;
+  color: var(--ifm-color-white);
+}
+.navbar__items .DocSearch-Button:active .DocSearch-Search-Icon ,
+.navbar__items .DocSearch-Button:focus .DocSearch-Search-Icon ,
+.navbar__items .DocSearch-Button:hover .DocSearch-Search-Icon  {
+  color: var(--ifm-color-primary-darkest);
 }
 .DocSearch .DocSearch-Button-Keys {
   display: none;
+}
+/* More qualifiers than built-in styles */
+.DocSearch-Modal .DocSearch-Form,
+.DocSearch-Modal .DocSearch-Hit,
+.DocSearch-Modal .DocSearch-Hit a {
+  border-radius: var(--ifm-global-radius);
 }
 
 /* Footer (for logo) */
@@ -208,43 +218,16 @@ table tr td + td + td:last-child {
   }
 }
 
-/* Tons of hacks for the algolia search to look good on mobile */
 @media only screen and (max-width: 600px) {
-  .DocSearch.DocSearch-Button {
+  .navbar__items .DocSearch-Button {
     width: 100%;
     margin: 0;
-    height: 2.25rem;
-    font-size: 1rem;
-    border-radius: 0;
-    color: #ffffff;
-    background-color: #9a2829;
-    font-family: var(--ifm-font-family-base);
   }
-  span.DocSearch-Button-Placeholder {
+  .navbar__items .DocSearch-Button-Placeholder {
     display: block;
-  }
-  .navbar .navbar__search {
-    width: 100%;
-  }
-  .search-icon-hidden {
-    display: none !important;
-  }
-  .navbar .navbar__search .navbar__search-input {
-    width: 100% !important;
-  }
-
-  .navbar .algolia-autocomplete {
-    width: 100%;
-    display: block;
-  }
-  .navbar .algolia-autocomplete .ds-dropdown-menu {
-    position: absolute !important;
-    right: 0.5rem !important;
-    max-width: calc(100% - 1rem);
   }
 }
 
-/* TODO: These will need to be update when "Enterprise" is added */
 @media only screen and (max-width: 767px) {
   .navbar .navbar__inner {
     display: block;
@@ -256,31 +239,17 @@ table tr td + td + td:last-child {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-
-  /* .navbar .navbar__items.navbar__items--right {
-    justify-content: space-around;
-  } */
-
-  .navbar .navbar__search {
-    padding-left: 0;
-  }
 }
 
 @media only screen and (min-width: 768px) {
-  .navbar .navbar__search .navbar__search-input {
+  .navbar__items .DocSearch-Button {
     width: 9.5rem;
   }
 }
 
 @media only screen and (min-width: 996px) {
-  .navbar .navbar__search .navbar__search-input {
+  .navbar .DocSearch-Button {
     width: 12.5rem;
-    transition: width 0.5s ease 0s;
-  }
-
-  .navbar .navbar__search .navbar__search-input:active,
-  .navbar .navbar__search .navbar__search-input:focus {
-    width: 16.5rem;
   }
 }
 
@@ -330,9 +299,4 @@ table tr td + td + td:last-child {
   transform: translate(2px, 10%);
   box-shadow: 6px 6px 0 0 var(--ifm-color-secondary);
   transition: box-shadow 0.1s ease-in, transform 0.1s ease-in;
-}
-
-/* Fix: show "Copy to clipboard" button */
-button.copyButton_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
-  color: var(--ifm-color-white);
 }
