@@ -180,6 +180,15 @@ module.exports = {
           flexBasis: '80px',
         },
       },
+      {
+        href: 'https://word.tips/',
+        src: 'sponsor-logos/word-tips.png',
+        alt: 'WordTips logo',
+        title: 'WordTips',
+        style: {
+          flexBasis: '150px',
+        },
+      },
     ]
   },
   stylesheets: [
