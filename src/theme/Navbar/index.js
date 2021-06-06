@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -14,7 +14,6 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import { useLocation } from '@docusaurus/router';
 
 import SearchBar from '@theme/SearchBar';
-// import Toggle from '@theme/Toggle';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import Logo from '@theme/Logo';
@@ -119,11 +118,9 @@ function Navbar() {
   const {
     siteConfig: {
       themeConfig: {
-        navbar: { title, items = [], hideOnScroll = false } = {},
-        disableDarkMode = false,
+        navbar: { items = [], hideOnScroll = false } = {},
       },
     },
-    isClient,
   } = useDocusaurusContext();
 
   const location = useLocation();
@@ -131,13 +128,7 @@ function Navbar() {
   useEffect(() => {
     setEnableSearch(notPluginPage(location.pathname));
   }, [location]);
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-
-  // const onToggleChange = useCallback(
-  //   e => (e.target.checked ? setDarkTheme() : setLightTheme()),
-  //   [setLightTheme, setDarkTheme],
-  // );
 
   return (
     <nav
@@ -148,7 +139,7 @@ function Navbar() {
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
-          <Logo 
+          <Logo
             className="navbar__brand"
             imageClassName="navbar__logo"
           />
@@ -164,14 +155,6 @@ function Navbar() {
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
             ))}
-          {/* {!disableDarkMode && (
-            <Toggle
-              className={styles.displayOnlyInLargeViewport}
-              aria-label="Dark mode toggle"
-              checked={isDarkTheme}
-              onChange={onToggleChange}
-            />
-          )} */}
           {enableSearch && (
             <SearchBar
               handleSearchBarToggle={noop}
