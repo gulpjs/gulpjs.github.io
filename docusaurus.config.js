@@ -189,6 +189,15 @@ module.exports = {
           flexBasis: '150px',
         },
       },
+      {
+        href: 'https://developer.americanexpress.com',
+        src: 'sponsor-logos/american-express.svg',
+        alt: 'American Express',
+        title: 'American Express',
+        style: {
+          flexBasis: '145px',
+        },
+      },
     ]
   },
   stylesheets: [
