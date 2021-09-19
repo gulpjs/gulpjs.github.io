@@ -35,7 +35,8 @@
     "lodash.shuffle": "^4.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "remark-admonitions": "^1.2.1"
+    "remark-admonitions": "^1.2.1",
+    "classnames": "^2.3.1"
   },
   "browserslist": {
     "production": [
@@ -48,8 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "dependencies": {
-    "classnames": "^2.3.1"
   }
 }
