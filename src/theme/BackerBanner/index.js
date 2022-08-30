@@ -46,7 +46,11 @@ async function getBackers() {
 
   const backersToDisplay = selectRandom(validBackers)
 
-  return backersToDisplay.map(function (backer) {
+  return backersToDisplay.reduce(function (results, backer) {
+    if (!backer.sponsor) {
+      return results;
+    }
+
     const {
       name,
       openCollectiveHandle,
@@ -68,14 +72,16 @@ async function getBackers() {
 
     let usersName = name || githubHandle || twitterHandle || openCollectiveHandle || '';
 
-    return {
+    results.push({
       key: href,
       src: avatarUrl,
       alt: usersName,
       title: monthlyAmount ? `Thank you ${usersName} for the $${monthlyAmount}/month!` : `Thank you ${usersName} for the support!`,
       href: href,
-    };
-  });
+    });
+
+    return results;
+  }, []);
 }
 
 function Backer({ backer }) {
