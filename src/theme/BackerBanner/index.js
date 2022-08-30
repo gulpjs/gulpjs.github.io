@@ -8,6 +8,10 @@ import styles from './banner.module.scss';
 const sponsorsURL = 'https://serve.onegraph.com/graphql?app_id=c8251aa1-22ab-4dca-9e57-e7c335ddcd7c';
 
 function between5And250(backer) {
+  if (!backer.tier) {
+    return false;
+  }
+
   const amount = backer.tier.amountDonated;
   if (amount >= 500 && amount < 25000) {
     return true;
@@ -68,7 +72,7 @@ async function getBackers() {
       key: href,
       src: avatarUrl,
       alt: usersName,
-      title: monthlyAmount ? `Thank you ${usersName} for the $${monthlyAmount}/month!` : 'Thank you ${usersName} for the support!',
+      title: monthlyAmount ? `Thank you ${usersName} for the $${monthlyAmount}/month!` : `Thank you ${usersName} for the support!`,
       href: href,
     };
   });
