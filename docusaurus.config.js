@@ -189,15 +189,16 @@ module.exports = {
           flexBasis: '150px',
         },
       },
-      {
-        href: 'https://developer.americanexpress.com',
-        src: 'sponsor-logos/american-express.svg',
-        alt: 'American Express',
-        title: 'American Express',
-        style: {
-          flexBasis: '145px',
-        },
-      },
+      // Stopped donating on June 15th, 2022
+      // {
+      //   href: 'https://developer.americanexpress.com',
+      //   src: 'sponsor-logos/american-express.svg',
+      //   alt: 'American Express',
+      //   title: 'American Express',
+      //   style: {
+      //     flexBasis: '145px',
+      //   },
+      // },
     ]
   },
   stylesheets: [
