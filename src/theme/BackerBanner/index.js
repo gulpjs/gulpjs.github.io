@@ -51,7 +51,7 @@ async function getBackers() {
       avatarUrl
     } = backer.sponsor;
     // It is in US cents
-    const monthlyAmount = (backer.tier.amountDonated / 100);
+    const monthlyAmount = backer.tier ? (backer.tier.amountDonated / 100) : 0;
 
     let href;
     if (githubHandle) {
@@ -68,7 +68,7 @@ async function getBackers() {
       key: href,
       src: avatarUrl,
       alt: usersName,
-      title: `Thank you ${usersName} for the $${monthlyAmount}/month!`,
+      title: monthlyAmount ? `Thank you ${usersName} for the $${monthlyAmount}/month!` : 'Thank you ${usersName} for the support!',
       href: href,
     };
   });
