@@ -8,6 +8,10 @@ import styles from './banner.module.scss';
 const sponsorsURL = 'https://serve.onegraph.com/graphql?app_id=c8251aa1-22ab-4dca-9e57-e7c335ddcd7c';
 
 function between5And250(backer) {
+  if (!backer.tier) {
+    return false;
+  }
+
   const amount = backer.tier.amountDonated;
   if (amount >= 500 && amount < 25000) {
     return true;
@@ -42,7 +46,11 @@ async function getBackers() {
 
   const backersToDisplay = selectRandom(validBackers)
 
-  return backersToDisplay.map(function (backer) {
+  return backersToDisplay.reduce(function (results, backer) {
+    if (!backer.sponsor) {
+      return results;
+    }
+
     const {
       name,
       openCollectiveHandle,
@@ -51,7 +59,7 @@ async function getBackers() {
       avatarUrl
     } = backer.sponsor;
     // It is in US cents
-    const monthlyAmount = (backer.tier.amountDonated / 100);
+    const monthlyAmount = backer.tier ? (backer.tier.amountDonated / 100) : 0;
 
     let href;
     if (githubHandle) {
@@ -64,14 +72,16 @@ async function getBackers() {
 
     let usersName = name || githubHandle || twitterHandle || openCollectiveHandle || '';
 
-    return {
+    results.push({
       key: href,
       src: avatarUrl,
       alt: usersName,
-      title: `Thank you ${usersName} for the $${monthlyAmount}/month!`,
+      title: monthlyAmount ? `Thank you ${usersName} for the $${monthlyAmount}/month!` : `Thank you ${usersName} for the support!`,
       href: href,
-    };
-  });
+    });
+
+    return results;
+  }, []);
 }
 
 function Backer({ backer }) {

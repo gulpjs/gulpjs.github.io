@@ -126,15 +126,16 @@ module.exports = {
       trackingID: 'UA-128126650-1',
     },
     companyLogos: [
-      {
-        href: 'https://stickermule.com',
-        src: 'sponsor-logos/sticker-mule.svg',
-        alt: 'Sticker Mule logo',
-        title: 'Sticker Mule',
-        style: {
-          flexBasis: '120px',
-        },
-      },
+      // Stopped donating on April 1, 2020
+      // {
+      //   href: 'https://stickermule.com',
+      //   src: 'sponsor-logos/sticker-mule.svg',
+      //   alt: 'Sticker Mule logo',
+      //   title: 'Sticker Mule',
+      //   style: {
+      //     flexBasis: '120px',
+      //   },
+      // },
       {
         href: 'https://icons8.com/',
         src: 'sponsor-logos/icons8.svg',
@@ -144,15 +145,16 @@ module.exports = {
           flexBasis: '80px',
         },
       },
-      {
-        href: 'https://frontendmasters.com/',
-        src: 'sponsor-logos/frontend-masters.png',
-        alt: 'Frontend Masters logo',
-        title: 'Frontend Masters',
-        style: {
-          flexBasis: '200px',
-        },
-      },
+      // Stopped donating on ??
+      // {
+      //   href: 'https://frontendmasters.com/',
+      //   src: 'sponsor-logos/frontend-masters.png',
+      //   alt: 'Frontend Masters logo',
+      //   title: 'Frontend Masters',
+      //   style: {
+      //     flexBasis: '200px',
+      //   },
+      // },
       {
         href: 'https://www.codeinwp.com/',
         src: 'sponsor-logos/codeinwp.svg',
@@ -162,24 +164,26 @@ module.exports = {
           flexBasis: '150px',
         },
       },
-      {
-        href: 'https://clay.global/',
-        src: 'sponsor-logos/clay.png',
-        alt: 'Clay logo',
-        title: 'Clay',
-        style: {
-          flexBasis: '150px',
-        },
-      },
-      {
-        href: 'https://twitter.com/chromiumdev',
-        src: 'sponsor-logos/chrome.svg',
-        alt: 'Chrome logo',
-        title: 'Chrome Developers',
-        style: {
-          flexBasis: '80px',
-        },
-      },
+      // Stopped donating on May 2nd, 2020
+      // {
+      //   href: 'https://clay.global/',
+      //   src: 'sponsor-logos/clay.png',
+      //   alt: 'Clay logo',
+      //   title: 'Clay',
+      //   style: {
+      //     flexBasis: '150px',
+      //   },
+      // },
+      // Stopped donating on ??
+      // {
+      //   href: 'https://twitter.com/chromiumdev',
+      //   src: 'sponsor-logos/chrome.svg',
+      //   alt: 'Chrome logo',
+      //   title: 'Chrome Developers',
+      //   style: {
+      //     flexBasis: '80px',
+      //   },
+      // },
       {
         href: 'https://word.tips/',
         src: 'sponsor-logos/word-tips.png',
@@ -189,15 +193,16 @@ module.exports = {
           flexBasis: '150px',
         },
       },
-      {
-        href: 'https://developer.americanexpress.com',
-        src: 'sponsor-logos/american-express.svg',
-        alt: 'American Express',
-        title: 'American Express',
-        style: {
-          flexBasis: '145px',
-        },
-      },
+      // Stopped donating on June 15th, 2022
+      // {
+      //   href: 'https://developer.americanexpress.com',
+      //   src: 'sponsor-logos/american-express.svg',
+      //   alt: 'American Express',
+      //   title: 'American Express',
+      //   style: {
+      //     flexBasis: '145px',
+      //   },
+      // },
     ]
   },
   stylesheets: [
