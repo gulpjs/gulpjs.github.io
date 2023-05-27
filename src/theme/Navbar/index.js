@@ -135,7 +135,7 @@ function Navbar() {
       ref={navbarRef}
       className={classnames('navbar', 'navbar--light', 'navbar--fixed-top', {
         [styles.navbarHideable]: hideOnScroll,
-        [styles.navbarHidden]: !isNavbarVisible,
+        [styles.navbarHidden]: isNavbarVisible,
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
