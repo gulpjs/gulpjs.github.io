@@ -58,7 +58,9 @@ h4 {
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-secondary);
 }
-
+h1 {
+  --ifm-h1-font-size: calc(1.375rem + 1.5vw);
+}
 small {
   font-size: 14px;
   font-style: italic;
@@ -170,6 +172,14 @@ table tr td + td + td:last-child {
   border-radius: var(--ifm-global-radius);
 }
 
+/* breadcrumbs */
+.breadcrumbs {
+  display: none;
+}
+article .clean-btn {
+  display: none;
+}
+
 /* Navbar search */
 .navbar__items .DocSearch-Button {
   height: 2.25rem;
@@ -216,6 +226,9 @@ table tr td + td + td:last-child {
 }
 .footer__item img {
   width: 60px;
+}
+.footer__item svg {
+  display: none;
 }
 
 @media only screen and (max-width: 720px) {
@@ -277,6 +290,12 @@ table tr td + td + td:last-child {
   .footer .col.col.col {
     --ifm-col-width: 50%;
   }
+}
+
+/* Plugins */
+.pills {
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 /* Tidelift */
