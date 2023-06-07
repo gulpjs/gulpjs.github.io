@@ -14,8 +14,8 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import { useLocation } from '@docusaurus/router';
 
 import SearchBar from '@theme/SearchBar';
-import useThemeContext from '@theme/hooks/useThemeContext';
-import useHideableNavbar from '@theme/hooks/useHideableNavbar';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import { useHideableNavbar } from '@docusaurus/theme-common/internal';
 import Logo from '@theme/Logo';
 import styles from './styles.module.css';
 
@@ -25,7 +25,7 @@ const useLinkLogo = (logo = {}) => {
   const {
     siteConfig: { baseUrl } = {},
   } = useDocusaurusContext();
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useThemeConfig();
   const logoLink = logo.href || baseUrl;
   let logoLinkProps = {};
 
@@ -135,7 +135,7 @@ function Navbar() {
       ref={navbarRef}
       className={classnames('navbar', 'navbar--light', 'navbar--fixed-top', {
         [styles.navbarHideable]: hideOnScroll,
-        [styles.navbarHidden]: !isNavbarVisible,
+        [styles.navbarHidden]: isNavbarVisible,
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
