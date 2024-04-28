@@ -176,15 +176,16 @@ module.exports = {
       //     flexBasis: '80px',
       //   },
       // },
-      {
-        href: 'https://word.tips/',
-        src: 'sponsor-logos/word-tips.png',
-        alt: 'WordTips logo',
-        title: 'WordTips',
-        style: {
-          flexBasis: '150px',
-        },
-      },
+      // Stopped donating in Sept 2023
+      // {
+      //   href: 'https://word.tips/',
+      //   src: 'sponsor-logos/word-tips.png',
+      //   alt: 'WordTips logo',
+      //   title: 'WordTips',
+      //   style: {
+      //     flexBasis: '150px',
+      //   },
+      // },
       {
         href: 'https://developer.americanexpress.com',
         src: 'sponsor-logos/american-express.svg',
