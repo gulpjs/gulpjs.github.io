@@ -1,0 +1,41 @@
+.announcementBar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: var(--ifm-color-secondary);
+  color: var(--ifm-color-white);
+}
+
+html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
+  display: none;
+}
+
+.announcementBarPlaceholder {
+  flex: 0 0 10px;
+}
+
+.announcementBarClose {
+  flex: 0 0 30px;
+  align-self: stretch;
+}
+
+.announcementBarContent {
+  flex: 1 1 auto;
+}
+
+@media print {
+  .announcementBar {
+    display: none;
+  }
+}
+
+@media (min-width: 997px) {
+  :root {
+    --docusaurus-announcement-bar-height: 30px;
+  }
+
+  .announcementBarPlaceholder,
+  .announcementBarClose {
+    flex-basis: 50px;
+  }
+}
