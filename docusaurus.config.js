@@ -18,7 +18,7 @@ module.exports = {
     announcementBar: {
       id: 'state_of_gulp',
       content:
-        'Participate in the <a href="" target="_blank" rel="noopener noreferrer nofollow">State of Gulp survey</a>—Seeking feedback until May 31st!',
+        `We're seeking your feedback until May 31st—participate in the <a href="" target="_blank" rel="noopener noreferrer nofollow">Gulp Developer Survey</a> today!`,
       isCloseable: false,
     },
     colorMode: {

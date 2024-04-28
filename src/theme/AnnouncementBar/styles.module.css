@@ -1,7 +1,7 @@
 .announcementBar {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 64px;
   background-color: var(--ifm-color-secondary);
   color: var(--ifm-color-white);
 }
@@ -30,9 +30,6 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
 }
 
 @media (min-width: 997px) {
-  :root {
-    --docusaurus-announcement-bar-height: 30px;
-  }
 
   .announcementBarPlaceholder,
   .announcementBarClose {
