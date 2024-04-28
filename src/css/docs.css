@@ -4,7 +4,7 @@
   --ifm-global-shadow-lw: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
   /* Font */
   /* TODO: maybe  this should be --ifm-font-family-primary */
-  --ifm-font-family-base: 'Poppins', sans-serif;
+  --ifm-font-family-base: "Poppins", sans-serif;
   /* TODO: add to ifm as ifm-font-family-secondary? */
   --font-family-secondary: "Roboto", sans-serif;
   --font-weight-secondary: 900;
@@ -82,9 +82,15 @@ h1 .hash-link {
   height: 3rem;
   margin-right: var(--ifm-navbar-item-padding-horizontal);
 }
+
 .navbar .navbar__logo {
   max-width: unset;
   margin-right: 0;
+  height: 100%;
+}
+
+.navbar-sidebar__item {
+  background-color: var(--ifm-color-white);
 }
 
 .navbar .navbar__link {
@@ -157,8 +163,8 @@ table tr td:last-child {
   min-width: 175px;
 }
 
-table tr th + th + th:last-child,
-table tr td + td + td:last-child {
+table tr th+th+th:last-child,
+table tr td+td+td:last-child {
   min-width: 320px;
   width: 100%;
 }
@@ -170,33 +176,56 @@ table tr td + td + td:last-child {
   border-radius: var(--ifm-global-radius);
 }
 
+/* breadcrumbs */
+.breadcrumbs {
+  display: none;
+}
+
+article .clean-btn {
+  display: none;
+}
+
 /* Navbar search */
 .navbar__items .DocSearch-Button {
   height: 2.25rem;
   font-size: 1rem;
+  margin-left: 16px;
   border-radius: var(--ifm-global-radius);
   color: var(--ifm-color-white);
   background-color: var(--ifm-color-primary-darkest);
   font-family: var(--ifm-font-family-base);
+  /* These are fixing changes between Docusaurus beta and our design */
+  padding: 0 8px;
+  margin: 0 0 0 16px;
 }
+
 .navbar__items .DocSearch-Button:active,
 .navbar__items .DocSearch-Button:focus,
 .navbar__items .DocSearch-Button:hover {
   color: var(--ifm-color-primary-darkest);
 }
+
+.navbar__logo {
+  height: 100%;
+}
+
 .navbar__items .DocSearch-Button .DocSearch-Search-Icon {
   width: 1rem;
   height: 1rem;
   color: var(--ifm-color-white);
 }
-.navbar__items .DocSearch-Button:active .DocSearch-Search-Icon ,
-.navbar__items .DocSearch-Button:focus .DocSearch-Search-Icon ,
-.navbar__items .DocSearch-Button:hover .DocSearch-Search-Icon  {
+
+
+.navbar__items .DocSearch-Button:active .DocSearch-Search-Icon,
+.navbar__items .DocSearch-Button:focus .DocSearch-Search-Icon,
+.navbar__items .DocSearch-Button:hover .DocSearch-Search-Icon {
   color: var(--ifm-color-primary-darkest);
 }
+
 .DocSearch .DocSearch-Button-Keys {
   display: none;
 }
+
 /* More qualifiers than built-in styles */
 .DocSearch-Modal .DocSearch-Form,
 .DocSearch-Modal .DocSearch-Hit,
@@ -204,40 +233,67 @@ table tr td + td + td:last-child {
   border-radius: var(--ifm-global-radius);
 }
 
+.navbar__items .DocSearch-Button-Placeholder {
+  display: block;
+}
+
 /* Footer (for logo) */
+/* Docusaurus always inject the title attribute even though we don't specify one */
+.footer__col:first-of-type .footer__title {
+  display: none;
+}
+
 .footer__col:first-of-type .footer__item {
   text-align: center;
 }
+
 .footer__item img {
   width: 60px;
+}
+
+.footer__item svg {
+  display: none;
 }
 
 @media only screen and (max-width: 720px) {
   table {
     box-shadow: -10px 0px 10px -10px #000000 inset;
   }
+
+  .navbar__items .DocSearch-Button-Placeholder {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  .navbar .navbar__inner {
+    display: block;
+  }
+
+  .navbar__items .emphasis {
+    display: none;
+  }
+
   .navbar__items .DocSearch-Button {
     width: 100%;
     margin: 0;
   }
+
   .navbar__items .DocSearch-Button-Placeholder {
     display: block;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .navbar .navbar__inner {
-    display: block;
-  }
-
   .navbar .navbar__items {
     padding-top: var(--ifm-navbar-item-padding-vertical);
     padding-bottom: var(--ifm-navbar-item-padding-vertical);
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+
+  .navbar .navbar__items--right .navbar__link {
+    display: none;
   }
 }
 
@@ -259,7 +315,8 @@ table tr td + td + td:last-child {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
+
   /* Hide our logos on tiny devices */
   .navbar .navbar__brand {
     display: none;
@@ -268,9 +325,16 @@ table tr td + td + td:last-child {
   .footer__col:first-of-type {
     display: none;
   }
+
   .footer .col.col.col {
     --ifm-col-width: 50%;
   }
+}
+
+/* Plugins */
+.pills {
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 /* Tidelift */
@@ -292,6 +356,7 @@ table tr td + td + td:last-child {
   box-shadow: 7px 7px 0 2px var(--ifm-color-secondary);
   transition: box-shadow 0.1s ease-in, transform 0.1s ease-in;
 }
+
 .tidelift-button:hover {
   text-decoration: none;
   color: var(--ifm-color-secondary);
@@ -299,4 +364,13 @@ table tr td + td + td:last-child {
   transform: translate(2px, 10%);
   box-shadow: 6px 6px 0 0 var(--ifm-color-secondary);
   transition: box-shadow 0.1s ease-in, transform 0.1s ease-in;
+}
+
+.navbarIcon {
+  vertical-align: middle;
+  max-width: unset;
+}
+
+.emphasis {
+  border: 2px solid var(--ifm-navbar-link-color);
 }

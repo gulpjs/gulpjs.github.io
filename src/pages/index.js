@@ -7,7 +7,6 @@ import CompanyBanner from '@theme/CompanyBanner';
 import BenefitSection from '@theme/BenefitSection';
 import PluginSection from '@theme/PluginSection';
 import BackerSection from '@theme/BackerSection';
-import BackerBanner from '@theme/BackerBanner';
 
 function Index() {
   return (
@@ -18,7 +17,6 @@ function Index() {
         <BenefitSection />
         <PluginSection />
         <BackerSection />
-        <BackerBanner />
       </main>
     </Layout>
   );
