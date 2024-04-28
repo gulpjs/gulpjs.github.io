@@ -1,15 +1,15 @@
-'use strict';
-
 // This file is only for generating the docs
 // No need to use any of this if working on the main website
-const del = require('del');
-const gulplog = require('gulplog');
-const { series } = require('gulp');
-const frontMatter = require('gray-matter');
-const download = require('github-download-directory');
+import { deleteAsync } from 'del';
+import gulplog from 'gulplog';
+import { series } from 'gulp';
+import frontMatter from 'gray-matter';
+import { Downloader } from 'github-download-directory';
+import { dirname } from 'path';
+import { mkdir, writeFile } from 'fs/promises';
 
 // Exports for task registration
-exports.default = series(clean, generateDocs);
+export default series(clean, generateDocs);
 
 const owner = 'gulpjs';
 const repo = 'gulp';
@@ -20,10 +20,25 @@ const fmOptions = {
 };
 
 async function clean() {
-  return del(directory);
+  return deleteAsync(directory);
+}
+
+async function createDirectories(filepath) {
+  var dir = dirname(filepath);
+  return mkdir(dir, { recursive: true });
+}
+
+async function output(file) {
+  await createDirectories(file.path);
+  await writeFile(file.path, file.contents);
 }
 
 async function generateDocs() {
+  const download = new Downloader({
+    github: {
+      auth: process.env.GITHUB_TOKEN
+    }
+  });
   // Fetch
   const files = await download.fetchFiles(owner, repo, directory, { sha: "master" });
 
@@ -42,5 +57,5 @@ async function generateDocs() {
   }, []);
 
   // Write
-  await Promise.all(docusaurusFiles.map(download.output))
+  await Promise.all(docusaurusFiles.map(output))
 }

@@ -1,6 +1,8 @@
 'use strict';
 
-var isProd = process.env.NODE_ENV === 'production';
+const {themes} = require('prism-react-renderer');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   title: 'gulp.js',
@@ -44,27 +46,16 @@ module.exports = {
           href: 'https://github.com/sponsors/gulpjs',
           label: 'Donate',
           position: 'left',
-        },
-        {
-          to: 'docs/en/support/for-enterprise',
-          label: 'Enterprise',
-          position: 'left',
-          emphasis: true,
+          className: 'emphasis',
         },
         {
           href: 'https://twitter.com/gulpjs',
-          logo: {
-            alt: 'Gulp on Twitter',
-            src: 'img/twitter.svg',
-          },
+          html: '<img class="navbarIcon" src="/img/twitter.svg" alt="Gulp on Twitter" />',
           position: 'right'
         },
         {
           href: 'https://medium.com/gulpjs',
-          logo: {
-            alt: 'The gulp blog',
-            src: 'img/medium.svg',
-          },
+          html: '<img class="navbarIcon" src="/img/medium.svg" alt="The gulp blog" />',
           position: 'right'
         },
       ]
@@ -112,19 +103,13 @@ module.exports = {
       // One of:
       // dracula, duotoneDark, duotoneLight, github, nightOwl, nightOwlLight,
       // oceanicNext, palenight, shad esOfPurple, ultramin, vsDark
-      theme: require('prism-react-renderer/themes/vsDark'),
+      theme: themes.vsDark,
     },
     algolia: {
       appId: 'HQ9BYTRO7N',
-      apiKey: 'a6ef919bce0b83de1bcbad1d4ef753f8',
+      apiKey: 'e0f1bf55fa3f4fb5150c708638b02e22',
       indexName: 'gulpjs',
       algoliaOptions: {} // Optional, if provided by Algolia
-    },
-    googleAnalytics: {
-      trackingID: 'UA-128126650-1',
-    },
-    gtag: {
-      trackingID: 'UA-128126650-1',
     },
     companyLogos: [
       // Stopped donating on April 1, 2020
@@ -225,8 +210,12 @@ module.exports = {
     }],
     ['docusaurus-plugin-sass', {}],
     ['@docusaurus/plugin-content-pages', {}],
-    isProd && ['@docusaurus/plugin-google-analytics', {}],
-    isProd && ['@docusaurus/plugin-google-gtag', {}],
+    isProd && ['@docusaurus/plugin-google-analytics', {
+      trackingID: 'UA-128126650-1',
+    }],
+    isProd && ['@docusaurus/plugin-google-gtag', {
+      trackingID: 'UA-128126650-1',
+    }],
     isProd && ['@docusaurus/plugin-sitemap', {}],
   ]
 };
