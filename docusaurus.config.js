@@ -195,6 +195,15 @@ module.exports = {
           flexBasis: '145px',
         },
       },
+      {
+        href: 'https://webweekly.email/',
+        src: 'sponsor-logos/web-weekly.svg',
+        alt: 'Web Weekly - Your friendly web dev newsletter',
+        title: 'Web Weekly - Your friendly web dev newsletter',
+        style: {
+          flexBasis: '175px',
+        }
+      }
     ]
   },
   stylesheets: [
