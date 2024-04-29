@@ -15,6 +15,12 @@ module.exports = {
   projectName: 'gulpjs.github.io',
   // The theme
   themeConfig: {
+    announcementBar: {
+      id: 'state_of_gulp',
+      content:
+        `We're seeking your feedback until May 31st—participate in the <a href="https://www.surveyhero.com/c/9sfd37mk" target="_blank" rel="noopener noreferrer nofollow">Gulp Developer Survey</a> today!`,
+      isCloseable: false,
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
@@ -170,25 +176,34 @@ module.exports = {
       //     flexBasis: '80px',
       //   },
       // },
-      {
-        href: 'https://word.tips/',
-        src: 'sponsor-logos/word-tips.png',
-        alt: 'WordTips logo',
-        title: 'WordTips',
-        style: {
-          flexBasis: '150px',
-        },
-      },
-      // Stopped donating on June 15th, 2022
+      // Stopped donating in Sept 2023
       // {
-      //   href: 'https://developer.americanexpress.com',
-      //   src: 'sponsor-logos/american-express.svg',
-      //   alt: 'American Express',
-      //   title: 'American Express',
+      //   href: 'https://word.tips/',
+      //   src: 'sponsor-logos/word-tips.png',
+      //   alt: 'WordTips logo',
+      //   title: 'WordTips',
       //   style: {
-      //     flexBasis: '145px',
+      //     flexBasis: '150px',
       //   },
       // },
+      {
+        href: 'https://developer.americanexpress.com',
+        src: 'sponsor-logos/american-express.svg',
+        alt: 'American Express',
+        title: 'American Express',
+        style: {
+          flexBasis: '145px',
+        },
+      },
+      {
+        href: 'https://webweekly.email/',
+        src: 'sponsor-logos/web-weekly.svg',
+        alt: 'Web Weekly - Your friendly web dev newsletter',
+        title: 'Web Weekly - Your friendly web dev newsletter',
+        style: {
+          flexBasis: '175px',
+        }
+      }
     ]
   },
   stylesheets: [
