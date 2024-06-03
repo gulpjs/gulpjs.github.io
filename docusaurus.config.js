@@ -15,12 +15,6 @@ module.exports = {
   projectName: 'gulpjs.github.io',
   // The theme
   themeConfig: {
-    announcementBar: {
-      id: 'state_of_gulp',
-      content:
-        `We're seeking your feedback until May 31st—participate in the <a href="https://www.surveyhero.com/c/9sfd37mk" target="_blank" rel="noopener noreferrer nofollow">Gulp Developer Survey</a> today!`,
-      isCloseable: false,
-    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
