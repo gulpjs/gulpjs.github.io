@@ -20,10 +20,9 @@
   line-height: 3rem;
   outline: none;
   padding: 0 0.5rem 0 2.25rem;
-
-  &::placeholder {
-    color: var(--ifm-navbar-search-input-placeholder-color);
-  }
+}
+.searchInput::placeholder {
+  color: var(--ifm-navbar-search-input-placeholder-color);
 }
 
 .searchButton {
@@ -38,10 +37,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  h2 {
-    margin-left: var(--ifm-card-horizontal-spacing);
-  }
+}
+.deprecatedCardHeader h2 {
+  margin-left: var(--ifm-card-horizontal-spacing);
 }
 
 .deprecatedMessage {
@@ -57,10 +55,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  h2 {
-    margin-bottom: 0;
-  }
+}
+.pluginCardHeader h2 {
+  margin-bottom: 0;
 }
 
 .pluginCardKeywords {

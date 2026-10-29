@@ -2,23 +2,22 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-
   padding: 1rem;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .benefits {
     flex-direction: row;
-
     padding: 4rem 1rem;
   }
-
-  @media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) {
+  .benefits {
     padding: 5rem 2rem;
   }
 }
 
 .benefitCard {
   flex: 0 1 30%;
-
   margin-bottom: 1rem;
   max-width: 30rem;
 }

@@ -6,7 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ExternalLink from '@theme/ExternalLink';
 
-import styles from './banner.module.scss';
+import styles from './banner.module.css';
 
 function randomLogos(logos) {
   return shuffle(logos).slice(0, 4);

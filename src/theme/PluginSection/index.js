@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ExternalLink from '@theme/ExternalLink';
 
-import styles from './plugins.module.scss';
+import styles from './plugins.module.css';
 
 function PluginSection() {
   return (
