@@ -3,7 +3,7 @@
 import { deleteAsync } from 'del';
 import gulplog from 'gulplog';
 import { series } from 'gulp';
-import frontMatter from 'gray-matter';
+import frontMatter from '@11ty/gray-matter';
 import { Downloader } from 'github-download-directory';
 import { dirname } from 'path';
 import { mkdir, writeFile } from 'fs/promises';
