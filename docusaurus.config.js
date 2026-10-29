@@ -222,12 +222,6 @@ module.exports = {
     }],
     ['docusaurus-plugin-sass', {}],
     ['@docusaurus/plugin-content-pages', {}],
-    isProd && ['@docusaurus/plugin-google-analytics', {
-      trackingID: 'UA-128126650-1',
-    }],
-    isProd && ['@docusaurus/plugin-google-gtag', {
-      trackingID: 'UA-128126650-1',
-    }],
     isProd && ['@docusaurus/plugin-sitemap', {}],
   ]
 };
