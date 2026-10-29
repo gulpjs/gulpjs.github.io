@@ -220,7 +220,6 @@ module.exports = {
       // to support translations and v2 doesn't support them yet
       routeBasePath: 'docs/en/',
     }],
-    ['docusaurus-plugin-sass', {}],
     ['@docusaurus/plugin-content-pages', {}],
     isProd && ['@docusaurus/plugin-sitemap', {}],
   ]

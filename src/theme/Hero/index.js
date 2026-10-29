@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './hero.module.scss';
+import styles from './hero.module.css';
 
 import Svg from './svg';
 

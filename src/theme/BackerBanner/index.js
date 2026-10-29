@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import shuffle from 'lodash.shuffle';
 import ExternalLink from '@theme/ExternalLink';
 
-import styles from './banner.module.scss';
+import styles from './banner.module.css';
 
 const sponsorsURL = 'https://serve.onegraph.com/graphql?app_id=c8251aa1-22ab-4dca-9e57-e7c335ddcd7c';
 

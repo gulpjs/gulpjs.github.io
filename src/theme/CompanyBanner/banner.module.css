@@ -1,35 +1,34 @@
 .banner {
   color: var(--ifm-color-white);
-
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
   min-height: 10rem;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .banner {
     flex-direction: row;
     width: 98%;
   }
-
-  @media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) {
+  .banner {
     width: 90%;
   }
 }
 
 .companyLogos {
   background-color: var(--ifm-color-secondary);
-
   list-style: none;
   padding: 0;
   margin: 0;
-
   flex-grow: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  @media screen and (max-width: 425px) {
+}
+@media screen and (max-width: 425px) {
+  .companyLogos {
     flex-wrap: wrap;
   }
 }
@@ -44,37 +43,29 @@
   display: block;
 }
 
-.companyLogo {
-}
-
 .supportButton {
   flex: 0 0 35%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   background: var(--ifm-color-primary);
   margin: 2rem 1rem;
-
   padding: 0.5rem 1.5rem;
-
   transform: translate(5px, -10px);
   box-shadow: -7px 7px 0 3px var(--ifm-color-secondary);
-  transition: box-shadow .1s ease-in, transform .1s ease-in;
-
-  @media screen and (min-width: 768px) {
+  transition: box-shadow 0.1s ease-in, transform 0.1s ease-in;
+}
+@media screen and (min-width: 768px) {
+  .supportButton {
     margin: 0;
     transform: none;
     box-shadow: none;
-    transition: box-shadow .1s ease-in, transform .1s ease-in;
-
-    &:hover,
-    &:active {
-      transform: translate(5px, -10px);
-      box-shadow: -7px 10px 0 3px var(--ifm-color-secondary);
-      transition: box-shadow .1s ease-in, transform .1s ease-in;
-    }
+    transition: box-shadow 0.1s ease-in, transform 0.1s ease-in;
+  }
+  .supportButton:hover, .supportButton:active {
+    transform: translate(5px, -10px);
+    box-shadow: -7px 10px 0 3px var(--ifm-color-secondary);
+    transition: box-shadow 0.1s ease-in, transform 0.1s ease-in;
   }
 }
 
@@ -83,12 +74,14 @@
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-secondary);
   font-size: 1.1rem;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .supportTitle {
     font-size: 1.2rem;
   }
-
-  @media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) {
+  .supportTitle {
     font-size: 1.4rem;
   }
 }
@@ -96,8 +89,9 @@
 .supportDescription {
   color: var(--ifm-color-white);
   font-size: 0.8rem;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .supportDescription {
     font-size: 1rem;
   }
 }

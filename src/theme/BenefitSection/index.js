@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './benefits.module.scss';
+import styles from './benefits.module.css';
 
 function BenefitSection(props) {
   return (

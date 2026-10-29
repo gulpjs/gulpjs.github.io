@@ -1,7 +1,7 @@
 import React from 'react';
 import ExternalLink from '@theme/ExternalLink';
 
-import styles from './backers.module.scss';
+import styles from './backers.module.css';
 
 function BackerSection() {
   return (

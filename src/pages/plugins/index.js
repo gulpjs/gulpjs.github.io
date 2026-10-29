@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import Layout from '@theme/Layout';
 
-import styles from './plugins.module.scss';
+import styles from './plugins.module.css';
 
 const baseUrl = `https://registry.npmjs.com/-/v1/search`;
 

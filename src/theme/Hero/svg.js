@@ -1,7 +1,7 @@
 import React from "react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './svg.module.scss';
+import styles from './svg.module.css';
 
 function Svg() {
   return (
