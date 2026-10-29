@@ -141,15 +141,16 @@ module.exports = {
       //     flexBasis: '200px',
       //   },
       // },
-      {
-        href: 'https://www.codeinwp.com/',
-        src: 'sponsor-logos/codeinwp.svg',
-        alt: 'CodeinWP',
-        title: 'CodeinWP',
-        style: {
-          flexBasis: '150px',
-        },
-      },
+      // Stopped donating on October 1st, 2025
+      // {
+      //   href: 'https://www.codeinwp.com/',
+      //   src: 'sponsor-logos/codeinwp.svg',
+      //   alt: 'CodeinWP',
+      //   title: 'CodeinWP',
+      //   style: {
+      //     flexBasis: '150px',
+      //   },
+      // },
       // Stopped donating on May 2nd, 2020
       // {
       //   href: 'https://clay.global/',
@@ -180,24 +181,26 @@ module.exports = {
       //     flexBasis: '150px',
       //   },
       // },
-      {
-        href: 'https://developer.americanexpress.com',
-        src: 'sponsor-logos/american-express.svg',
-        alt: 'American Express',
-        title: 'American Express',
-        style: {
-          flexBasis: '145px',
-        },
-      },
-      {
-        href: 'https://webweekly.email/',
-        src: 'sponsor-logos/web-weekly.svg',
-        alt: 'Web Weekly - Your friendly web dev newsletter',
-        title: 'Web Weekly - Your friendly web dev newsletter',
-        style: {
-          flexBasis: '175px',
-        }
-      }
+      // Stopped donating on March 6th, 2025
+      // {
+      //   href: 'https://developer.americanexpress.com',
+      //   src: 'sponsor-logos/american-express.svg',
+      //   alt: 'American Express',
+      //   title: 'American Express',
+      //   style: {
+      //     flexBasis: '145px',
+      //   },
+      // },
+      // Partnership ended in June 2024
+      // {
+      //   href: 'https://webweekly.email/',
+      //   src: 'sponsor-logos/web-weekly.svg',
+      //   alt: 'Web Weekly - Your friendly web dev newsletter',
+      //   title: 'Web Weekly - Your friendly web dev newsletter',
+      //   style: {
+      //     flexBasis: '175px',
+      //   }
+      // }
     ]
   },
   stylesheets: [
