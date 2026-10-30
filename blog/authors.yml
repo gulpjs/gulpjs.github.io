@@ -13,3 +13,8 @@ phated:
   image_url: https://github.com/phated.png
   socials:
     github: phated
+
+claire:
+  name: Clarissa Abidog
+  title: Founder of Clarified Consulting
+  image_url: /img/claire-avatar.jpg
