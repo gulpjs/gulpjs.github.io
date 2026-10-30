@@ -43,6 +43,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'blog',
+          label: 'Blog',
+          position: 'left'
+        },
+        {
           href: 'https://github.com/sponsors/gulpjs',
           label: 'Donate',
           position: 'left',
@@ -201,7 +206,12 @@ module.exports = {
       //     flexBasis: '175px',
       //   }
       // }
-    ]
+    ],
+    blog: {
+      sidebar: {
+        groupByYear: false
+      }
+    }
   },
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Roboto:wght@900&display=swap'
@@ -213,6 +223,10 @@ module.exports = {
     ['@docusaurus/theme-search-algolia', {}]
   ],
   plugins: [
+    ['@docusaurus/plugin-content-blog', {
+      blogSidebarCount: 30,
+      blogDescription: "Curated articles for our community.",
+    }],
     ['@docusaurus/plugin-content-docs', {
       path: 'docs',
       sidebarPath: require.resolve('./sidebars.json'),
