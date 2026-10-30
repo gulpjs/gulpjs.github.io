@@ -224,8 +224,9 @@ module.exports = {
   ],
   plugins: [
     ['@docusaurus/plugin-content-blog', {
-      blogSidebarCount: 30,
-      blogDescription: "Curated articles for our community.",
+      blogSidebarCount: 'ALL',
+      blogDescription: 'Curated articles for our community.',
+      blogSidebarTitle: 'All posts'
     }],
     ['@docusaurus/plugin-content-docs', {
       path: 'docs',
