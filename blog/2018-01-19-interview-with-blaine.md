@@ -10,6 +10,7 @@ tags: [JavaScript, Gulp, Gulpjs, Open Collective, Open Source]
 With the release of gulp 4, I thought you all might be interested in hearing about it from the lead maintainer!
 
 ![Blaine posing at Machu Picchu](/img/blaine-interview.jpg)
+_Working on gulp in the Andes._
 
 <!-- truncate -->
 

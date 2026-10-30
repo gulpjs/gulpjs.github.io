@@ -48,5 +48,4 @@ If you’re missing out on developer happenings, we highly recommend checking ou
 Over the next few weeks, I will be cleaning and analyzing the data for the Gulp team. We will be sharing the results here as soon as they are finalized, so keep your eyes peeled for the next blog post if you consider yourself a #dataisbeautiful nerd like myself. 🤓
 
 ![Photo of a red greeting card with the words "Thank You"](/img/gulp-survey-wrap.jpg)
-
 _Photo by [Aaron Burden](https://unsplash.com/@aaronburden) on [Unsplash](https://unsplash.com)_

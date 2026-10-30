@@ -8,6 +8,7 @@ tags: [JavaScript, Gulp Sips, Gulp, Gulpjs, Streams]
 ---
 
 ![Gulpfile showing many streams piped together](/img/gulp-sips-streams.png)
+_Plugins strictly spooky._
 
 <!-- truncate -->
 
