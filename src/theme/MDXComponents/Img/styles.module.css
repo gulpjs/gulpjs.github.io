@@ -1,0 +1,10 @@
+.img {
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.img+em {
+  display: block;
+  text-align: center;
+}
