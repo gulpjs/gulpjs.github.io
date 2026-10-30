@@ -4,7 +4,7 @@ description: Take the survey before May 31st.
 image: /img/gulp-survey-banner.png
 slug: gulp-developer-survey-2024
 authors: claire
-tags: [JavaScript, Gulp, Gulpjs, Nodejs]
+tags: [JavaScript, Gulp, Gulpjs, Nodejs, Surveys]
 ---
 
 ![Stylized banner image saying "We want to hear from you. Survey closes May 31st."](/img/gulp-survey-banner.png)
