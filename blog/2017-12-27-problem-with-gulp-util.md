@@ -1,6 +1,6 @@
 ---
 title: The Problem with gulp-util
-description: A little postmortem
+description: A little postmortem.
 image: /img/problem-with-gulp-util.png
 slug: problem-with-gulp-util
 authors: janiceilene
