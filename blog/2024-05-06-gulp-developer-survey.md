@@ -8,6 +8,7 @@ tags: [JavaScript, Gulp, Gulpjs, Nodejs, Surveys]
 ---
 
 ![Stylized banner image saying "We want to hear from you. Survey closes May 31st."](/img/gulp-survey-banner.png)
+_[Take the survey before May 31st](https://www.surveyhero.com/c/ctrpnqkr)_
 
 <!-- truncate -->
 

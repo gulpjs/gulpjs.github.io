@@ -8,6 +8,7 @@ tags: [JavaScript, Gulp, Gulpjs, Gulp Util, Vinyl]
 ---
 
 ![Deprecation message for gulp-util displayed in terminal](/img/problem-with-gulp-util.png)
+_Seeing this message?_
 
 <!-- truncate -->
 

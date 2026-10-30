@@ -8,10 +8,9 @@ tags: [JavaScript, Gulp, Gulpjs, Nodejs]
 ---
 
 ![Photo of a small gift wrapped in red paper](/img/gulp-5-announcement.jpg)
+_Photo by [Kostiantyn Li](https://unsplash.com/@leekos) on [Unsplash](https://unsplash.com)_
 
 <!-- truncate -->
-
-_Photo by [Kostiantyn Li](https://unsplash.com/@leekos) on [Unsplash](https://unsplash.com)_
 
 It’s been a long road to gulp 5, but we’re finally here! This release contains four years worth of work on over 60 projects. Together, the team has closed over 200 issues and pull requests. 🤯
 
