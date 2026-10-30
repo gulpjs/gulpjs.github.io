@@ -9,9 +9,9 @@ tags: [JavaScript, Gulp Sips, Gulp Gulpjs, Command Line]
 
 ![Gulp help message displayed in terminal](/img/gulp-sips-cli-help.png)
 
-_This is part of our Gulp Sips series: bringing you easily-digestible bits of information on our advanced or unknown features._
-
 <!-- truncate -->
+
+_This is part of our Gulp Sips series: bringing you easily-digestible bits of information on our advanced or unknown features._
 
 ## A Standalone CLI
 
