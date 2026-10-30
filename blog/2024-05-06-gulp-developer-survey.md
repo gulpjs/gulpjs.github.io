@@ -46,6 +46,6 @@ At the end of the survey, you will be redirected to a page to collect an email a
 
 ## Final Words 🗺️
 
-The last day to complete the Gulp Developer Survey is May 31st. We encourage you to share it out to your communities however you please. In the spirit of open source, <em class="aqt">we really can’t do this without you!</em> So whether you use the new version, an old version, or have moved away from gulp entirely, we hope you’ll take the time to contribute to the project’s future direction. Once the results are collected and analyzed, we’ll share them out with everyone here on the blog. We are excited for the ideas your feedback will bring, and we look forward to going on this adventure with you.
+The last day to complete the Gulp Developer Survey is May 31st. We encourage you to share it out to your communities however you please. In the spirit of open source, _we really can’t do this without you!_ So whether you use the new version, an old version, or have moved away from gulp entirely, we hope you’ll take the time to contribute to the project’s future direction. Once the results are collected and analyzed, we’ll share them out with everyone here on the blog. We are excited for the ideas your feedback will bring, and we look forward to going on this adventure with you.
 
-<a class="bx rb" href="https://www.surveyhero.com/c/ctrpnqkr" rel="noopener ugc nofollow" target="_blank"><strong class="cb">TAKE THE SURVEY HERE</strong></a>
+__[TAKE THE SURVEY HERE](https://www.surveyhero.com/c/ctrpnqkr)__
