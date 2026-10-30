@@ -5,3 +5,11 @@ janiceilene:
   image_url: https://github.com/janiceilene.png
   socials:
     github: janiceilene
+
+phated:
+  name: Blaine Bublitz
+  title: Gulp lead maintainer
+  url: https://github.com/phated
+  image_url: https://github.com/phated.png
+  socials:
+    github: phated
