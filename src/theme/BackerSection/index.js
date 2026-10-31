@@ -27,7 +27,7 @@ function BackerSection() {
       </div>
       <div className={styles.tier}>
         <h3 className={styles.tierTitle}>$10 each month</h3>
-        <p>We'll thank you on Twitter and, in the future, rotate your avatar through an individual contributors banner below.</p>
+        <p>In the future, rotate your avatar through an individual contributors banner below.</p>
         <ExternalLink href="https://github.com/sponsors/gulpjs?tier_id=24681" className={styles.tierButton}>Donate $10</ExternalLink>
       </div>
     </div>

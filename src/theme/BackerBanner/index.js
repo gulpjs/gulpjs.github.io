@@ -54,7 +54,6 @@ async function getBackers() {
     const {
       name,
       openCollectiveHandle,
-      twitterHandle,
       githubHandle,
       avatarUrl
     } = backer.sponsor;
@@ -64,13 +63,11 @@ async function getBackers() {
     let href;
     if (githubHandle) {
       href = `https://github.com/${githubHandle}`;
-    } else if (twitterHandle) {
-      href = `https://twitter.com/${twitterHandle}`;
     } else {
       href = `https://opencollective.com/${openCollectiveHandle}`
     }
 
-    let usersName = name || githubHandle || twitterHandle || openCollectiveHandle || '';
+    let usersName = name || githubHandle || openCollectiveHandle || '';
 
     results.push({
       key: href,

@@ -53,16 +53,6 @@ module.exports = {
           position: 'left',
           className: 'emphasis',
         },
-        {
-          href: 'https://twitter.com/gulpjs',
-          html: '<img class="navbarIcon" src="/img/twitter.svg" alt="Gulp on Twitter" />',
-          position: 'right'
-        },
-        {
-          href: 'https://medium.com/gulpjs',
-          html: '<img class="navbarIcon" src="/img/medium.svg" alt="The gulp blog" />',
-          position: 'right'
-        },
       ]
     },
     footer: {
@@ -97,8 +87,8 @@ module.exports = {
               label: 'Stack Overflow',
             },
             {
-              href: 'https://twitter.com/gulpjs',
-              label: 'Twitter',
+              href: 'https://github.com/orgs/gulpjs/discussions',
+              label: 'Discussions',
             }
           ]
         },
