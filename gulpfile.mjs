@@ -50,6 +50,11 @@ async function generateDocs() {
       return result;
     }
 
+    // Skip Tidelift's "For Enterprise" page
+    if (config.data.id === "for-enterprise") {
+      return result;
+    }
+
     return result.concat({
       path,
       contents: Buffer.from(config.stringify())
