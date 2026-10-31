@@ -4,7 +4,7 @@ description: Follow our self-hosted blog.
 image: /img/blog-relaunch-welcome.jpg
 slug: blog-relaunch
 authors: phated
-tags: []
+tags: [self-hosting]
 ---
 
 ![Photograph of a red door with a hanging sign saying "Welcome"](/img/blog-relaunch-welcome.jpg)
