@@ -2,7 +2,7 @@ janiceilene:
   name: Janice
   title: Product manager @ github/docs
   url: https://github.com/janiceilene
-  image_url: https://github.com/janiceilene.png
+  image_url: /img/janice-avatar.jpg
   socials:
     github: janiceilene
 
@@ -10,7 +10,7 @@ phated:
   name: Blaine Bublitz
   title: Gulp lead maintainer
   url: https://github.com/phated
-  image_url: https://github.com/phated.png
+  image_url: /img/blaine-avatar.jpg
   socials:
     github: phated
 
